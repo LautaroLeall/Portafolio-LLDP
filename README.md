@@ -1,3 +1,2 @@
-# Portafolio de
-# Lautaro Leal Del Prete
+# Portafolio de Lautaro Leal Del Prete
 
