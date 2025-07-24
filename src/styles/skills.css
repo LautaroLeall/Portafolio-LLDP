@@ -1,0 +1,25 @@
+.skills-container {
+    max-width: 800px;
+}
+
+.skill-bar {
+    margin-bottom: 1.2rem;
+}
+
+.skill-bar span {
+    font-weight: 600;
+}
+
+.bar-bg {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 4px;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: #0d6efd;
+    transition: width 1s ease-in-out;
+}
