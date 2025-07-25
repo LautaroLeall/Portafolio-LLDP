@@ -1,34 +1,119 @@
-import React from 'react';
+// src/components/Projects.jsx
+import React from 'react'
+import { Github, Radio } from 'lucide-react'
+import { TiCloudStorageOutline } from "react-icons/ti";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap } from 'react-icons/fa';
 import '../styles/projects.css';
+import imageCard from '../assets/confia-car.png';
+import imageGimnasio from '../assets/gestion-gym.png';
+import imageCalculadora from '../assets/calculadora.png';
+import imageGames from '../assets/games.png';
+import imageLautyDeporte from '../assets/lautyDeporte.png';
+import imageBooking from '../assets/booking.png';
+
+const techIcons = {
+    HTML: <FaHtml5 />,
+    CSS: <FaCss3Alt />,
+    JavaScript: <FaJs />,
+    React: <FaReact />,
+    Bootstrap: <FaBootstrap />,
+    LocalStorage: <TiCloudStorageOutline />,
+};
 
 const projectList = [
     {
         title: 'CONFIA-CAR',
-        description: 'App de reservas y pagos para venta de autos.',
-        tech: 'React, Bootstrap, json-server',
-        link: 'https://github.com/LautyGod/confia-car'
+        description: 'App de reservas y pagos para alquiler de autos.',
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage'],
+        code: 'https://github.com/LautaroLeall/Confia-CAR',
+        demo: 'https://confia-car-renta.netlify.app/',
+        image: imageCard,
     },
     {
-        title: 'GimnasioApp',
+        title: 'Gestion-GYM',
         description: 'Turnos, sedes y coaches con filtros por especialidad.',
-        tech: 'React, Bootstrap, LocalStorage',
-        link: 'https://github.com/LautyGod/gimnasio-app'
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage'],
+        code: 'https://github.com/LautaroLeall/Gestion-GYM',
+        demo: 'https://gestion-gym.netlify.app/',
+        image: imageGimnasio,
+    },
+    {
+        title: 'Games',
+        description: 'Juegos "TA TE TI" - "Piedra | Papel | Tijera"',
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap'],
+        code: 'https://github.com/LautaroLeall/Games',
+        demo: 'https://games-lau.netlify.app/',
+        image: imageGames,
+    },
+    {
+        title: 'Calculadora',
+        description: 'Calculadora "Basica" de Iphone',
+        techs: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
+        code: 'https://github.com/LautaroLeall/Calculadora',
+        demo: 'https://cal-iphone.netlify.app/',
+        image: imageCalculadora,
+    },
+    {
+        title: 'LautyDeporte',
+        description: 'E-Commerce tienda Deportiva.',
+        techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'LocalStorage'],
+        code: 'https://github.com/LautaroLeall/LautyDeporte',
+        demo: '',
+        image: imageLautyDeporte,
+    },
+    {
+        title: 'Booking.com',
+        description: 'Interfaz de Booking.com',
+        techs: ['HTML', 'CSS', 'Bootstrap', 'LocalStorage'],
+        code: 'https://github.com/LautaroLeall/Booking.com',
+        demo: 'https://booking-lldp.netlify.app/',
+        image: imageBooking,
     },
 ];
 
 const Projects = () => {
     return (
-        <div className="projects-container container py-5" data-aos="fade-up">
-            <h2 className="section-title">Projects</h2>
-            <div className="project-grid">
-                {projectList.map((proj, index) => (
-                    <div className="project-card" key={index}>
-                        <h5>{proj.title}</h5>
-                        <p>{proj.description}</p>
-                        <p className="tech-used">{proj.tech}</p>
-                        <a href={proj.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary">
-                            Ver en GitHub
-                        </a>
+        <div className="projects-container container py-5" id="projects" data-aos="fade-up">
+            <h2 className="section-title">My Projects</h2>
+            <div className="project-grid mt-4">
+                {projectList.map((proj, i) => (
+                    <div className="project-card" key={i}>
+                        <img src={proj.image} alt={proj.title} className="project-image" />
+                        <div className="overlay d-flex flex-column justify-content-center text-center p-3">
+                            <h5 className="project-title">{proj.title}</h5>
+                            <p className="project-description m-0">{proj.description}</p>
+                            <div className="project-techs d-flex justify-content-center align-items-center gap-3 my-3">
+                                {proj.techs.map((tech, idx) => (
+                                    <span className="tech-icon" key={idx} data-tooltip={tech}>
+                                        {techIcons[tech]}
+                                    </span>
+                                ))}
+                            </div>
+                            <div className="d-flex justify-content-center align-items-center gap-3">
+                                {proj.code && (
+                                    <a
+                                        href={proj.code}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-outline-custom py-2 px-3"
+                                    >
+                                        <Github className="me-2" />
+                                        CODE
+                                    </a>
+                                )}
+                                {proj.demo && (
+                                    <a
+                                        href={proj.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-outline-custom py-2 px-3"
+                                    >
+                                        <Radio className="me-2" />
+                                        DEMO
+                                    </a>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
