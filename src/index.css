@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body.dark-mode {
+    background-color: #0d1117;
+    color: #f0f6fc;
+}
+
+body.dark-mode .bottom-navbar {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .btn-nav {
+    color: #f0f6fc;
+}
+
+body.dark-mode .btn-nav:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

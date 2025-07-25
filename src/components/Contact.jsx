@@ -1,45 +1,74 @@
-import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
-import '../styles/contact.css';
+import { useRef } from 'react'
+import emailjs from 'emailjs-com'
+import Swal from 'sweetalert2'
+import { Mail, User, MessageSquareText } from 'lucide-react'
+import '../styles/contact.css'
 
 const Contact = () => {
-    const form = useRef();
-    const [success, setSuccess] = useState(false);
+    const form = useRef()
 
     const sendEmail = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        emailjs.sendForm(
-            'YOUR_SERVICE_ID',
-            'YOUR_TEMPLATE_ID',
-            form.current,
-            'YOUR_PUBLIC_KEY'
-        )
-            .then((result) => {
-                console.log(result.text);
-                setSuccess(true);
-                form.current.reset();
-            }, (error) => {
-                console.log(error.text);
-                alert("Hubo un error al enviar el mensaje. 😥");
-            });
-    };
+        emailjs
+            .sendForm(
+                'service_m2xi21i',       // Reemplazá con tu Service ID
+                'template_y8mh8jg',      // Reemplazá con tu Template ID
+                form.current,
+                'TxYC4I9s0Lubvu7l2'        // Reemplazá con tu Public Key
+            )
+            .then(
+                () => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Mensaje enviado!',
+                        text: 'Te responderé lo antes posible.',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        toast: true,
+                        position: 'bottom-end',
+                    })
+                    form.current.reset()
+                },
+                () => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ups...',
+                        text: 'Hubo un problema al enviar el mensaje.',
+                    })
+                }
+            )
+    }
 
     return (
         <div className="contact-container container py-5" id="contact" data-aos="fade-up">
-            <h2 className="section-title">¿Charlamos?</h2>
-            <p>Mandame un mensaje directo por acá y te respondo por mail 💌</p>
+            <h2 className="section-title mb-3">Shall we Chat??</h2>
+            <p className="mb-2">Send me a direct message here and I'll reply by email.</p>
 
-            <form ref={form} onSubmit={sendEmail} className="contact-form mt-4">
-                <input type="text" name="user_name" placeholder="Tu nombre" required />
-                <input type="email" name="user_email" placeholder="Tu correo" required />
-                <textarea name="message" placeholder="Tu mensaje" rows="5" required />
-                <button type="submit" className="btn btn-primary mt-3">Enviar mensaje</button>
+            <form ref={form} onSubmit={sendEmail} className="contact-form shadow-lg p-4 rounded">
+                <label className="form-label">
+                    <User size={25} className="text-primary" />
+                </label>
+                <input type="text" name="user_name" placeholder="Your name" required />
+
+                <label className="form-label">
+                    <Mail size={25} className="text-primary" />
+                </label>
+                <input type="email" name="user_email" placeholder="Your email" required />
+
+                <label className="form-label">
+                    <MessageSquareText size={25} className="text-primary" />
+                </label>
+                <textarea name="message" placeholder="Your message" rows="5" required />
+
+                <div className="btn-send d-flex justify-content-center align-items-center">
+                    <button type="submit" className="btn btn-outline-primary mt-2 w-50 shadow">
+                        Send Message
+                    </button>
+                </div>
             </form>
-
-            {success && <p className="success-msg mt-3">¡Mensaje enviado con éxito! 📬</p>}
         </div>
-    );
-};
+    )
+}
 
-export default Contact;
+export default Contact

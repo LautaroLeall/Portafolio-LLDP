@@ -1,0 +1,35 @@
+.home-section {
+    min-height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.home-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+.home-section .highlight {
+    color: #0d6efd;
+}
+
+@media (max-width: 768px) {
+    .home-section .display-4 {
+        font-size: 2rem;
+    }
+
+    .home-section .lead {
+        font-size: 1rem;
+    }
+}

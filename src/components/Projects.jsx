@@ -19,7 +19,7 @@ const projectList = [
 const Projects = () => {
     return (
         <div className="projects-container container py-5" data-aos="fade-up">
-            <h2 className="section-title">Proyectos</h2>
+            <h2 className="section-title">Projects</h2>
             <div className="project-grid">
                 {projectList.map((proj, index) => (
                     <div className="project-card" key={index}>

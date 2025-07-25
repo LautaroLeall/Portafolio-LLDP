@@ -1,25 +1,86 @@
 .skills-container {
-    max-width: 800px;
+    max-width: 80vw;
 }
 
-.skill-bar {
-    margin-bottom: 1.2rem;
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.skill-bar span {
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    cursor: default;
+    user-select: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Pulse al hacer hover */
+.skill-badge:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Técnicas */
+.skill-badge.tech {
+    background: #0d6efd;
+    color: white;
+}
+
+/* Blandas */
+.skill-badge.soft {
+    background: white;
+    color: #212529;
+    border: 1px solid #dee2e6;
+}
+
+.skill-badge.soft:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #0d6efd;
     font-weight: 600;
 }
 
-.bar-bg {
-    background-color: #e9ecef;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 20px;
-    margin-top: 4px;
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.5);
+    }
+
+    70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 8px rgba(13, 110, 253, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+    }
 }
 
-.bar-fill {
-    height: 100%;
-    background-color: #0d6efd;
-    transition: width 1s ease-in-out;
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .skill-badge {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
 }
