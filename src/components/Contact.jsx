@@ -41,7 +41,7 @@ const Contact = () => {
     }
 
     return (
-        <div className="contact-container container py-5" id="contact" data-aos="fade-up">
+        <div className="contact-container container py-5 mb-5" id="contact" data-aos="fade-up">
             <h2 className="section-title mb-3">Shall we Chat??</h2>
             <p className="mb-2">Send me a direct message here and I'll reply by email.</p>
 

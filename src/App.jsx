@@ -8,13 +8,12 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 
-// Nuevos componentes
 import BottomNavbar from './components/BottomNavbar' // el navbar minimalista con icons
 import ThemeToggle from './components/ThemeToggle'   // el switch de tema
+import Networks from './components/Networks'
 
-// Contexto del tema
 import { useTheme } from './context/ThemeContext'
 
 function App() {
@@ -31,26 +30,32 @@ function App() {
         <ThemeToggle />
       </div>
 
+      <Networks />
+
       <section id="home">
         <Home />
       </section>
+
       <section id="profile">
         <About />
       </section>
+
       <section id="skills">
         <Skills />
       </section>
+
       <section id="projects">
         <Projects />
       </section>
+
       <section id="contact">
         <Contact />
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
 
-      {/* Navbar minimalista fijo al fondo */}
       <BottomNavbar />
+
     </div>
   )
 }
