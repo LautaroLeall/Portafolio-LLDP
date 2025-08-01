@@ -9,16 +9,15 @@
     box-shadow: 2px 0 10px rgba(0, 0, 0, 1);
     border-radius: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: background-color 0.5s ease, border 0.3s ease;
 }
 
-/* Dark mode (usa Bootstrap dark class) */
+/* Dark mode */
 body.dark .bottom-navbar {
     background-color: rgba(33, 37, 41, 0.85);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Botones */
+/* Estilos botones */
 .btn-nav {
     display: flex;
     align-items: center;
@@ -26,21 +25,18 @@ body.dark .bottom-navbar {
     padding: 0.5rem 1.5rem;
     border-radius: 1.2rem;
     color: #212529;
+    font-weight: 600;
     background-color: transparent;
     transition: all 0.4s ease-in-out;
-    font-weight: 600;
 }
 
-/* Hover animado suave */
 .btn-nav:hover {
     background-color: rgba(13, 110, 253, 0.1);
     color: #0d6efd;
     box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
-    text-decoration: none;
     transform: translateY(-3px);
 }
 
-/* Active */
 .btn-nav.active {
     background-color: rgba(13, 110, 253, 0.2);
     color: #0d6efd;
@@ -48,7 +44,6 @@ body.dark .bottom-navbar {
     box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
 }
 
-/* Ícono y texto más suave */
 .btn-nav svg {
     transition: transform 0.3s ease;
 }
@@ -57,7 +52,6 @@ body.dark .bottom-navbar {
     transform: scale(0.9) rotate(5deg);
 }
 
-/* Dark mode */
 body.dark .btn-nav {
     color: #f8f9fa;
 }
@@ -65,4 +59,48 @@ body.dark .btn-nav {
 body.dark .btn-nav:hover,
 body.dark .btn-nav.active {
     color: #0d6efd;
+}
+
+/* Botón hamburguesa */
+.hamburger-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.menu-button {
+    background-color: rgba(13, 110, 253, 0.9);
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 1rem;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+    transform: scale(1.05);
+}
+
+/* Menú desplegable hacia abajo */
+.mobile-nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 13rem;
+    z-index: 9999;
+}
+
+body.dark .mobile-nav {
+    background-color: rgba(33, 37, 41, 0.95);
 }
