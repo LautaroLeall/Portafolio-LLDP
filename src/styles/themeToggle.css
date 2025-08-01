@@ -1,4 +1,7 @@
 .theme-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     z-index: 1;
     bottom: 2rem;
@@ -46,4 +49,11 @@
 .toggle.dark .ball {
     transform: translateX(22px);
     background: #f8f9fa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 0.5rem;
+    }
 }
