@@ -3,13 +3,14 @@ import React from 'react'
 import { Github, Radio } from 'lucide-react'
 import { TiCloudStorageOutline } from "react-icons/ti";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap } from 'react-icons/fa';
+import { LuTabletSmartphone } from "react-icons/lu";
 import '../styles/projects.css';
-import imageCard from '../assets/confia-car.png';
-import imageGimnasio from '../assets/gestion-gym.png';
-import imageCalculadora from '../assets/calculadora.png';
-import imageGames from '../assets/games.png';
-import imageLautyDeporte from '../assets/lautyDeporte.png';
-import imageBooking from '../assets/booking.png';
+import imageCard from '/public/projects/confia-car.png';
+import imageGimnasio from '/public/projects/gestion-gym.png';
+import imageCalculadora from '/public/projects/calculadora.png';
+import imageGames from '/public/projects/games.png';
+import imageLautyDeporte from '/public/projects/lautyDeporte.png';
+import imageBooking from '/public/projects/booking.png';
 
 const techIcons = {
     HTML: <FaHtml5 />,
@@ -18,13 +19,14 @@ const techIcons = {
     React: <FaReact />,
     Bootstrap: <FaBootstrap />,
     LocalStorage: <TiCloudStorageOutline />,
+    Responsive: <LuTabletSmartphone />,
 };
 
 const projectList = [
     {
         title: 'CONFIA-CAR',
         description: 'App de reservas y pagos para alquiler de autos.',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage' , 'Responsive'],
         code: 'https://github.com/LautaroLeall/Confia-CAR',
         demo: 'https://confia-car-renta.netlify.app/',
         image: imageCard,
@@ -38,9 +40,17 @@ const projectList = [
         image: imageGimnasio,
     },
     {
+        title: 'LautyDeporte',
+        description: 'E-Commerce tienda Deportiva.',
+        techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'LocalStorage', 'Responsive'],
+        code: 'https://github.com/LautaroLeall/LautyDeporte',
+        demo: 'https://lauty-deporte.netlify.app/',
+        image: imageLautyDeporte,
+    },
+    {
         title: 'Games',
         description: 'Juegos "TA TE TI" - "Piedra | Papel | Tijera"',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap' , 'Responsive'],
         code: 'https://github.com/LautaroLeall/Games',
         demo: 'https://games-lau.netlify.app/',
         image: imageGames,
@@ -48,18 +58,10 @@ const projectList = [
     {
         title: 'Calculadora',
         description: 'Calculadora "Basica" de Iphone',
-        techs: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'LocalStorage' , 'Responsive'],
         code: 'https://github.com/LautaroLeall/Calculadora',
         demo: 'https://cal-iphone.netlify.app/',
         image: imageCalculadora,
-    },
-    {
-        title: 'LautyDeporte',
-        description: 'E-Commerce tienda Deportiva.',
-        techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'LocalStorage'],
-        code: 'https://github.com/LautaroLeall/LautyDeporte',
-        demo: '',
-        image: imageLautyDeporte,
     },
     {
         title: 'Booking.com',

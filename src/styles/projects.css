@@ -19,6 +19,7 @@
     cursor: pointer;
     transition: all 0.4s ease;
     background-color: #000;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +34,7 @@
 }
 
 .project-card:hover .project-image {
-    filter: brightness(30%);
+    filter: brightness(15%);
 }
 
 .overlay {
@@ -46,7 +47,7 @@
 }
 
 .project-card:hover .overlay {
-    opacity: 1;
+    opacity: 100%;
     pointer-events: auto;
 }
 
@@ -63,7 +64,7 @@
 
 .tech-icon {
     font-size: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     padding: 0.1rem 0.5rem;
     color: #0d6efd;
@@ -75,7 +76,7 @@
 .tech-icon:hover {
     transform: scale(0.95);
     background-color: rgba(13, 110, 253, 0.2);
-    box-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+    box-shadow: 1px 1px 10px rgba(13, 110, 253, 0.6);
 }
 
 /* Tooltip */
@@ -129,4 +130,25 @@ body.light .btn-outline-custom {
 body.light .btn-outline-custom:hover {
     background-color: #0d6efd;
     color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .projects-container {
+        max-width: 100vw;
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .tech-icon {
+        font-size: 1.4rem;
+        padding: 0.1rem 0.4rem;
+    }
 }
