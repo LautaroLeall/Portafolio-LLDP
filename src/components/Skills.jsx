@@ -1,3 +1,4 @@
+// src/components/Skills.jsx
 import React from 'react'
 import '../styles/skills.css'
 import { motion } from 'framer-motion'
