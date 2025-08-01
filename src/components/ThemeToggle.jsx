@@ -1,3 +1,4 @@
+// src/components/ThemeToggle.jsx
 import React, { useEffect, useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
 import '../styles/themeToggle.css'
@@ -19,7 +20,7 @@ export default function ThemeToggle() {
     }
 
     return (
-        <div className="theme-toggle d-flex align-items-center justify-content-center gap-2">
+        <div className="theme-toggle gap-2">
             <Sun className={`icon ${theme === 'dark' ? 'inactive' : ''}`} />
             <div className={`toggle ${theme}`} onClick={toggleTheme}>
                 <div className="ball" />
