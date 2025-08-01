@@ -1,4 +1,4 @@
-// src/components/SocialBar.jsx
+// src/components/Networks.jsx
 import React from 'react'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import '../styles/networks.css'
