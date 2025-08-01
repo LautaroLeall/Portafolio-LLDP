@@ -1,35 +1,51 @@
+/* Sección principal que ocupa toda la pantalla */
 .home-section {
-    min-height: 100vh;
     position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.home-section .overlay {
+/* Cada slide del carrusel con la imagen de fondo */
+.carousel-slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 2rem;
+    inset: 0;
+    background-size: cover;
+    /* Ajuste sin recortar */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Capa oscura para que el texto se lea bien */
+.overlay-home {
+    position: absolute;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
+    /* Oscurece la imagen */
+    z-index: 1;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.home-section .highlight {
+/* Estilo general del texto */
+.text-light {
+    z-index: 2;
+    color: #fff;
+}
+
+/* Título con color destacado */
+.title-home {
     color: #0d6efd;
 }
 
+/* Responsive para móviles */
 @media (max-width: 768px) {
-    .home-section .display-4 {
-        font-size: 2rem;
-    }
-
-    .home-section .lead {
-        font-size: 1rem;
+    .home-section {
+        height: 100vh;
+        width: 100vw;
     }
 }
