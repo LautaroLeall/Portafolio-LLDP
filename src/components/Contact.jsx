@@ -2,6 +2,7 @@
 import { useRef } from 'react'
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
+// Icons
 import { Mail, User, MessageSquareText } from 'lucide-react'
 import '../styles/contact.css'
 
