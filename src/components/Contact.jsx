@@ -1,3 +1,4 @@
+// src/components/Contact.jsx
 import { useRef } from 'react'
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
