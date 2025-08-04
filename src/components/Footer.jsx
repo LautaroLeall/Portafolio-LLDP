@@ -1,3 +1,4 @@
+// src/components/Footer.jsx
 const Footer = () => {
     return (
         <footer className="text-center py-4 mt-3">
