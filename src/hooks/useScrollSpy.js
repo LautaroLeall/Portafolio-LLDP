@@ -1,5 +1,7 @@
+// src/hooks/useScrollSpy.js
 import { useEffect, useState } from 'react'
 
+// resaltar el ítem activo del navbar
 export default function useScrollSpy(sectionIds, offset = 100) {
     const [activeId, setActiveId] = useState('')
 
