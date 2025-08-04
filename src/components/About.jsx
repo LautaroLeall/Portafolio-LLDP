@@ -1,5 +1,6 @@
 // src/components/About.jsx
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { Download } from 'lucide-react'
 import '../styles/about.css'
