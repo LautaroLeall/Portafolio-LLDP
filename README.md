@@ -50,9 +50,11 @@ PORTAFOLIO-LLDP/
 │   │   ├── Skills.jsx
 │   │   ├── ThemeToggle.jsx
 │   ├── context/
-│   │   └── ThemeContext.jsx
+│   │   ├── ThemeContext.jsx
+│   │   └── ThemeProvider.jsx
 │   ├── hooks/
-│   │   └── useScrollSpy.js
+│   │   ├── useScrollSpy.jsx
+│   │   └── useTheme.jsx
 │   ├── styles/                 # Estilos globales y locales
 │   ├── App.jsx
 │   ├── index.css
