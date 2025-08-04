@@ -1,22 +1,15 @@
 // src/components/ThemeToggle.jsx
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Sun, Moon } from 'lucide-react'
+import { useTheme } from '../hooks/useTheme'
 import '../styles/themeToggle.css'
 
 export default function ThemeToggle() {
-    const [theme, setTheme] = useState('light')
-
-    useEffect(() => {
-        const saved = localStorage.getItem('theme') || 'light'
-        setTheme(saved)
-        document.body.classList.toggle('dark-mode', saved === 'dark')
-    }, [])
+    const { theme, setTheme } = useTheme()
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light'
         setTheme(newTheme)
-        document.body.classList.toggle('dark-mode', newTheme === 'dark')
-        localStorage.setItem('theme', newTheme)
     }
 
     return (

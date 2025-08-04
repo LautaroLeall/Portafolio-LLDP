@@ -14,7 +14,7 @@ import BottomNavbar from './components/BottomNavbar' // el navbar minimalista co
 import ThemeToggle from './components/ThemeToggle'   // el switch de tema
 import Networks from './components/Networks'
 
-import { useTheme } from './context/ThemeContext'
+import { useTheme } from './hooks/useTheme'
 
 function App() {
   const { theme } = useTheme()
