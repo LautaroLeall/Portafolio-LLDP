@@ -76,7 +76,7 @@ PORTAFOLIO-LLDP/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/lautygod/portafolio-lldp.git
+git clone https://github.com/LautaroLeall/Portafolio-LLDP
 
 # Entrar al proyecto
 cd portafolio-lldp
@@ -90,15 +90,6 @@ npm run dev
 
 ---
 
-## 👨‍💻 Autor
 
-**Lautaro Leal Del Prete**
-Desarrollador Frontend | Apasionado por la calidad de software
-
-- GitHub: [@lautygod](https://github.com/lautygod)
-- LinkedIn: [lautaro-leal-del-prete](https://www.linkedin.com/in/lautaro-leal-del-prete)
-- Email: [lautaroleal4@gmail.com](mailto:lautaroleal4@gmail.com)
-
----
-
-> Este portafolio es un reflejo vivo de mi aprendizaje constante y evolución como desarrollador. ¡Gracias por visitarlo!
+> Este portafolio es un reflejo vivo de mi aprendizaje constante y evolución como desarrollador. <br>
+> ¡Gracias por visitarlo!
