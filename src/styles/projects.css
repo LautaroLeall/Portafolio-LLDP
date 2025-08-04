@@ -122,16 +122,6 @@
     transform: translateY(-2px);
 }
 
-body.light .btn-outline-custom {
-    border-color: #222;
-    color: #222;
-}
-
-body.light .btn-outline-custom:hover {
-    background-color: #0d6efd;
-    color: #fff;
-}
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .projects-container {

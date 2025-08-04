@@ -1,16 +1,18 @@
 // src/components/Projects.jsx
 import React from 'react'
 import { Github, Radio } from 'lucide-react'
+// Icons
 import { TiCloudStorageOutline } from "react-icons/ti";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap } from 'react-icons/fa';
 import { LuTabletSmartphone } from "react-icons/lu";
-import '../styles/projects.css';
+// Images
 import imageCard from '/public/projects/confia-car.png';
 import imageGimnasio from '/public/projects/gestion-gym.png';
 import imageCalculadora from '/public/projects/calculadora.png';
 import imageGames from '/public/projects/games.png';
 import imageLautyDeporte from '/public/projects/lautyDeporte.png';
 import imageBooking from '/public/projects/booking.png';
+import '../styles/projects.css';
 
 const techIcons = {
     HTML: <FaHtml5 />,
@@ -26,7 +28,7 @@ const projectList = [
     {
         title: 'CONFIA-CAR',
         description: 'App de reservas y pagos para alquiler de autos.',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage' , 'Responsive'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Confia-CAR',
         demo: 'https://confia-car-renta.netlify.app/',
         image: imageCard,
@@ -50,7 +52,7 @@ const projectList = [
     {
         title: 'Games',
         description: 'Juegos "TA TE TI" - "Piedra | Papel | Tijera"',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap' , 'Responsive'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Games',
         demo: 'https://games-lau.netlify.app/',
         image: imageGames,
@@ -58,7 +60,7 @@ const projectList = [
     {
         title: 'Calculadora',
         description: 'Calculadora "Basica" de Iphone',
-        techs: ['HTML', 'CSS', 'JavaScript', 'LocalStorage' , 'Responsive'],
+        techs: ['HTML', 'CSS', 'JavaScript', 'LocalStorage', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Calculadora',
         demo: 'https://cal-iphone.netlify.app/',
         image: imageCalculadora,
