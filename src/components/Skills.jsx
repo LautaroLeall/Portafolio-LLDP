@@ -1,7 +1,9 @@
 // src/components/Skills.jsx
 import React from 'react'
 import '../styles/skills.css'
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
+// Icons
 import {
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaGitAlt, FaNpm, FaGithub, FaFigma,
     FaUsers, FaComments, FaUserCheck, FaLightbulb,

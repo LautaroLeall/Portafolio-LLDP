@@ -1,5 +1,6 @@
 // src/components/BottomNavbar.jsx
-import React, { useState } from 'react'
+import { useState } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import {
     Home,
