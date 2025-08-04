@@ -52,20 +52,16 @@ body.dark .icon-link {
 }
 
 /* RESPONSIVE */
-@media (max-width: 426px) {
+@media (max-width: 768px) {
     .social-bar {
-        transform: rotate(-90deg);
-        top: 84%;
-        left: 25%;
+        top: 90%;
     }
 
-
     .icon-link {
-        padding: 0.5rem;
-        transform: rotate(90deg);
+        padding: 0.4rem;
     }
 
     .social-bar li {
-        margin: 0.4rem 0;
+        margin: 0.3rem 0;
     }
 }

@@ -1,5 +1,6 @@
 // src/components/Networks.jsx
 import React from 'react'
+// Icons
 import { Github, Linkedin, Mail } from 'lucide-react'
 import '../styles/networks.css'
 
@@ -16,7 +17,7 @@ const socialLinks = [
     },
     {
         icon: <Mail size={25} />,
-        href: 'mailto:lautaro.leall@gmail.com',
+        href: 'mailto:lautaroleal4@gmail',
         label: 'Email',
     },
 ]
