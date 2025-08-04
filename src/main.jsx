@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { ThemeProvider } from "./context/ThemeContext"
+import { ThemeProvider } from "./context/ThemeProvider"
 import App from "./App"
 import "./index.css"
 

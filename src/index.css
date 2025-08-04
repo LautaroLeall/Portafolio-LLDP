@@ -3,19 +3,16 @@
     padding: 0;
 }
 
-body.dark-mode {
-    background-color: #0d1117;
-    color: #f0f6fc;
+body.light {
+    background-color: #f0f6f8;
+    color: #020a15;
 }
 
-body.dark-mode .bottom-navbar {
-    background-color: rgba(255, 255, 255, 0.06);
+body.dark {
+    background-color: #020a15;
+    color: #f0f6f8;
 }
 
-body.dark-mode .btn-nav {
-    color: #f0f6fc;
-}
-
-body.dark-mode .btn-nav:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
