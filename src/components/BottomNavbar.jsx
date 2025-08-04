@@ -2,6 +2,8 @@
 import { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
+import useScrollSpy from '../hooks/useScrollSpy'
+// Icons
 import {
     Home,
     User,
@@ -10,7 +12,6 @@ import {
     BookUser,
     Menu
 } from 'lucide-react'
-import useScrollSpy from '../hooks/useScrollSpy'
 import '../styles/bottomNavbar.css'
 
 const navItems = [
