@@ -18,6 +18,15 @@ const About = () => {
                 About Me
             </motion.h2>
 
+            {/* Imagen centrada con animación de entrada */}
+            {/* <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+            >
+                <img src="/lldp-my.png" alt="Lautaro Leal" className="profile-image" />
+            </motion.div> */}
+
             {/* Texto con animación sutil */}
             <motion.p
                 className="about-text"
