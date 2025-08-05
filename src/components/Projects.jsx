@@ -51,7 +51,7 @@ const projectList = [
     },
     {
         title: 'Games',
-        description: 'Juegos "TA TE TI" - "Piedra | Papel | Tijera"',
+        description: 'Juegos Web',
         techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Games',
         demo: 'https://games-lau.netlify.app/',
