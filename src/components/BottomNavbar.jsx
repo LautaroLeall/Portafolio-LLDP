@@ -7,7 +7,6 @@ import useScrollSpy from '../hooks/useScrollSpy'
 import {
     Home,
     User,
-    GraduationCap,
     ChartNoAxesGantt,
     CodeXml,
     BookUser,
@@ -18,7 +17,6 @@ import '../styles/bottomNavbar.css'
 const navItems = [
     { icon: <Home size={20} />, label: 'Home', href: '#home', id: 'home' },
     { icon: <User size={20} />, label: 'About Me', href: '#profile', id: 'profile' },
-    { icon: <GraduationCap  size={20} />, label: 'Certifications', href: '#certifications', id: 'certifications' },
     { icon: <ChartNoAxesGantt size={20} />, label: 'Skills', href: '#skills', id: 'skills' },
     { icon: <CodeXml size={20} />, label: 'Projects', href: '#projects', id: 'projects' },
     { icon: <BookUser size={20} />, label: 'Contact', href: '#contact', id: 'contact' },
