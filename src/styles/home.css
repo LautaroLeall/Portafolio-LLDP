@@ -1,0 +1,51 @@
+/* Sección principal que ocupa toda la pantalla */
+.home-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Cada slide del carrusel con la imagen de fondo */
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    /* Ajuste sin recortar */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Capa oscura para que el texto se lea bien */
+.overlay-home {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Oscurece la imagen */
+    z-index: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo general del texto */
+.text-light {
+    z-index: 2;
+    color: #fff;
+}
+
+/* Título con color destacado */
+.title-home {
+    color: #0d6efd;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .home-section {
+        height: 100vh;
+        width: 100vw;
+    }
+}
