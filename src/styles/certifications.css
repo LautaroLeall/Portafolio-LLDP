@@ -1,0 +1,96 @@
+.certifications-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.certifications-title {
+    font-size: 2rem;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.certification-card {
+    position: relative;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 3px 8px rgba(13, 110, 253, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible;
+}
+
+.certification-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+}
+
+.certification-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #274e89;
+    text-decoration: none;
+}
+
+.certification-link:hover {
+    text-decoration: underline;
+}
+
+.certification-institution {
+    font-size: 1rem;
+    color: #212529;
+    margin-top: 0.3rem;
+}
+
+.certification-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.1rem;
+}
+
+/* Contenedor de la imagen que aparece sobre la tarjeta */
+.certification-image-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    width: 260px;
+    max-height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+    background: white;
+    z-index: 10;
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+.certification-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    user-select: none;
+}
+
+/* Animación para que la imagen aparezca más suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 10px);
+    }
+}
