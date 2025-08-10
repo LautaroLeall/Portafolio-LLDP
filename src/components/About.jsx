@@ -2,27 +2,11 @@
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
-import { Download } from 'lucide-react'
 import '../styles/about.css'
-
-const educations = [
-    {
-        institution: 'UNSTA',
-        type: 'Technique',
-        degree: 'Desarrollo y Calidad de Software',
-        period: '2024 - Present',
-    },
-    {
-        institution: 'Institute Nexus',
-        type: 'English Language Training',
-        degree: 'English',
-        period: '2025 - Present',
-    },
-]
 
 const About = () => {
     return (
-        <div className="about-container container py-5" id="profile" data-aos="fade-up">
+        <div className="about-container container" id="profile" data-aos="fade-up">
             {/* Título con animación de entrada */}
             <motion.h2
                 className="section-title"
@@ -59,76 +43,6 @@ const About = () => {
                 <br />
                 I'm looking for opportunities to continue learning, add value to technology teams, and participate in projects that represent real challenges.
             </motion.p>
-
-            {/* Cards con información sobre mi Educación */}
-            <motion.div
-                className="education-section"
-                initial="hidden"
-                animate="visible"
-                variants={{
-                    hidden: {},
-                    visible: {
-                        transition: {
-                            staggerChildren: 0.2,
-                        },
-                    },
-                }}
-            >
-                <h3 className="education-title">Education</h3>
-                <div className="education-cards d-flex justify-content-center gap-5 flex-wrap">
-                    {educations.map(({ institution, type, degree, period }, index) => (
-                        <motion.div
-                            key={index}
-                            className="education-card"
-                            variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            transition={{ duration: 0.5, ease: 'easeOut' }}
-                            whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(13,110,253,0.3)' }}
-                        >
-                            <h4 className="education-institution">{institution}</h4>
-                            <p className="education-typeof">{type}</p>
-                            <p className="education-degree">{degree}</p>
-                            <p className="education-period">{period}</p>
-                        </motion.div>
-                    ))}
-                </div>
-            </motion.div>
-
-            {/* Botón centrado para descargar el CV */}
-            <motion.div className="d-flex justify-content-center align-items-center container-cv mt-5">
-                <motion.div
-                    className="d-flex justify-content-center btn-download align-items-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                >
-                    <a
-                        href="/Lautaro-Leal-Del-Prete-Spanish.pdf"
-                        download
-                        className="btn btn-outline-primary btn-cv shadow d-flex align-items-center gap-2"
-                    >
-                        <Download size={20} />
-                        Download CV - Espanish Version
-                    </a>
-                </motion.div>
-                <motion.div
-                    className="d-flex justify-content-center btn-download align-items-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                >
-                    <a
-                        href="/Lautaro-Leal-Del-Prete-English.pdf"
-                        download
-                        className="btn btn-outline-primary btn-cv shadow d-flex align-items-center gap-2"
-                    >
-                        <Download size={20} />
-                        Download CV - English Version
-                    </a>
-                </motion.div>
-            </motion.div>
         </div>
     )
 }
