@@ -26,8 +26,60 @@
     line-height: 1.8;
 }
 
+/* sección de Educación */
+.education-section {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.education-title {
+    font-size: 2rem;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.education-card {
+    background: #d3dae2;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    width: 360px;
+    cursor: default;
+    box-shadow: 0 1px 10px rgba(13, 110, 253, 0.5);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.education-card:hover {
+    box-shadow: 0 7px 25px rgba(13, 110, 253, 0.9);
+    transform: translateY(-5px);
+}
+
+.education-institution {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #274e89;
+}
+
+.education-typeof{
+    font-size: 1.2rem;
+    color: rgb(80, 107, 145);
+    margin-bottom: 0.3rem;
+}
+
+.education-degree {
+    font-size: 1.1rem;
+    color: #002f5f;
+    margin-bottom: 0.3rem;
+}
+
+.education-period {
+    font-size: 0.95rem;
+    color: #50657a;
+}
+
 /* Botón CV */
-.container-cv{
+.container-cv {
     gap: 2.5rem;
 }
 
