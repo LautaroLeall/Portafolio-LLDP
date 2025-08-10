@@ -5,7 +5,9 @@ import 'aos/dist/aos.css'
 // Secciones del portafolio
 import Home from './components/Home'
 import About from './components/About'
+import Education from './components/Education'
 import Certifications from './components/Certifications'
+import BtnCV from './components/BtnCV'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
@@ -37,12 +39,11 @@ function App() {
         <Home />
       </section>
 
-      <section id="profile">
+      <section id="profile" className='py-5'>
         <About />
-      </section>
-
-      <section id="certifications">
+        <Education />
         <Certifications />
+        <BtnCV />
       </section>
 
       <section id="skills">
