@@ -7,7 +7,7 @@ Portfolio web personal desarrollado con ReactJS + Vite, diseñado para presentar
 ## 🎯 Funcionalidades Principales
 
 ✅ Carrusel animado de bienvenida con frases personalizadas y CTA dinámico <br>
-✅ Sección "About Me" con descripción personal y descarga de CV en PDF <br>
+✅ Sección "About Me" con descripción personal, educacion, certificados y descarga de CV (Spanish y English) en PDF <br>
 ✅ Sección de Skills con animaciones, categorías e íconos <br>
 ✅ Galería de Proyectos con efecto hover revelador e interacción clara <br>
 ✅ Filtro interactivo de coaches por especialidad <br>
@@ -41,8 +41,11 @@ PORTAFOLIO-LLDP/
 │   ├── assets/                 # Imágenes y recursos
 │   ├── components/             # Componentes reutilizables
 │   │   ├── About.jsx
-│   │   └── BottomNavbar.jsx
+│   │   ├── BottomNavbar.jsx
+│   │   ├── BtnCV.jsx
+│   │   ├── Certifications.jsx
 │   │   ├── Contact.jsx
+│   │   ├── Education.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Home.jsx
 │   │   ├── Networks.jsx
@@ -55,6 +58,7 @@ PORTAFOLIO-LLDP/
 │   ├── hooks/
 │   │   ├── useScrollSpy.jsx
 │   │   └── useTheme.jsx
+│   ├── pdf/                    # PDFs CV
 │   ├── styles/                 # Estilos globales y locales
 │   ├── App.jsx
 │   ├── index.css
