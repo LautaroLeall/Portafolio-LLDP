@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Portafolio-LLDP
-# Portafolio-LLDP
-=======
 # 🌐 Portafolio Web LLDP
 
 Portfolio web personal desarrollado con ReactJS + Vite, diseñado para presentar mis habilidades, proyectos, y ofrecer un canal de contacto directo. La interfaz es moderna, fluida, con animaciones visuales atractivas, interacción responsiva y una experiencia profesional.
@@ -96,4 +92,3 @@ npm run dev
 
 > Este portafolio es un reflejo vivo de mi aprendizaje constante y evolución como desarrollador. <br>
 > ¡Gracias por visitarlo!
->>>>>>> d04b6f57ad5455d2ea4d08838b8eaf088925a610
