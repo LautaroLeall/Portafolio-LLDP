@@ -1,7 +1,5 @@
-.certifications-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+.certifications-section {
+    margin: 0 8rem;
     text-align: center;
 }
 
@@ -12,85 +10,124 @@
     font-weight: 600;
 }
 
-.certifications-grid {
+.certifications-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    width: calc(85% - 5rem);
+}
+
+/* Responsive: 2 columnas en pantallas medias */
+@media (max-width: 992px) {
+    .certifications-section {
+        margin: 0 0;
+    }
+
+    .certifications-cards {
+        grid-template-columns: repeat(2, 1fr);
+        width: calc(100% - 2rem);
+    }
+
+    .certification-card {
+        height: 160px;
+    }
+}
+
+/* Responsive: 1 columna en móviles */
+@media (max-width: 576px) {
+    .certifications-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-card {
+        height: 140px;
+    }
 }
 
 .certification-card {
-    position: relative;
-    background-color: #f8f9fa;
+    background: #d3dae2;
     border-radius: 12px;
-    padding: 1.8rem 1.5rem;
-    box-shadow: 0 3px 8px rgba(13, 110, 253, 0.15);
+    width: 100%;
+    max-width: 360px;
+    height: 200px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 1px 10px rgba(13, 110, 253, 0.5);
     overflow: visible;
+    position: relative;
+    transition: transform 0.28s cubic-bezier(.2, .9, .2, 1), box-shadow 0.28s;
+    display: block;
+    will-change: transform;
 }
 
+/* Mantener la card por encima cuando esté en hover (evita overlap raro) */
 .certification-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+    z-index: 5;
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(13, 110, 253, 0.45);
 }
 
+/* Contenedor interno que preserva las capas absolutas */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* FRONT: capa con el texto - absoluta para no alterar el flujo */
+.card-front {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    text-align: center;
+    pointer-events: none;
+    background: transparent;
+}
+
+/* BACK: imagen overlay absoluta (aparece sobre el front) */
+.card-back {
+    position: absolute;
+    inset: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Texto dentro de la front */
 .certification-link {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: #274e89;
-    text-decoration: none;
-}
-
-.certification-link:hover {
-    text-decoration: underline;
 }
 
 .certification-institution {
-    font-size: 1rem;
-    color: #212529;
-    margin-top: 0.3rem;
+    font-size: 1.2rem;
+    color: rgb(80, 107, 145);
+    margin-bottom: 0.3rem;
 }
 
 .certification-date {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-top: 0.1rem;
+    font-size: 0.95rem;
+    color: #50657a;
 }
 
-/* Contenedor de la imagen que aparece sobre la tarjeta */
-.certification-image-container {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, 10px);
-    width: 260px;
-    max-height: 180px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
-    background: white;
-    z-index: 10;
-    animation: fadeInUp 0.3s ease forwards;
-}
-
-.certification-image {
+/* Imagen que ocupa la capa back (ajustada para no deformarse) */
+.certification-image-full {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
     object-fit: contain;
+    display: block;
     user-select: none;
-}
-
-/* Animación para que la imagen aparezca más suave */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translate(-50%, 20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, 10px);
-    }
+    -webkit-user-drag: none;
+    pointer-events: none;
 }
