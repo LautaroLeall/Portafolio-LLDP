@@ -15,10 +15,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     justify-items: center;
-    justify-content: center;
-    align-items: center;
     margin-inline: auto;
     width: calc(85% - 5rem);
+}
+
+/* Clase para centrar la última card cuando sobra sólo una (desktop) */
+.center-last {
+    grid-column: 2 / 3;
+    justify-self: center;
 }
 
 /* Responsive: 2 columnas en pantallas medias */
@@ -29,11 +33,19 @@
 
     .certifications-cards {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
         width: calc(100% - 2rem);
     }
 
     .certification-card {
         height: 160px;
+    }
+
+    .center-last {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 360px;
+        width: 100%;
     }
 }
 
@@ -45,6 +57,11 @@
 
     .certification-card {
         height: 140px;
+    }
+
+    .center-last {
+        grid-column: auto;
+        justify-self: stretch;
     }
 }
 
