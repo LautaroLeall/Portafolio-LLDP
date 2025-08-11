@@ -1,4 +1,4 @@
-// src/components/About.jsx
+// src/components/BtnCV.jsx
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
@@ -7,7 +7,7 @@ import '../styles/btnCV.css'
 
 const BtnCV = () => {
     return (
-        <motion.div className="d-flex justify-content-center align-items-center container-cv mt-2" >
+        <motion.div className="d-flex justify-content-center align-items-center container-cv mt-5">
             <motion.div
                 className="d-flex justify-content-center btn-download align-items-center"
                 initial={{ opacity: 0, y: 20 }}
