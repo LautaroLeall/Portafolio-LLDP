@@ -1,4 +1,4 @@
-// src/components/About.jsx
+// src/components/Education.jsx
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
@@ -24,7 +24,7 @@ const educations = [
 const Education = () => {
     return (
         < motion.div
-            className="education-section"
+            className="education-section mt-5 mx-3"
             initial="hidden"
             animate="visible"
             variants={{
