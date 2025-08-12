@@ -1,6 +1,5 @@
 // src/components/Skills.jsx
 import React from 'react'
-import '../styles/skills.css'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 // Icons
@@ -11,6 +10,7 @@ import {
 import { FaLinesLeaning } from "react-icons/fa6";
 import { SiVite } from 'react-icons/si'
 import { RiGeminiFill } from "react-icons/ri";
+import '../styles/skills.css'
 
 const techSkills = [
     { name: 'HTML', icon: <FaHtml5 /> },
@@ -69,14 +69,14 @@ const Skills = () => {
                                 variants={fadeInItem}
                                 whileHover={{ scale: 1.1 }}
                             >
-                                {skill.icon} <span className="ms-2">{skill.name}</span>
+                                {skill.icon} <span className="skill-badge-name">{skill.name}</span>
                             </motion.span>
                         ))}
                     </motion.div>
                 </div>
 
                 {/* Columna Habilidades Personales */}
-                <div className="col-md-6 mt-5 mt-md-0" data-aos="fade-up">
+                <div className="col-md-6" data-aos="fade-up">
                     <h2 className="section-title mb-4 text-center">Soft Skills</h2>
                     <motion.div
                         className="badge-group"
@@ -92,7 +92,7 @@ const Skills = () => {
                                 variants={fadeInItem}
                                 whileHover={{ scale: 1.1 }}
                             >
-                                {skill.icon} <span className="ms-2">{skill.name}</span>
+                                {skill.icon} <span className="skill-badge-name">{skill.name}</span>
                             </motion.span>
                         ))}
                     </motion.div>
