@@ -51,7 +51,7 @@ PORTAFOLIO-LLDP/
 │   │   ├── Networks.jsx
 │   │   ├── Projects.jsx
 │   │   ├── Skills.jsx
-│   │   ├── ThemeToggle.jsx
+│   │   └── ThemeToggle.jsx
 │   ├── context/
 │   │   ├── ThemeContext.jsx
 │   │   └── ThemeProvider.jsx
@@ -62,7 +62,7 @@ PORTAFOLIO-LLDP/
 │   ├── styles/                 # Estilos globales y locales
 │   ├── App.jsx
 │   ├── index.css
-│   ├── main.jsx
+│   └── main.jsx
 ├── index.html
 ├── vite.config.js
 └── README.md
