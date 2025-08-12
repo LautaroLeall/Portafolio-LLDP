@@ -94,7 +94,7 @@ const Certifications = () => {
             <h3 className="certifications-title">My Certifications</h3>
             <div className="certifications-cards d-grid align-items-center justify-content-center">
                 {certificationsData.map(({ title, institution, link, date, imgSrc }, index) => {
-                    // MODIFICACIÓN: calcular si este es el último elemento y sobra sólo 1 en la última fila
+                    // calcular si este es el último elemento y sobra sólo 1 en la última fila
                     const isLastElement = index === certificationsData.length - 1
                     const singleOnLastRow = certificationsData.length % columns === 1
                     const shouldCenterLast = isLastElement && singleOnLastRow
