@@ -91,7 +91,7 @@ const Home = () => {
 
                             {/* Subtítulo debajo del título */}
                             <motion.p
-                                className="lead m-0"
+                                className="lead subtitle-home m-0"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -102,7 +102,7 @@ const Home = () => {
                             {/* Botón dinámico que lleva a la sección según el slide */}
                             <motion.a
                                 href={getButtonHref(slides[index].button)}
-                                className="btn btn-outline-primary mt-3"
+                                className="btn btn-home mt-3"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.6 }}

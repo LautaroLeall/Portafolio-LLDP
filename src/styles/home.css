@@ -31,15 +31,35 @@
     text-align: center;
 }
 
-/* Estilo general del texto */
-.text-light {
-    z-index: 2;
-    color: #fff;
-}
-
 /* Título con color destacado */
 .title-home {
-    color: #0d6efd;
+    color: #78adff;
+}
+
+/* Subtítulo */
+.subtitle-home{
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Botón de navegación */
+.btn-home{
+    background-color: #fff;
+    border-color: #002255;
+    color: #78adff;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 1.5rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-home:hover{
+    background-color:  #78adff;
+    color:  #fff;
 }
 
 /* Responsive para móviles */
