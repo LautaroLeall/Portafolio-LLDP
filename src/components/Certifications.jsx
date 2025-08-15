@@ -7,6 +7,13 @@ import '../styles/certifications.css'
 // Datos de certificaciones centralizados
 const certificationsData = [
     {
+        title: 'Professional Foundations of Software Development',
+        institution: 'Microsoft & LinkedIn Learning',
+        link: 'https://www.linkedin.com/learning/certificates/e07e0fec757116348e2e1a95a977efee635420ddc2569afdc068d5aa7287a26a',
+        date: '2025-08-12',
+        imgSrc: '/certifications/fundDesarrolloDeSoft.png'
+    },
+    {
         title: 'Legacy Front End',
         institution: 'FreeCodeCamp',
         link: 'https://www.freecodecamp.org/certification/lautaroleall/legacy-front-end',
