@@ -1,7 +1,9 @@
 // src/components/Certifications.jsx
-import { useState, useEffect } from 'react'
+import React from 'react'
+// Framer Motion para animaciones
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowDownFromLine } from 'lucide-react'
 import '../styles/certifications.css'
 
 // Datos de certificaciones centralizados
@@ -64,109 +66,107 @@ const certificationsData = [
     },
 ]
 
-const Certifications = () => {
-    const [hoveredIndex, setHoveredIndex] = useState(null)
-
-    // MODIFICACIÓN: detecta cuántas columnas muestra el grid en base al ancho
-    const [columns, setColumns] = useState(() => {
-        if (typeof window === 'undefined') return 3
-        const w = window.innerWidth
-        if (w <= 576) return 1
-        if (w <= 992) return 2
-        return 3
-    })
-
-    useEffect(() => {
-        const onResize = () => {
-            const w = window.innerWidth
-            if (w <= 576) setColumns(1)
-            else if (w <= 992) setColumns(2)
-            else setColumns(3)
-        }
-
-        window.addEventListener('resize', onResize)
-        return () => window.removeEventListener('resize', onResize)
-    }, [])
+// Componente Certifications
+// Recibe props desde Qualifications.jsx
+// - isOpen (boolean): si la sección está abierta
+// - onToggle (función): dispara toggle de apertura/cierre
+const Certifications = ({ isOpen, onToggle }) => {
+    const [hoveredIndex, setHoveredIndex] = React.useState(null)
 
     return (
-        <motion.div
-            className="certifications-section mt-5"
-            initial="hidden"
-            animate="visible"
-            variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.15 } },
-            }}
-        >
-            <h3 className="certifications-title">My Certifications</h3>
-            <div className="certifications-cards d-grid align-items-center justify-content-center">
-                {certificationsData.map(({ title, institution, link, date, imgSrc }, index) => {
-                    // calcular si este es el último elemento y sobra sólo 1 en la última fila
-                    const isLastElement = index === certificationsData.length - 1
-                    const singleOnLastRow = certificationsData.length % columns === 1
-                    const shouldCenterLast = isLastElement && singleOnLastRow
+        <div className="certifications-section mt-5 mx-3">
+            {/* Encabezado clickeable */}
+            <button
+                className="certifications-header"
+                onClick={onToggle}
+                aria-expanded={isOpen}
+            >
+                <h3 className="certifications-title">My Certifications</h3>
 
-                    return (
-                        <motion.a
-                            key={index}
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            // clase 'center-last' condicionada
-                            className={`certification-card ${shouldCenterLast ? 'center-last' : ''}`}
-                            variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            transition={{ duration: 0.4, ease: 'easeOut' }}
-                            whileHover={{ scale: 1.04 }} // efecto visual
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                            aria-label={`Ver certificación ${title} de ${institution}`}
-                        >
-                            <div className="card-inner">
-                                {/* FRONT: texto (posición absoluta para mantener tamaño de card fijo) */}
-                                <motion.div
-                                    className="card-front"
+                {/* Icono que rota dinámicamente según el estado */}
+                <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <ArrowDownFromLine
+                        size={28}
+                        strokeWidth={2}
+                        className="certifications-icon"
+                    />
+                </motion.div>
+            </button>
+
+            {/* Contenido que se expande/colapsa */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className="certifications-cards d-grid align-items-center justify-content-center"
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -50 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                    >
+                        {certificationsData.map(
+                            ({ title, institution, link, date, imgSrc }, index) => (
+                                <motion.a
+                                    key={index}
+                                    href={link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="certification-card"
                                     initial={{ opacity: 0, y: 10 }}
-                                    animate={{
-                                        opacity: hoveredIndex === index ? 0 : 1,
-                                        y: hoveredIndex === index ? -8 : 0
-                                    }}
-                                    transition={{ duration: 0.25 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(13,110,253,0.3)' }}
+                                    onMouseEnter={() => setHoveredIndex(index)}
+                                    onMouseLeave={() => setHoveredIndex(null)}
+                                    aria-label={`Ver certificación ${title} de ${institution}`}
                                 >
-                                    <h4 className="certification-link">{title}</h4>
-                                    <p className="certification-institution">{institution}</p>
-                                    <p className="certification-date">{date}</p>
-                                </motion.div>
-
-                                {/* BACK: imagen (overlay absoluto). Aparece con AnimatePresence */}
-                                <AnimatePresence>
-                                    {hoveredIndex === index && (
+                                    <div className="card-inner">
+                                        {/* FRONT */}
                                         <motion.div
-                                            className="card-back"
-                                            key="back"
-                                            initial={{ opacity: 0, scale: 0.98 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.98 }}
+                                            className="card-front"
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{
+                                                opacity: hoveredIndex === index ? 0 : 1,
+                                                y: hoveredIndex === index ? -8 : 0
+                                            }}
                                             transition={{ duration: 0.25 }}
                                         >
-                                            <img
-                                                src={imgSrc}
-                                                alt={`Certification: ${title}`}
-                                                className="certification-image-full"
-                                                loading="lazy"
-                                                draggable={false}
-                                            />
+                                            <h4 className="certification-link">{title}</h4>
+                                            <p className="certification-institution">{institution}</p>
+                                            <p className="certification-date">{date}</p>
                                         </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        </motion.a>
-                    );
-                })}
-            </div>
-        </motion.div>
+
+                                        {/* BACK */}
+                                        <AnimatePresence>
+                                            {hoveredIndex === index && (
+                                                <motion.div
+                                                    className="card-back"
+                                                    key="back"
+                                                    initial={{ opacity: 0, scale: 0.98 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    exit={{ opacity: 0, scale: 0.98 }}
+                                                    transition={{ duration: 0.25 }}
+                                                >
+                                                    <img
+                                                        src={imgSrc}
+                                                        alt={`Certification: ${title}`}
+                                                        className="certification-image-full"
+                                                        loading="lazy"
+                                                        draggable={false}
+                                                    />
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                </motion.a>
+                            )
+                        )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     )
 }
 
