@@ -1,9 +1,12 @@
-// src/components/Education.jsx
+// Componente Education.jsx
 import React from 'react'
+// Framer Motion para animaciones
 // eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowDownFromLine } from 'lucide-react'
 import '../styles/education.css'
 
+// Datos de la educación
 const educations = [
     {
         institution: 'UNSTA',
@@ -21,51 +24,81 @@ const educations = [
     },
 ]
 
-const Education = () => {
+// Componente Education
+// Recibe props desde el contenedor padre:
+// - isOpen (boolean): indica si la sección está abierta
+// - onToggle (función): ejecuta el cambio de estado al clickear
+const Education = ({ isOpen, onToggle }) => {
     return (
-        < motion.div
-            className="education-section mt-5 mx-3"
-            initial="hidden"
-            animate="visible"
-            variants={{
-                hidden: {},
-                visible: {
-                    transition: {
-                        staggerChildren: 0.2,
-                    },
-                },
-            }
-            }
-        >
-            <h3 className="education-title">Education</h3>
-            <div className="education-cards d-flex justify-content-center gap-5 flex-wrap">
-                {educations.map(({ institution, link, type, degree, period }, index) => (
+        <div className="education-section mt-5 mx-3">
+            {/* Encabezado clickeable */}
+            <button
+                className="education-header"
+                onClick={onToggle}
+                aria-expanded={isOpen}
+            >
+                <h3 className="education-title">Education</h3>
+
+                {/* Icono que rota dinámicamente según el estado */}
+                <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <ArrowDownFromLine
+                        size={28}
+                        strokeWidth={2}
+                        className="education-icon"
+                    />
+                </motion.div>
+            </button>
+
+            {/* Contenido que se expande/colapsa */}
+            <AnimatePresence>
+                {isOpen && (
                     <motion.div
-                        key={index}
-                        className="education-card"
-                        variants={{
-                            hidden: { opacity: 0, y: 30 },
-                            visible: { opacity: 1, y: 0 },
-                        }}
-                        transition={{ duration: 0.5, ease: 'easeOut' }}
-                        whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(13,110,253,0.3)' }}
+                        className="education-cards d-flex justify-content-center gap-5 flex-wrap"
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -50 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="education-institution"
-                            title={`Open certification for ${institution}`}
-                        >
-                            {institution}
-                        </a>
-                        <p className="education-typeof">{type}</p>
-                        <p className="education-degree">{degree}</p>
-                        <p className="education-period">{period}</p>
+                        {educations.map((edu, idx) => (
+                            <motion.div
+                                key={idx}
+                                className="education-card"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    boxShadow: '0 10px 20px rgba(13,110,253,0.3)',
+                                }}
+                            >
+                                {/* Link de institución */}
+                                <a
+                                    href={edu.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="education-institution"
+                                    title={`Open certification for ${edu.institution}`}
+                                >
+                                    {edu.institution}
+                                </a>
+
+                                {/* Tipo de formación */}
+                                <p className="education-typeof">{edu.type}</p>
+
+                                {/* Título / grado */}
+                                <p className="education-degree">{edu.degree}</p>
+
+                                {/* Período */}
+                                <p className="education-period">{edu.period}</p>
+                            </motion.div>
+                        ))}
                     </motion.div>
-                ))}
-            </div>
-        </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     )
 }
 
