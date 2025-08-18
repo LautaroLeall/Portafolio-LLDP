@@ -1,25 +1,57 @@
+/* Sección de Certificaciones */
 .certifications-section {
-    margin: 0 8rem;
     text-align: center;
+    margin: 0 3rem;
 }
 
+/* Encabezado clickeable con icono */
+.certifications-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.15s ease;
+}
+
+/* Pequeña animación al pasar el mouse sobre el header */
+.certifications-header:hover {
+    transform: translateY(-1px);
+}
+
+.certifications-header:focus {
+    outline: 2px solid #0d6efd;
+    outline-offset: 3px;
+}
+
+/* Título de la sección */
 .certifications-title {
     font-size: 2rem;
     color: #0d6efd;
-    margin-bottom: 1rem;
     font-weight: 600;
+    margin: 0;
 }
 
+/* Icono al lado del título */
+.certifications-icon {
+    color: #0d6efd;
+}
+
+/* Tarjetas de certificaciones */
 .certifications-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     justify-items: center;
     margin-inline: auto;
-    width: calc(85% - 5rem);
+    width: calc(88% - 10rem);
 }
 
-/* Clase para centrar la última card cuando sobra sólo una (desktop) */
+/* Clase para centrar la última card si sobra sólo una */
 .center-last {
     grid-column: 2 / 3;
     justify-self: center;
@@ -65,11 +97,12 @@
     }
 }
 
+/* Estilos de cada tarjeta */
 .certification-card {
     background: #d3dae2;
     border-radius: 12px;
     width: 100%;
-    max-width: 360px;
+    max-width: 340px;
     height: 200px;
     cursor: pointer;
     text-decoration: none;
@@ -81,7 +114,7 @@
     will-change: transform;
 }
 
-/* Mantener la card por encima cuando esté en hover (evita overlap raro) */
+/* Mantener la card por encima cuando esté en hover */
 .certification-card:hover {
     z-index: 5;
     transform: translateY(-6px) scale(1.03);
@@ -147,4 +180,9 @@
     user-select: none;
     -webkit-user-drag: none;
     pointer-events: none;
+}
+
+/* transición suave a front/back para hover */
+.card-front, .card-back {
+    transition: all 0.25s ease-in-out;
 }
