@@ -17,9 +17,9 @@ const socialLinks = [
     },
     {
         icon: <Mail size={25} />,
-        href: 'mailto:lautaroleal4@gmail',
+        href: 'mailto:lautaroleal4@gmail.com?subject=Consulta%20profesional%20-%20Portafolio%20de%20Lautaro%20Leal&body=Hola%20Lautaro,%20me%20gustaría%20ponerme%20en%20contacto%20contigo%20para...',
         label: 'Email',
-    },
+    }
 ]
 
 const Networks = () => {
