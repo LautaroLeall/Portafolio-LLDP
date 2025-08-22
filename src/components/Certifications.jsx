@@ -9,7 +9,7 @@ import '../styles/certifications.css'
 // Datos de certificaciones centralizados
 const certificationsData = [
     {
-        title: 'Fundamentos Profesionales de IA Generativa',
+        title: 'Professional Foundations of Generative AI',
         institution: 'Microsoft & LinkedIn Learning',
         link: 'https://www.linkedin.com/learning/certificates/5181b220b78f85b0d0c2430c8eabeacc81a4666d076cd285db8da4ace938a24c',
         date: '2025-08-21',
