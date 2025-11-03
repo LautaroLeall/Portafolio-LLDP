@@ -4,13 +4,13 @@
     left: 0;
     transform: translateY(-50%);
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(222, 222, 222);
     backdrop-filter: blur(6px);
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 0.8rem 0.5rem;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease-in-out;
 }
 
