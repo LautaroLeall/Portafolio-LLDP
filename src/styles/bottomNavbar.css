@@ -1,14 +1,13 @@
 .bottom-navbar {
     position: fixed;
     bottom: 1rem;
-    left: 25%;
-    transform: translateX(-50%);
+    left: 25vw;
     z-index: 9999;
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(222, 222, 222);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 1);
     border-radius: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* Dark mode */

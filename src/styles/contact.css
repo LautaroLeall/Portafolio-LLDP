@@ -3,7 +3,7 @@
     animation: fadeInUp 0.6s ease-out both;
 }
 
-/* ---------- MODO CLARO ---------- */
+/* MODO CLARO */
 body.light .contact-form {
     background: #ffffff;
     border: 2px solid transparent;
@@ -37,7 +37,7 @@ body.light .contact-form .form-label {
     color: #020a15;
 }
 
-/* ---------- MODO OSCURO ---------- */
+/* MODO OSCURO */
 body.dark .contact-form {
     background: #0c1829;
     border: 2px solid #1a2a3c;
@@ -64,14 +64,14 @@ body.dark .contact-form textarea:focus {
     background-color: #1a2a3c;
     border-color: #4dabf7;
     box-shadow: 0 0 12px rgba(77, 171, 247, 0.25);
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 body.dark .contact-form .form-label {
     color: #f0f6f8;
 }
 
-/* ---------- COMÚN A AMBOS MODOS ---------- */
+/* COMÚN A AMBOS MODOS */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
