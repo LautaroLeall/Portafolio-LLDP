@@ -38,7 +38,7 @@ const projectList = [
         description: 'Turnos, sedes y coaches con filtros por especialidad.',
         techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage'],
         code: 'https://github.com/LautaroLeall/Gestion-GYM',
-        demo: 'https://gestion-gym.netlify.app/',
+        demo: 'https://gimnasio-lg.netlify.app/',
         image: imageGimnasio,
     },
     {
