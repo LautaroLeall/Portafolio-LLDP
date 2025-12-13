@@ -1,4 +1,4 @@
-// Componente Education.jsx
+// src/components/Education.jsx
 import React from 'react'
 // Framer Motion para animaciones
 // eslint-disable-next-line no-unused-vars
@@ -12,15 +12,17 @@ const educations = [
         institution: 'UNSTA',
         link: 'https://www.unsta.edu.ar/ingenieria/desarrollo-y-calidad-de-software/',
         type: 'Technique',
-        degree: 'Desarrollo y Calidad de Software',
-        period: '2024 - Present',
+        degree: 'Software Development and Quality',
+        period: '2024 - 2026',
+        imgSrc: '/education/Campus-Unsta.png'
     },
     {
         institution: 'Institute Nexus',
         link: 'https://www.instagram.com/instituto_nexus/?hl=es-la',
         type: 'English Language Training',
         degree: 'English',
-        period: '2025 - Present',
+        period: '2025 - 2028',
+        imgSrc: '/education/Institute-Nexus.png'
     },
 ]
 
@@ -29,6 +31,8 @@ const educations = [
 // - isOpen (boolean): indica si la sección está abierta
 // - onToggle (función): ejecuta el cambio de estado al clickear
 const Education = ({ isOpen, onToggle }) => {
+    const [hoveredIdx, setHoveredIdx] = React.useState(null)
+
     return (
         <div className="education-section mt-5 mx-3">
             {/* Encabezado clickeable */}
@@ -62,39 +66,67 @@ const Education = ({ isOpen, onToggle }) => {
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        {educations.map((edu, idx) => (
-                            <motion.div
-                                key={idx}
-                                className="education-card"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8 }}
-                                whileHover={{
-                                    scale: 1.05,
-                                    boxShadow: '0 10px 20px rgba(13,110,253,0.3)',
-                                }}
-                            >
-                                {/* Link de institución */}
-                                <a
-                                    href={edu.link}
+                        {educations.map(
+                            ({ institution, link, type, degree, period, imgSrc }, idx) => (
+                                <motion.a
+                                    key={idx}
+                                    href={link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="education-institution"
-                                    title={`Open certification for ${edu.institution}`}
+                                    className="education-card"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    whileHover={{
+                                        scale: 1.05,
+                                        boxShadow: '0 10px 20px rgba(13,110,253,0.3)',
+                                    }}
+                                    onMouseEnter={() => setHoveredIdx(idx)}
+                                    onMouseLeave={() => setHoveredIdx(null)}
+                                    aria-label={`Ver educación en ${institution}`}
                                 >
-                                    {edu.institution}
-                                </a>
+                                    <div className="card-inner">
+                                        {/* FRONT */}
+                                        <motion.div
+                                            className="card-front"
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{
+                                                opacity: hoveredIdx === idx ? 0 : 1,
+                                                y: hoveredIdx === idx ? -8 : 0,
+                                            }}
+                                            transition={{ duration: 0.25 }}
+                                        >
+                                            <h4 className="education-institution">{institution}</h4>
+                                            <p className="education-typeof">{type}</p>
+                                            <p className="education-degree">{degree}</p>
+                                            <p className="education-period">{period}</p>
+                                        </motion.div>
 
-                                {/* Tipo de formación */}
-                                <p className="education-typeof">{edu.type}</p>
-
-                                {/* Título / grado */}
-                                <p className="education-degree">{edu.degree}</p>
-
-                                {/* Período */}
-                                <p className="education-period">{edu.period}</p>
-                            </motion.div>
-                        ))}
+                                        {/* BACK */}
+                                        <AnimatePresence>
+                                            {hoveredIdx === idx && (
+                                                <motion.div
+                                                    className="card-back"
+                                                    key="back"
+                                                    initial={{ opacity: 0, scale: 0.98 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    exit={{ opacity: 0, scale: 0.98 }}
+                                                    transition={{ duration: 0.25 }}
+                                                >
+                                                    <img
+                                                        src={imgSrc}
+                                                        alt={`Education: ${institution}`}
+                                                        className="education-image-full"
+                                                        loading="lazy"
+                                                        draggable={false}
+                                                    />
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                </motion.a>
+                            )
+                        )}
                     </motion.div>
                 )}
             </AnimatePresence>
