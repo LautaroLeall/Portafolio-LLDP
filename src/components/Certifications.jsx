@@ -124,7 +124,10 @@ const Certifications = ({ isOpen, onToggle }) => {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8 }}
-                                    whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(13,110,253,0.3)' }}
+                                    whileHover={{
+                                        scale: 1.05,
+                                        boxShadow: '0 10px 20px rgba(13,110,253,0.3)'
+                                    }}
                                     onMouseEnter={() => setHoveredIndex(index)}
                                     onMouseLeave={() => setHoveredIndex(null)}
                                     aria-label={`Ver certificación ${title} de ${institution}`}
