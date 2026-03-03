@@ -7,8 +7,8 @@ import {
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaGitAlt, FaNpm, FaGithub, FaFigma,
     FaUsers, FaComments, FaUserCheck, FaLightbulb,
 } from 'react-icons/fa'
+import { SiVite, SiTailwindcss} from 'react-icons/si'
 import { FaLinesLeaning } from "react-icons/fa6";
-import { SiVite } from 'react-icons/si'
 import { RiGeminiFill } from "react-icons/ri";
 import '../styles/skills.css'
 
@@ -17,6 +17,7 @@ const techSkills = [
     { name: 'CSS', icon: <FaCss3Alt /> },
     { name: 'JavaScript', icon: <FaJs /> },
     { name: 'React', icon: <FaReact /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
     { name: 'Bootstrap', icon: <FaBootstrap /> },
     { name: 'npm', icon: <FaNpm /> },
     { name: 'Vite', icon: <SiVite /> },
