@@ -4,8 +4,11 @@ import { Github, Radio } from 'lucide-react'
 // Icons
 import { TiCloudStorageOutline } from "react-icons/ti";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap } from 'react-icons/fa';
+import { SiTailwindcss, SiVite, SiFramer } from "react-icons/si";
 import { LuTabletSmartphone } from "react-icons/lu";
 // Images
+import imageBGA from '/public/projects/bga-habilitaciones.png';
+import imageKrauft from '/public/projects/krauft.png';
 import imageCard from '/public/projects/confia-car.png';
 import imageGimnasio from '/public/projects/gestion-gym.png';
 import imageCalculadora from '/public/projects/calculadora.png';
@@ -22,13 +25,34 @@ const techIcons = {
     Bootstrap: <FaBootstrap />,
     LocalStorage: <TiCloudStorageOutline />,
     Responsive: <LuTabletSmartphone />,
+    Tailwind: <SiTailwindcss />,
+    Vite: <SiVite />,
+    Framer: <SiFramer />,
 };
 
 const projectList = [
     {
+        title: 'BGA Habilitaciones',
+        description: 'Sitio profesional para gestor de habilitaciones comerciales.',
+        subtitle: '(Proyecto Real Vendido)',
+        techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        code: 'https://github.com/LautaroLeall/BG-Habilitaciones',
+        demo: 'https://bga-habilitaciones.netlify.app/',
+        image: imageBGA,
+    },
+    {
+        title: 'Krauft Marketing Inmobiliario',
+        description: 'Sitio corporativo para agencia inmobiliaria.',
+        subtitle: '(Proyecto Real Vendido)',
+        techs: ['React', 'JavaScript', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        code: 'https://github.com/LautaroLeall/Krauft',
+        demo: 'https://krauft-marketing-inmobiliaria.netlify.app/',
+        image: imageKrauft,
+    },
+    {
         title: 'CONFIA-CAR',
         description: 'App de reservas y pagos para alquiler de autos.',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage', 'Responsive'],
+        techs: ['React', 'JavaScript', 'CSS', 'Bootstrap', 'LocalStorage', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Confia-CAR',
         demo: 'https://confia-car-renta.netlify.app/',
         image: imageCard,
@@ -36,7 +60,7 @@ const projectList = [
     {
         title: 'Gestion-GYM',
         description: 'Turnos, sedes y coaches con filtros por especialidad.',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'LocalStorage'],
+        techs: ['React', 'JavaScript', 'CSS', 'Bootstrap', 'LocalStorage'],
         code: 'https://github.com/LautaroLeall/Gestion-GYM',
         demo: 'https://gimnasio-lg.netlify.app/',
         image: imageGimnasio,
@@ -52,7 +76,7 @@ const projectList = [
     {
         title: 'Games',
         description: 'Juegos Web',
-        techs: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Responsive'],
+        techs: ['React', 'JavaScript', 'CSS', 'Bootstrap', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Games',
         demo: 'https://games-lau.netlify.app/',
         image: imageGames,
@@ -86,6 +110,7 @@ const Projects = () => {
                         <div className="overlay d-flex flex-column justify-content-center text-center p-3">
                             <h5 className="project-title">{proj.title}</h5>
                             <p className="project-description m-0">{proj.description}</p>
+                            <p className="project-description m-0">{proj.subtitle}</p>
                             <div className="project-techs d-flex justify-content-center align-items-center gap-3 my-3">
                                 {proj.techs.map((tech, idx) => (
                                     <span className="tech-icon" key={idx} data-tooltip={tech}>
