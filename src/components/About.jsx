@@ -35,13 +35,12 @@ const About = () => {
             >
                 Hello, I'm Lautaro Leal Del Prete.
                 <br />
-                I'm a Software Development and Quality student at Universidad del Norte Santo Tomás de Aquino.
+                I'm an advanced Software Development and Quality student focused on modern web development and real client projects.
                 <br />
-                I'm continuing my training in web development, programming, problem-solving, and teamwork. I already have experience in web development, customer service, and inventory control thanks to previous academic projects and jobs.
+                I build responsive, performance-oriented web applications using technologies such as React, Tailwind and modern frontend tooling, always aiming to align design, usability and business goals.
                 <br />
-                I'm especially motivated by teamwork. I have experience applying agile methodologies such as SCRUM, which has allowed me to develop organizational, communication, and effective collaboration skills in group projects.
-                <br />
-                I'm looking for opportunities to continue learning, add value to technology teams, and participate in projects that represent real challenges.
+                I'm motivated by solving problems, collaborating with teams and turning ideas into functional digital products.
+                I'm looking for opportunities to grow as a developer and contribute to projects that create real impact.
             </motion.p>
         </div>
     )
