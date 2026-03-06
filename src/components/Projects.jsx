@@ -34,7 +34,6 @@ const projectList = [
     {
         title: 'BGA Habilitaciones',
         description: 'Sitio profesional para gestor de habilitaciones comerciales.',
-        subtitle: '(Proyecto Real Vendido)',
         techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/BG-Habilitaciones',
         demo: 'https://bga-habilitaciones.netlify.app/',
@@ -43,7 +42,6 @@ const projectList = [
     {
         title: 'Krauft Marketing Inmobiliario',
         description: 'Sitio corporativo para agencia inmobiliaria.',
-        subtitle: '(Proyecto Real Vendido)',
         techs: ['React', 'JavaScript', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Krauft',
         demo: 'https://krauft-marketing-inmobiliaria.netlify.app/',
@@ -110,7 +108,6 @@ const Projects = () => {
                         <div className="overlay d-flex flex-column justify-content-center text-center p-3">
                             <h5 className="project-title">{proj.title}</h5>
                             <p className="project-description m-0">{proj.description}</p>
-                            <p className="project-description m-0">{proj.subtitle}</p>
                             <div className="project-techs d-flex justify-content-center align-items-center gap-3 my-3">
                                 {proj.techs.map((tech, idx) => (
                                     <span className="tech-icon" key={idx} data-tooltip={tech}>
