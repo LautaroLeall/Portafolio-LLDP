@@ -105,7 +105,7 @@ const Projects = () => {
                 {projectList.map((proj, i) => (
                     <div className="project-card" key={i}>
                         <img src={proj.image} alt={proj.title} className="project-image" />
-                        <div className="overlay d-flex flex-column justify-content-center text-center p-3">
+                        <div className="overlay d-flex flex-column justify-content-center text-center p-2">
                             <h5 className="project-title">{proj.title}</h5>
                             <p className="project-description m-0">{proj.description}</p>
                             <div className="project-techs d-flex justify-content-center align-items-center gap-3 my-3">
