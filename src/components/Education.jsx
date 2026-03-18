@@ -1,6 +1,5 @@
 // src/components/Education.jsx
 import React from 'react'
-// Framer Motion para animaciones
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowDownFromLine } from 'lucide-react'
@@ -14,7 +13,7 @@ const educations = [
         type: 'Technique',
         degree: 'Software Development and Quality',
         period: '2024 - 2026',
-        imgSrc: '/education/Campus-Unsta.png'
+        // imgSrc: '/education/Campus-Unsta.png' YA NO SE USA
     },
     {
         institution: 'Institute Nexus',
@@ -22,17 +21,12 @@ const educations = [
         type: 'English Language Training',
         degree: 'English',
         period: '2025 - 2028',
-        imgSrc: '/education/Institute-Nexus.png'
+        // imgSrc: '/education/Institute-Nexus.png' YA NO SE USA
     },
 ]
 
 // Componente Education
-// Recibe props desde el contenedor padre:
-// - isOpen (boolean): indica si la sección está abierta
-// - onToggle (función): ejecuta el cambio de estado al clickear
 const Education = ({ isOpen, onToggle }) => {
-    const [hoveredIdx, setHoveredIdx] = React.useState(null)
-
     return (
         <div className="education-section mt-5 mx-3">
             {/* Encabezado clickeable */}
@@ -43,7 +37,7 @@ const Education = ({ isOpen, onToggle }) => {
             >
                 <h3 className="education-title">Education</h3>
 
-                {/* Icono que rota dinámicamente según el estado */}
+                {/* Icono que rota dinámicamente */}
                 <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.5 }}
@@ -56,7 +50,7 @@ const Education = ({ isOpen, onToggle }) => {
                 </motion.div>
             </button>
 
-            {/* Contenido que se expande/colapsa */}
+            {/* Contenido expandible */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -67,7 +61,7 @@ const Education = ({ isOpen, onToggle }) => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                         {educations.map(
-                            ({ institution, link, type, degree, period, imgSrc }, idx) => (
+                            ({ institution, link, type, degree, period }, idx) => (
                                 <motion.a
                                     key={idx}
                                     href={link}
@@ -81,18 +75,17 @@ const Education = ({ isOpen, onToggle }) => {
                                         scale: 1.05,
                                         boxShadow: '0 10px 20px rgba(13,110,253,0.3)',
                                     }}
-                                    onMouseEnter={() => setHoveredIdx(idx)}
-                                    onMouseLeave={() => setHoveredIdx(null)}
                                     aria-label={`Ver educación en ${institution}`}
                                 >
                                     <div className="card-inner">
+
                                         {/* FRONT */}
                                         <motion.div
                                             className="card-front"
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{
-                                                opacity: hoveredIdx === idx ? 0 : 1,
-                                                y: hoveredIdx === idx ? -8 : 0,
+                                                opacity: 1,
+                                                y: 0,
                                             }}
                                             transition={{ duration: 0.25 }}
                                         >
@@ -102,27 +95,10 @@ const Education = ({ isOpen, onToggle }) => {
                                             <p className="education-period">{period}</p>
                                         </motion.div>
 
-                                        {/* BACK */}
-                                        <AnimatePresence>
-                                            {hoveredIdx === idx && (
-                                                <motion.div
-                                                    className="card-back"
-                                                    key="back"
-                                                    initial={{ opacity: 0, scale: 0.98 }}
-                                                    animate={{ opacity: 1, scale: 1 }}
-                                                    exit={{ opacity: 0, scale: 0.98 }}
-                                                    transition={{ duration: 0.25 }}
-                                                >
-                                                    <img
-                                                        src={imgSrc}
-                                                        alt={`Education: ${institution}`}
-                                                        className="education-image-full"
-                                                        loading="lazy"
-                                                        draggable={false}
-                                                    />
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
+                                        {/* ELIMINADO COMPLETO
+                                            BACK: ahora SIEMPRE visible (IMG)
+                                        */}
+
                                     </div>
                                 </motion.a>
                             )
