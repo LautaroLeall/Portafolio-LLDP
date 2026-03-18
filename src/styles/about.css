@@ -10,16 +10,18 @@
 }
 
 /* IMGAGEN (DE PERFIL) DESACTIVADA */
-/* .profile-image{
-    position: absolute;
-    bottom: 80%;
-    left: 22%;
-    z-index: 1;
+.profile-image{
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
-} */
+    margin-bottom: 1rem;
+}
+
+/* RESPONSIVE IMG */
+@media (max-width: 768px) {
+    .profile-image {
+        display: none;
+    }
+}
 
 .about-text {
     font-size: 1.1rem;
