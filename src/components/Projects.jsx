@@ -1,5 +1,4 @@
 // src/components/Projects.jsx
-import React from 'react'
 import { Github, Radio } from 'lucide-react'
 // Icons
 import { TiCloudStorageOutline } from "react-icons/ti";
@@ -7,14 +6,16 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap } from 'react-icons/fa';
 import { SiTailwindcss, SiVite, SiFramer } from "react-icons/si";
 import { LuTabletSmartphone } from "react-icons/lu";
 // Images
+import imageLevels from '/public/projects/levels-gym.png';
+import imageCesar from '/public/projects/cesar-estista.png';
 import imageBGA from '/public/projects/bga-habilitaciones.png';
 import imageKrauft from '/public/projects/krauft.png';
 import imageCard from '/public/projects/confia-car.png';
 import imageGimnasio from '/public/projects/gestion-gym.png';
-import imageCalculadora from '/public/projects/calculadora.png';
-import imageGames from '/public/projects/games.png';
 import imageLautyDeporte from '/public/projects/lautyDeporte.png';
-import imageBooking from '/public/projects/booking.png';
+import imageGames from '/public/projects/games.png';
+// import imageCalculadora from '/public/projects/calculadora.png';
+// import imageBooking from '/public/projects/booking.png';
 import '../styles/projects.css';
 
 const techIcons = {
@@ -31,6 +32,22 @@ const techIcons = {
 };
 
 const projectList = [
+    {
+        title: 'Levels GYM',
+        description: 'Sitio web para centro de alto rendimiento con planes y contacto.',
+        techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        code: 'https://github.com/LautaroLeall/Levels-GYM',
+        demo: 'https://levels-ar.netlify.app/',
+        image: imageLevels,
+    },
+    {
+        title: 'Cesar Aparicio Estilista',
+        description: 'Landing para estilista con galería y reservas vía WhatsApp.',
+        techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        code: 'https://github.com/LautaroLeall/Cesar_Aparicio_Estilista',
+        demo: 'https://cesar-aparicio-estilista.netlify.app/',
+        image: imageCesar,
+    },
     {
         title: 'BGA Habilitaciones',
         description: 'Sitio profesional para gestor de habilitaciones comerciales.',
@@ -78,22 +95,6 @@ const projectList = [
         code: 'https://github.com/LautaroLeall/Games',
         demo: 'https://games-lau.netlify.app/',
         image: imageGames,
-    },
-    {
-        title: 'Calculadora',
-        description: 'Calculadora "Basica" de Iphone',
-        techs: ['HTML', 'CSS', 'JavaScript', 'LocalStorage', 'Responsive'],
-        code: 'https://github.com/LautaroLeall/Calculadora',
-        demo: 'https://cal-iphone.netlify.app/',
-        image: imageCalculadora,
-    },
-    {
-        title: 'Booking.com',
-        description: 'Interfaz de Booking.com',
-        techs: ['HTML', 'CSS', 'Bootstrap', 'LocalStorage'],
-        code: 'https://github.com/LautaroLeall/Booking.com',
-        demo: 'https://booking-lldp.netlify.app/',
-        image: imageBooking,
     },
 ];
 
