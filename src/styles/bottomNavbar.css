@@ -1,7 +1,8 @@
 .bottom-navbar {
     position: fixed;
     bottom: 1rem;
-    left: 25vw;
+    left: 50vh;
+    transform: translateX(-50%);
     z-index: 9999;
     backdrop-filter: blur(10px);
     background-color: rgba(222, 222, 222);
