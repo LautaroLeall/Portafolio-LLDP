@@ -30,7 +30,7 @@ export default function BottomNavbar() {
         <>
             {/* Desktop navbar */}
             <motion.nav
-                className="bottom-navbar d-none d-md-flex p-2 shadow"
+                className="bottom-navbar d-none d-xxl-flex p-2 shadow"
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 80, damping: 14 }}
@@ -57,7 +57,7 @@ export default function BottomNavbar() {
             </motion.nav>
 
             {/* Mobile navbar */}
-            <div className="hamburger-menu d-md-none">
+            <div className="hamburger-menu d-xxl-none">
                 <button className="menu-button" onClick={() => setMenuOpen((prev) => !prev)}>
                     <Menu size={28} />
                 </button>
