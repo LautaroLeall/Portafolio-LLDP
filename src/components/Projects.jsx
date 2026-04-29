@@ -6,6 +6,7 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap } from 'react-icons/fa';
 import { SiTailwindcss, SiVite, SiFramer } from "react-icons/si";
 import { LuTabletSmartphone } from "react-icons/lu";
 // Images
+import imageMym from '/public/projects/mym-decoraciones.png';
 import imageLevels from '/public/projects/levels-gym.png';
 import imageCesar from '/public/projects/cesar-estista.png';
 import imageBGA from '/public/projects/bga-habilitaciones.png';
@@ -13,7 +14,7 @@ import imageKrauft from '/public/projects/krauft.png';
 import imageCard from '/public/projects/confia-car.png';
 import imageGimnasio from '/public/projects/gestion-gym.png';
 import imageLautyDeporte from '/public/projects/lautyDeporte.png';
-import imageGames from '/public/projects/games.png';
+// import imageGames from '/public/projects/games.png';
 // import imageCalculadora from '/public/projects/calculadora.png';
 // import imageBooking from '/public/projects/booking.png';
 import '../styles/projects.css';
@@ -32,6 +33,14 @@ const techIcons = {
 };
 
 const projectList = [
+    {
+        title: 'MyM Decoraciones',
+        description: 'Landing para decoraciones con sus propuestas y contacto.',
+        techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        code: 'https://github.com/LautaroLeall/MyM_Decoraciones',
+        demo: 'https://mym-decoraciones.netlify.app/',
+        image: imageMym,
+    },
     {
         title: 'Levels GYM',
         description: 'Sitio web para centro de alto rendimiento con planes y contacto.',
@@ -87,15 +96,7 @@ const projectList = [
         code: 'https://github.com/LautaroLeall/LautyDeporte',
         demo: 'https://lauty-deporte.netlify.app/',
         image: imageLautyDeporte,
-    },
-    {
-        title: 'Games',
-        description: 'Juegos Web',
-        techs: ['React', 'JavaScript', 'CSS', 'Bootstrap', 'Responsive'],
-        code: 'https://github.com/LautaroLeall/Games',
-        demo: 'https://games-lau.netlify.app/',
-        image: imageGames,
-    },
+    }
 ];
 
 const Projects = () => {
