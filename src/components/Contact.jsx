@@ -14,10 +14,13 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                'service_m2xi21i',      
-                'template_y8mh8jg',
+                // SERVICE ID
+                'service_y9njvrc',
+                // TEMPLATE ID
+                'template_erui2te',
                 form.current,
-                'TxYC4I9s0Lubvu7l2'
+                // USER ID
+                'hk3ctGIGJ_kN-_Fai'
             )
             .then(
                 () => {
@@ -32,7 +35,8 @@ const Contact = () => {
                     })
                     form.current.reset()
                 },
-                () => {
+                (error) => {
+                    console.error('Error al enviar el correo:', error);
                     Swal.fire({
                         icon: 'error',
                         title: 'Ups...',
