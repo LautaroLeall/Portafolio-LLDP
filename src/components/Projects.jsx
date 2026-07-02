@@ -55,9 +55,9 @@ const projectList = [
     {
         title: 'MyM Decoraciones',
         description: 'Event decoration landing page with pricing and contact.',
-        techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        techs: ['React', 'ReactRouter', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/MyM_Decoraciones',
-        demo: 'https://mym-decoraciones.vercel.app/',
+        demo: 'https://mym-decoraciones.netlify.app/',
         image: '/projects/mym-decoraciones.png',
         category: 'Landing Pages'
     },
@@ -66,16 +66,16 @@ const projectList = [
         description: 'High-performance gym website with plans and contact.',
         techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Levels-GYM',
-        demo: 'https://levels-gym.vercel.app/',
+        demo: 'https://levels-ar.netlify.app/',
         image: '/projects/levels-gym.png',
         category: 'Landing Pages'
     },
     {
         title: 'Cesar Aparicio Estilista',
         description: 'Stylist landing page with WhatsApp booking.',
-        techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
+        techs: ['React', 'ReactRouter', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Cesar_Aparicio_Estilista',
-        demo: 'https://cesar-estilista.vercel.app/',
+        demo: 'https://cesar-aparicio-estilista.netlify.app/',
         image: '/projects/cesar-estista.png',
         category: 'Landing Pages'
     },
@@ -84,7 +84,7 @@ const projectList = [
         description: 'Professional site for commercial permits consulting.',
         techs: ['React', 'Tailwind', 'Vite', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/BG-Habilitaciones',
-        demo: 'https://bga-habilitaciones.vercel.app/',
+        demo: 'https://bga-habilitaciones.netlify.app/',
         image: '/projects/bga-habilitaciones.png',
         category: 'Landing Pages'
     },
@@ -102,7 +102,7 @@ const projectList = [
         description: 'Car rental app for booking management.',
         techs: ['React', 'JavaScript', 'CSS', 'Bootstrap', 'LocalStorage', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Confia-CAR',
-        demo: 'https://tarjeta-con-react-js.vercel.app/',
+        demo: 'https://confia-car-renta.netlify.app/',
         image: '/projects/confia-car.png',
         category: 'Frontend Apps'
     }
