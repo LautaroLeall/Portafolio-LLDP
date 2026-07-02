@@ -12,65 +12,44 @@ const certificationsData = [
         title: 'Professional Foundations of Generative AI',
         institution: 'Microsoft & LinkedIn Learning',
         link: 'https://www.linkedin.com/learning/certificates/5181b220b78f85b0d0c2430c8eabeacc81a4666d076cd285db8da4ace938a24c',
-        date: '2025-08-21',
+        date: '2025-10',
         imgSrc: '/certifications/fundProfDeIAGenerativa.png'
     },
     {
         title: 'Professional Foundations of Software Development',
         institution: 'Microsoft & LinkedIn Learning',
         link: 'https://www.linkedin.com/learning/certificates/e07e0fec757116348e2e1a95a977efee635420ddc2569afdc068d5aa7287a26a',
-        date: '2025-08-12',
+        date: '2025-09',
         imgSrc: '/certifications/fundDesarrolloDeSoft.png'
     },
     {
         title: 'Legacy Front End',
         institution: 'FreeCodeCamp',
         link: 'https://www.freecodecamp.org/certification/lautaroleall/legacy-front-end',
-        date: '2025-08-05',
+        date: '2025-08',
         imgSrc: '/certifications/legacyFrontEnd.png'
     },
     {
         title: 'JavaScript Algorithms And Data Structures',
         institution: 'FreeCodeCamp',
         link: 'https://www.freecodecamp.org/certification/lautaroleall/javascript-algorithms-and-data-structures-v8',
-        date: '2025-08-04',
+        date: '2025-08',
         imgSrc: '/certifications/javaS-Algorith-DataStructures.png'
     },
     {
         title: 'Front End Development Libraries',
         institution: 'FreeCodeCamp',
         link: 'https://www.freecodecamp.org/certification/lautaroleall/front-end-development-libraries',
-        date: '2025-07-24',
+        date: '2025-07',
         imgSrc: '/certifications/frontEndLibraries.png'
-    },
-    {
-        title: 'Responsive Web Design',
-        institution: 'FreeCodeCamp',
-        link: 'https://www.freecodecamp.org/certification/lautaroleall/responsive-web-design',
-        date: '2025-07-23',
-        imgSrc: '/certifications/responsiveWeb.png'
     },
     {
         title: 'Web Development | Digitalers Academy',
         institution: 'Educacion IT',
         link: 'https://www.educacionit.com/perfil/lautaro-leal-del-prete-1069835/certificado/81949',
-        date: '2024-05-27',
+        date: '2025-05',
         imgSrc: '/certifications/devWeb.png'
-    },
-    {
-        title: 'Introduction to Programming',
-        institution: 'Educacion IT',
-        link: 'https://www.educacionit.com/perfil/lautaro-leal-del-prete-1069835/certificado/54677',
-        date: '2025-05-08',
-        imgSrc: '/certifications/introdProg.png'
-    },
-    {
-        title: 'Programming Logic',
-        institution: 'Rolling Code School',
-        link: 'https://certs.rollingcodeschool.com/bGF1dGFyb2xlYWw0QGdtYWlsLmNvbQ==-1743082204316-1.png',
-        date: '2025-03-30',
-        imgSrc: '/certifications/logProg.png'
-    },
+    }
 ]
 
 // Componente Certifications

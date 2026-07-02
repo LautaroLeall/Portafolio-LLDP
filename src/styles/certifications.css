@@ -183,6 +183,7 @@
 }
 
 /* transición suave a front/back para hover */
-.card-front, .card-back {
+.card-front,
+.card-back {
     transition: all 0.25s ease-in-out;
 }
