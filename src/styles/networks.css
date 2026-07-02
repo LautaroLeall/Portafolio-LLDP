@@ -54,7 +54,7 @@ body.dark .icon-link {
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .social-bar {
-        top: 90%;
+        top: 85%;
     }
 
     .icon-link {

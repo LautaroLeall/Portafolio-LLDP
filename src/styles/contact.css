@@ -144,4 +144,8 @@ body.dark .custom-swal-popup .swal2-title {
     .contact-social-card:hover {
         transform: translateY(-5px);
     }
+
+    div.row {
+        gap: 2.5rem;
+    }
 }
