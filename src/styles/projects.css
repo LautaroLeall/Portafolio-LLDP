@@ -141,3 +141,42 @@
         padding: 0.1rem 0.4rem;
     }
 }
+
+/* Filter Buttons */
+.btn-filter {
+    background-color: transparent;
+    border: 2px solid rgba(13, 110, 253, 0.5);
+    color: #e2e8f0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+body.light .btn-filter {
+    color: #212529;
+    border-color: rgba(13, 110, 253, 0.3);
+}
+
+.btn-filter:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-filter.active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+}
+
+@media (hover: none) {
+    .overlay {
+        opacity: 1;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+        pointer-events: auto;
+    }
+}
