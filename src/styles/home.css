@@ -1,8 +1,10 @@
+/* src/styles/home.css */
 /* Sección principal que ocupa toda la pantalla */
 .home-section {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
+    width: 100%;
 }
 
 /* Cada slide del carrusel con la imagen de fondo */
@@ -10,7 +12,6 @@
     position: absolute;
     inset: 0;
     background-size: cover;
-    /* Ajuste sin recortar */
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
@@ -29,25 +30,61 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+body.light .overlay-home {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.home-text-container {
+    max-width: 800px;
+    z-index: 2;
+}
+
+.greeting-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* Título con color destacado */
 .title-home {
     color: #78adff;
+    transition: color 0.5s ease;
 }
 
-/* Subtítulo */
-.subtitle-home{
+body.light .title-home {
+    color: #0d6efd;
+}
+
+/* Subtítulo con efecto de escritura */
+.type-animation-container {
+    min-height: 60px;
+    /* Previene saltos de layout cuando se borra el texto */
+}
+
+.subtitle-home {
     color: #fff;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
     line-height: 1.8;
     font-style: italic;
     letter-spacing: 1px;
+    transition: color 0.5s ease;
+}
+
+body.light .subtitle-home {
+    color: #212529;
+}
+
+body.light .greeting-text {
+    color: #495057 !important;
 }
 
 /* Botón de navegación */
-.btn-home{
+.btn-home {
     background-color: #fff;
     border-color: #002255;
     color: #78adff;
@@ -57,15 +94,54 @@
     transition: all 0.4s ease-in-out;
 }
 
-.btn-home:hover{
-    background-color:  #78adff;
-    color:  #fff;
+.btn-home:hover {
+    background-color: #78adff;
+    color: #fff;
 }
 
-/* Responsive para móviles */
+body.light .btn-home {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+body.light .btn-home:hover {
+    background-color: #0b5ed7;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.home-buttons .btn {
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.home-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+body.light .btn-outline-light {
+    color: #212529;
+    border-color: #212529;
+}
+
+body.light .btn-outline-light:hover {
+    background-color: #212529;
+    color: #fff;
+    border-color: #212529;
+}
+
 @media (max-width: 768px) {
     .home-section {
         height: 100vh;
-        width: 100vw;
+        width: 100%;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
