@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+// eslint-disable-next-line no-unused-vars
+import { motion, useScroll, useSpring } from 'framer-motion'
 
 // Secciones del portafolio
 import Home from './components/Home'
@@ -20,6 +22,12 @@ import { useTheme } from './hooks/useTheme'
 
 function App() {
   const { theme } = useTheme()
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true })
@@ -27,6 +35,10 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+      <motion.div
+        className="scroll-progress-bar"
+        style={{ scaleX }}
+      />
       {/* Botón para cambiar tema (lo podés poner donde quieras) */}
       <div className="theme-toggle-wrapper">
         <ThemeToggle />
