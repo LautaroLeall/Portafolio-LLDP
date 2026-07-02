@@ -23,14 +23,6 @@ const About = () => {
                 >
                     About Me
                 </motion.h2>
-                {/* Imagen centrada con animación de entrada */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
-                >
-                    <img src="/Logo_LLDP.png" alt="Lautaro Leal" className="profile-image" />
-                </motion.div>
             </motion.div>
 
 
@@ -43,12 +35,12 @@ const About = () => {
             >
                 Hello, I'm Lautaro Leal Del Prete.
                 <br />
-                I'm an advanced Software Development and Quality student focused on modern web development and real client projects.
+                I am an advanced Software Development and Quality student with experience building Full Stack web applications.
                 <br />
-                I build responsive, performance-oriented web applications using technologies such as React, Tailwind and modern frontend tooling, always aiming to align design, usability and business goals.
+                I focus on developing scalable products, implementing responsive interfaces, and applying best development practices and agile methodologies.
                 <br />
-                I'm motivated by solving problems, collaborating with teams and turning ideas into functional digital products.
-                I'm looking for opportunities to grow as a developer and contribute to projects that create real impact.
+                I am motivated by solving problems, integrating REST APIs, and optimizing the user experience. 
+                I'm always ready to take on new challenges for my personal and professional growth.
             </motion.p>
         </div>
     )

@@ -16,13 +16,12 @@ const educations = [
         // imgSrc: '/education/Campus-Unsta.png' YA NO SE USA
     },
     {
-        institution: 'Institute Nexus',
+        institution: 'Institute English Nexus',
         link: 'https://www.instagram.com/instituto_nexus/?hl=es-la',
         type: 'English Language Training',
         degree: 'English',
-        period: '2025 - 2028',
-        // imgSrc: '/education/Institute-Nexus.png' YA NO SE USA
-    },
+        period: '2025 - Present',
+    }
 ]
 
 // Componente Education
