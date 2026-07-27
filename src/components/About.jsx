@@ -1,10 +1,12 @@
-// src/components/About.jsx
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
+import { useLanguage } from '../hooks/useLanguage'
 import '../styles/about.css'
 
 const About = () => {
+    const { t } = useLanguage()
+
     return (
         <div className="about-container container" id="profile" data-aos="fade-up">
             {/* Encabezado con animación de entrada */}
@@ -21,7 +23,7 @@ const About = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    About Me
+                    {t('about.title')}
                 </motion.h2>
             </motion.div>
 
@@ -33,14 +35,13 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
             >
-                Hello, I'm Lautaro Leal Del Prete.
+                {t('about.text1')}
                 <br />
-                I am an advanced Software Development and Quality student with experience building Full Stack web applications.
+                {t('about.text2')}
                 <br />
-                I focus on developing scalable products, implementing responsive interfaces, and applying best development practices and agile methodologies.
+                {t('about.text3')}
                 <br />
-                I am motivated by solving problems, integrating REST APIs, and optimizing the user experience. 
-                I'm always ready to take on new challenges for my personal and professional growth.
+                {t('about.text4')}
             </motion.p>
         </div>
     )

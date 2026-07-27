@@ -1,11 +1,13 @@
-// src/components/BtnCV.jsx
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { Download } from 'lucide-react'
+import { useLanguage } from '../hooks/useLanguage'
 import '../styles/btnCV.css'
 
 const BtnCV = () => {
+    const { t } = useLanguage()
+
     return (
         <motion.div className="d-flex justify-content-center align-items-center container-cv mt-5">
             <motion.div
@@ -20,7 +22,7 @@ const BtnCV = () => {
                     className="btn btn-outline-primary btn-cv shadow d-flex align-items-center gap-2"
                 >
                     <Download size={20} />
-                    Download CV - Espanish Version
+                    {t('cv.spanish')}
                 </a>
             </motion.div>
             <motion.div
@@ -35,7 +37,7 @@ const BtnCV = () => {
                     className="btn btn-outline-primary btn-cv shadow d-flex align-items-center gap-2"
                 >
                     <Download size={20} />
-                    Download CV - English Version
+                    {t('cv.english')}
                 </a>
             </motion.div>
         </motion.div>

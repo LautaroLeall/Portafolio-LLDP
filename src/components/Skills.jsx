@@ -1,7 +1,7 @@
-// src/components/Skills.jsx
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
+import { useLanguage } from '../hooks/useLanguage'
 // Icons
 import {
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaGitAlt, FaGithub, FaFigma,
@@ -64,16 +64,18 @@ const skillCategories = [
     }
 ]
 
-const softSkills = [
-    { name: 'Generative AI', icon: <FaRobot /> },
-    { name: 'Communication', icon: <FaComments /> },
-    { name: 'Teamwork', icon: <FaUsers /> },
-    { name: 'Problem Solving', icon: <FaLightbulb /> },
-    { name: 'Adaptability', icon: <FaLinesLeaning /> },
-    { name: 'Innovation', icon: <RiGeminiFill /> },
-]
-
 const Skills = () => {
+    const { t } = useLanguage()
+
+    const softSkills = [
+        { name: t('skills.softSkills.ai'), icon: <FaRobot /> },
+        { name: t('skills.softSkills.comm'), icon: <FaComments /> },
+        { name: t('skills.softSkills.team'), icon: <FaUsers /> },
+        { name: t('skills.softSkills.problem'), icon: <FaLightbulb /> },
+        { name: t('skills.softSkills.adapt'), icon: <FaLinesLeaning /> },
+        { name: t('skills.softSkills.innov'), icon: <RiGeminiFill /> },
+    ]
+
     return (
         <section className="skills-section py-5" id="skills">
             <div className="container">
@@ -83,8 +85,8 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-5"
                 >
-                    <h2 className="section-title">Technical Expertise</h2>
-                    <p className="section-subtitle">Technologies and tools I use to build scalable and high-quality solutions.</p>
+                    <h2 className="section-title">{t('skills.title')}</h2>
+                    <p className="section-subtitle">{t('skills.subtitle')}</p>
                 </motion.div>
 
                 <div className="skills-grid">
@@ -120,7 +122,7 @@ const Skills = () => {
                     transition={{ delay: 0.4 }}
                     className="soft-skills-container mt-5"
                 >
-                    <h3 className="text-center mb-4 text-gradient">Core Competencies & Soft Skills</h3>
+                    <h3 className="text-center mb-4 text-gradient">{t('skills.softTitle')}</h3>
                     <div className="soft-skills-flex">
                         {softSkills.map((skill, i) => (
                             <div key={i} className="soft-skill-badge">
