@@ -1,31 +1,20 @@
-// src/components/Education.jsx
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowDownFromLine } from 'lucide-react'
+import { useLanguage } from '../hooks/useLanguage'
 import '../styles/education.css'
-
-// Datos de la educación
-const educations = [
-    {
-        institution: 'UNSTA',
-        link: 'https://www.unsta.edu.ar/ingenieria/desarrollo-y-calidad-de-software/',
-        type: 'Technique',
-        degree: 'Software Development and Quality',
-        period: '2024 - 2026',
-        // imgSrc: '/education/Campus-Unsta.png' YA NO SE USA
-    },
-    {
-        institution: 'Institute English Nexus',
-        link: 'https://www.instagram.com/instituto_nexus/?hl=es-la',
-        type: 'English Language Training',
-        degree: 'English',
-        period: '2025 - Present',
-    }
-]
 
 // Componente Education
 const Education = ({ isOpen, onToggle }) => {
+    const { t } = useLanguage()
+    const educationsList = t('qualifications.educationList') || []
+
+    const links = [
+        'https://www.unsta.edu.ar/ingenieria/desarrollo-y-calidad-de-software/',
+        'https://www.instagram.com/instituto_nexus/?hl=es-la'
+    ]
+
     return (
         <div className="education-section mt-5 mx-3">
             {/* Encabezado clickeable */}
@@ -34,7 +23,7 @@ const Education = ({ isOpen, onToggle }) => {
                 onClick={onToggle}
                 aria-expanded={isOpen}
             >
-                <h3 className="education-title">Education</h3>
+                <h3 className="education-title">{t('qualifications.educationTitle')}</h3>
 
                 {/* Icono que rota dinámicamente */}
                 <motion.div
@@ -59,11 +48,11 @@ const Education = ({ isOpen, onToggle }) => {
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        {educations.map(
-                            ({ institution, link, type, degree, period }, idx) => (
+                        {educationsList.map(
+                            ({ institution, type, degree, period }, idx) => (
                                 <motion.a
                                     key={idx}
-                                    href={link}
+                                    href={links[idx] || '#'}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="education-card"
@@ -77,15 +66,10 @@ const Education = ({ isOpen, onToggle }) => {
                                     aria-label={`Ver educación en ${institution}`}
                                 >
                                     <div className="card-inner">
-
-                                        {/* FRONT */}
                                         <motion.div
                                             className="card-front"
                                             initial={{ opacity: 0, y: 10 }}
-                                            animate={{
-                                                opacity: 1,
-                                                y: 0,
-                                            }}
+                                            animate={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.25 }}
                                         >
                                             <h4 className="education-institution">{institution}</h4>
@@ -93,11 +77,6 @@ const Education = ({ isOpen, onToggle }) => {
                                             <p className="education-degree">{degree}</p>
                                             <p className="education-period">{period}</p>
                                         </motion.div>
-
-                                        {/* ELIMINADO COMPLETO
-                                            BACK: ahora SIEMPRE visible (IMG)
-                                        */}
-
                                     </div>
                                 </motion.a>
                             )

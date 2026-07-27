@@ -1,9 +1,9 @@
-// src/components/Certifications.jsx
 import React from 'react'
 // Framer Motion para animaciones
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowDownFromLine } from 'lucide-react'
+import { useLanguage } from '../hooks/useLanguage'
 import '../styles/certifications.css'
 
 // Datos de certificaciones centralizados
@@ -52,12 +52,9 @@ const certificationsData = [
     }
 ]
 
-// Componente Certifications
-// Recibe props desde Qualifications.jsx
-// - isOpen (boolean): si la sección está abierta
-// - onToggle (función): dispara toggle de apertura/cierre
 const Certifications = ({ isOpen, onToggle }) => {
     const [hoveredIndex, setHoveredIndex] = React.useState(null)
+    const { t } = useLanguage()
 
     return (
         <div className="certifications-section mt-5 mx-3">
@@ -67,7 +64,7 @@ const Certifications = ({ isOpen, onToggle }) => {
                 onClick={onToggle}
                 aria-expanded={isOpen}
             >
-                <h3 className="certifications-title">My Certifications</h3>
+                <h3 className="certifications-title">{t('qualifications.certificationsTitle')}</h3>
 
                 {/* Icono que rota dinámicamente según el estado */}
                 <motion.div
