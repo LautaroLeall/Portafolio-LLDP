@@ -1,0 +1,56 @@
+.global-controls {
+    position: fixed;
+    z-index: 9999;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.4rem 0.9rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+body.light .global-controls {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.controls-divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.light .controls-divider {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Override inner components fixed positioning */
+.global-controls .theme-toggle,
+.global-controls .language-toggle {
+    position: static !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 768px) {
+    .global-controls {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        top: auto;
+        left: auto;
+        padding: 0.35rem 0.75rem;
+        gap: 0.6rem;
+    }
+}
