@@ -1,8 +1,8 @@
-// src/components/BottomNavbar.jsx
 import { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import useScrollSpy from '../hooks/useScrollSpy'
+import { useLanguage } from '../hooks/useLanguage'
 // Icons
 import {
     Home,
@@ -14,15 +14,17 @@ import {
 } from 'lucide-react'
 import '../styles/bottomNavbar.css'
 
-const navItems = [
-    { icon: <Home size={20} />, label: 'Home', href: '#home', id: 'home' },
-    { icon: <User size={20} />, label: 'About Me', href: '#profile', id: 'profile' },
-    { icon: <ChartNoAxesGantt size={20} />, label: 'Skills', href: '#skills', id: 'skills' },
-    { icon: <CodeXml size={20} />, label: 'Projects', href: '#projects', id: 'projects' },
-    { icon: <BookUser size={20} />, label: 'Contact', href: '#contact', id: 'contact' },
-]
-
 export default function BottomNavbar() {
+    const { t } = useLanguage()
+
+    const navItems = [
+        { icon: <Home size={20} />, label: t('nav.home'), href: '#home', id: 'home' },
+        { icon: <User size={20} />, label: t('nav.about'), href: '#profile', id: 'profile' },
+        { icon: <ChartNoAxesGantt size={20} />, label: t('nav.skills'), href: '#skills', id: 'skills' },
+        { icon: <CodeXml size={20} />, label: t('nav.projects'), href: '#projects', id: 'projects' },
+        { icon: <BookUser size={20} />, label: t('nav.contact'), href: '#contact', id: 'contact' },
+    ]
+
     const activeSection = useScrollSpy(navItems.map((item) => item.id), 200)
     const [menuOpen, setMenuOpen] = useState(false)
 
