@@ -16,7 +16,9 @@ import Contact from './components/Contact'
 
 import BottomNavbar from './components/BottomNavbar' // el navbar minimalista con icons
 import ThemeToggle from './components/ThemeToggle'   // el switch de tema
+import LanguageToggle from './components/LanguageToggle' // el switch de idioma
 import Networks from './components/Networks'
+import './styles/globalControls.css'
 
 import { useTheme } from './hooks/useTheme'
 
@@ -39,9 +41,12 @@ function App() {
         className="scroll-progress-bar"
         style={{ scaleX }}
       />
-      {/* Botón para cambiar tema (lo podés poner donde quieras) */}
-      <div className="theme-toggle-wrapper">
+      
+      {/* Controles Unificados (Tema + Idioma en una sola barra glassmorphism) */}
+      <div className="global-controls">
         <ThemeToggle />
+        <div className="controls-divider"></div>
+        <LanguageToggle />
       </div>
 
       <Networks />
