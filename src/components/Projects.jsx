@@ -47,7 +47,7 @@ const projectList = [
         descriptionKey: 'projects.confiaCar.desc',
         techs: ['React', 'Tailwind', 'Nodejs', 'Express', 'MongoDB', 'Socket.IO', 'JWT'],
         code: 'https://github.com/LautaroLeall/Confia-CAR-Front',
-        demo: 'https://confia-car-renta.vercel.app/',
+        demo: 'https://confia-car-rent.vercel.app/',
         image: '/projects/confia-car.png',
         category: 'Full Stack'
     },
