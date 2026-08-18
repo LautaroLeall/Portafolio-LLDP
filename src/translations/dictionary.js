@@ -21,7 +21,7 @@ export const translations = {
         about: {
             title: 'About Me',
             text1: "Hello, I'm Lautaro Leal Del Prete.",
-            text2: 'I am an advanced Software Development and Quality student with experience building Full Stack web applications.',
+            text2: 'I am a Software Development and Quality graduate with experience building Full Stack web applications.',
             text3: 'I focus on developing scalable products, implementing responsive interfaces, and applying best development practices and agile methodologies.',
             text4: "I am motivated by solving problems, integrating REST APIs, and optimizing the user experience. I'm always ready to take on new challenges for my personal and professional growth."
         },
@@ -131,7 +131,7 @@ export const translations = {
         about: {
             title: 'Sobre mí',
             text1: 'Hola, soy Lautaro Leal Del Prete.',
-            text2: 'Soy estudiante avanzado de Desarrollo y Calidad de Software con experiencia construyendo aplicaciones web Full Stack.',
+            text2: 'Soy graduado en Desarrollo y Calidad de Software con experiencia construyendo aplicaciones web Full Stack.',
             text3: 'Me enfoco en desarrollar productos escalables, implementar interfaces adaptativas y aplicar las mejores prácticas de desarrollo y metodologías ágiles.',
             text4: 'Me motiva resolver problemas, integrar APIs REST y optimizar la experiencia del usuario. Siempre listo para asumir nuevos desafíos para mi crecimiento personal y profesional.'
         },
