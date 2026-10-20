@@ -1,29 +1,264 @@
-.about-container {
-    max-width: 800px;
+/* About Me - Editorial Organic Styling (Zero Heavy Cards) */
+.about-editorial-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
+/* Eyebrow & Lead Title */
+.about-editorial-header {
+    max-width: 950px;
+    position: relative;
+    z-index: 2;
+}
+
+.editorial-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #78adff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+body.light .editorial-eyebrow {
     color: #0d6efd;
-    margin-bottom: 1rem;
 }
 
-/* IMGAGEN (DE PERFIL) DESACTIVADA */
-.profile-image{
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
+.eyebrow-line {
+    width: 28px;
+    height: 2px;
+    background: #0d6efd;
+    border-radius: 999px;
 }
 
-/* RESPONSIVE IMG */
-@media (max-width: 768px) {
-    .profile-image {
-        display: none;
+.editorial-lead-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.6px;
+    color: #f8fafc;
+}
+
+body.light .editorial-lead-title {
+    color: #0f172a;
+}
+
+/* 2-Column Organic Layout */
+.about-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+/* Columna Izquierda: Biografía */
+.bio-greeting {
+    display: inline-flex;
+}
+
+.greeting-pill {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #38bdf8;
+    background: rgba(13, 110, 253, 0.12);
+    border: 1px solid rgba(13, 110, 253, 0.28);
+    padding: 0.35rem 0.95rem;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+}
+
+body.light .greeting-pill {
+    background: rgba(13, 110, 253, 0.08);
+    color: #0d6efd;
+    border-color: rgba(13, 110, 253, 0.22);
+}
+
+.bio-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.bio-paragraph-primary {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    line-height: 1.75;
+}
+
+body.light .bio-paragraph {
+    color: #475569;
+}
+
+body.light .bio-paragraph-primary {
+    color: #0f172a;
+}
+
+/* Metadata Row (Unboxed) */
+.bio-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light .bio-meta-row {
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+body.light .meta-item {
+    color: #64748b;
+}
+
+.meta-beacon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: beaconPulse 1.8s infinite;
+}
+
+@keyframes beaconPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
     }
 }
 
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+/* Columna Derecha: Pilares de Trabajo (Lista limpia con divisores sutiles) */
+.focus-column-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #78adff;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+}
+
+body.light .focus-column-title {
+    color: #0d6efd;
+}
+
+.focus-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.focus-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.25s ease;
+}
+
+.focus-row:first-child {
+    padding-top: 0;
+}
+
+.focus-row:last-child {
+    border-bottom: none;
+}
+
+.focus-row:hover {
+    padding-left: 0.5rem;
+}
+
+body.light .focus-row {
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+.focus-num {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0d6efd;
+    background: rgba(13, 110, 253, 0.12);
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+body.light .focus-num {
+    background: rgba(13, 110, 253, 0.08);
+}
+
+.focus-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.2px;
+}
+
+body.light .focus-title {
+    color: #0f172a;
+}
+
+.focus-desc {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #94a3b8;
+}
+
+body.light .focus-desc {
+    color: #64748b;
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+    .editorial-lead-title {
+        font-size: 1.85rem;
+    }
+
+    .about-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-editorial-section {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .editorial-lead-title {
+        font-size: 1.55rem;
+        line-height: 1.35;
+    }
+
+    .bio-paragraph-primary {
+        font-size: 1.05rem;
+    }
+
+    .bio-paragraph {
+        font-size: 0.95rem;
+    }
+
+    .focus-row {
+        gap: 1rem;
+    }
 }

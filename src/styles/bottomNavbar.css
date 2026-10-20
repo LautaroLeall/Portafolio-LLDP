@@ -110,3 +110,9 @@ body.dark .btn-nav.active {
 body.dark .mobile-nav {
     background-color: rgba(33, 37, 41, 0.95);
 }
+
+/* Modal Active State: Prevents clicks on navbar elements while modals are displayed */
+body.modal-active .bottom-navbar,
+body.modal-active .hamburger-menu {
+    pointer-events: none !important;
+}

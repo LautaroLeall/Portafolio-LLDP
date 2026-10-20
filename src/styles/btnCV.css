@@ -1,27 +1,105 @@
-/* Botón CV */
-.container-cv {
-    gap: 2.5rem;
+/* CV Minimal Section (Unboxed, Natural, Elegant) */
+.cv-minimal-section {
+    max-width: 1100px;
+    margin: 2rem auto 0 auto;
 }
 
-.btn-cv {
+.cv-minimal-bar {
+    padding: 1.6rem 2rem;
+    border-radius: 1.25rem;
+    background: rgba(10, 25, 47, 0.5);
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+}
+
+.cv-minimal-bar:hover {
+    border-color: rgba(13, 110, 253, 0.35);
+}
+
+body.light .cv-minimal-bar {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(13, 110, 253, 0.15);
+}
+
+.cv-prompt-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+body.light .cv-prompt-title {
+    color: #0f172a;
+}
+
+.cv-prompt-sub {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 4px;
+    color: #cbd5e1;
+    letter-spacing: 0.2px;
+}
+
+body.light .cv-prompt-sub {
+    color: #334155;
     font-weight: 600;
-    padding: 0.6rem 1.5rem;
-    border-radius: 1.5rem;
-    transition: all 0.4s ease-in-out;
 }
 
-.btn-cv:hover {
-    background-color: #0d6efd;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+/* Download Pills */
+.btn-cv-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.22s ease;
 }
 
-/* RESPONSIVE */
+.btn-cv-es {
+    background: linear-gradient(135deg, #0d6efd 0%, #0048b3 100%);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(13, 110, 253, 0.35);
+}
+
+.btn-cv-es:hover {
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.55);
+}
+
+.btn-cv-en {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f8fafc !important;
+}
+
+body.light .btn-cv-en {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0f172a !important;
+}
+
+.btn-cv-en:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff !important;
+}
+
+body.light .btn-cv-en:hover {
+    background: #e2e8f0;
+}
+
 @media (max-width: 768px) {
-    .container-cv {
+    .cv-minimal-bar {
+        padding: 1.25rem;
         flex-direction: column;
-        gap: 2rem;
-        margin-top: 2.5rem;
+        align-items: flex-start !important;
+    }
+
+    .btn-cv-pill {
+        width: 100%;
+        justify-content: center;
     }
 }

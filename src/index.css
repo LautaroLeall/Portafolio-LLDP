@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body.light {
@@ -28,4 +29,8 @@ body {
     transform-origin: 0%;
     z-index: 10000;
     box-shadow: 0 2px 10px rgba(13, 110, 253, 0.5);
+}
+
+.shrink-0 {
+    flex-shrink: 0 !important;
 }
