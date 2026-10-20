@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import useScrollSpy from '../hooks/useScrollSpy'
 import { useLanguage } from '../hooks/useLanguage'
+import { useModal } from '../hooks/useModal'
 // Icons
 import {
     Home,
@@ -16,6 +17,7 @@ import '../styles/bottomNavbar.css'
 
 export default function BottomNavbar() {
     const { t } = useLanguage()
+    const { isModalOpen } = useModal()
 
     const navItems = [
         { icon: <Home size={20} />, label: t('nav.home'), href: '#home', id: 'home' },
@@ -25,17 +27,28 @@ export default function BottomNavbar() {
         { icon: <BookUser size={20} />, label: t('nav.contact'), href: '#contact', id: 'contact' },
     ]
 
-    const activeSection = useScrollSpy(navItems.map((item) => item.id), 200)
+    const sectionIds = useMemo(() => ['home', 'profile', 'skills', 'projects', 'contact'], [])
+    const activeSection = useScrollSpy(sectionIds, 160)
     const [menuOpen, setMenuOpen] = useState(false)
+
+    useEffect(() => {
+        if (isModalOpen) {
+            setMenuOpen(false)
+        }
+    }, [isModalOpen])
 
     return (
         <>
             {/* Desktop navbar */}
             <motion.nav
                 className="bottom-navbar d-none d-md-flex p-2 shadow"
-                initial={{ y: 100, x: "-50%", opacity: 0 }}
-                animate={{ y: 0, x: "-50%", opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 80, damping: 14 }}
+                initial={{ y: 100, x: '-50%', opacity: 0 }}
+                animate={
+                    isModalOpen
+                        ? { y: 110, x: '-50%', opacity: 0, scale: 0.92 }
+                        : { y: 0, x: '-50%', opacity: 1, scale: 1 }
+                }
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             >
                 <ul className="nav gap-2 mb-0">
                     {navItems.map((item, idx) => (
@@ -59,7 +72,16 @@ export default function BottomNavbar() {
             </motion.nav>
 
             {/* Mobile navbar */}
-            <div className="hamburger-menu d-md-none">
+            <motion.div
+                className="hamburger-menu d-md-none"
+                initial={{ y: 0, opacity: 1, scale: 1 }}
+                animate={
+                    isModalOpen
+                        ? { y: -75, opacity: 0, scale: 0.85 }
+                        : { y: 0, opacity: 1, scale: 1 }
+                }
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            >
                 <button className="menu-button" onClick={() => setMenuOpen((prev) => !prev)}>
                     <Menu size={28} />
                 </button>
@@ -92,7 +114,7 @@ export default function BottomNavbar() {
                         </motion.ul>
                     )}
                 </AnimatePresence>
-            </div>
+            </motion.div>
         </>
     )
 }
