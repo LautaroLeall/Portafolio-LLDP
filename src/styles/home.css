@@ -1,28 +1,73 @@
-/* src/styles/home.css */
 /* Sección principal que ocupa toda la pantalla */
 .home-section {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
-/* Cada slide del carrusel con la imagen de fondo */
-.carousel-slide {
+/* Post-Hero Container sits above the fixed cyber constellation canvas */
+.post-hero-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenedor del fondo interactivo ASCII con máscara curva ultrasuave (sin línea de corte) */
+.ascii-bg-wrapper {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
     z-index: 0;
+    pointer-events: auto;
+    background: radial-gradient(circle at 50% 25%, #002855 0%, #001a33 55%, #020a15 100%);
+    transition: background 0.5s ease;
+    -webkit-mask-image: linear-gradient(to bottom,
+            black 0%,
+            black 72%,
+            rgba(0, 0, 0, 0.65) 83%,
+            rgba(0, 0, 0, 0.25) 92%,
+            transparent 100%);
+    mask-image: linear-gradient(to bottom,
+            black 0%,
+            black 72%,
+            rgba(0, 0, 0, 0.65) 83%,
+            rgba(0, 0, 0, 0.25) 92%,
+            transparent 100%);
 }
 
-/* Capa oscura para que el texto se lea bien */
+/* Capa de atmósfera oscura original dentro del wrapper enmascarado (oscurece letras y color superior sin crear línea abajo) */
+.ascii-bg-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(13, 110, 253, 0.10) 0%, transparent 55%),
+        radial-gradient(circle at center, rgba(2, 10, 21, 0.42) 0%, rgba(2, 10, 21, 0.76) 100%);
+    pointer-events: none;
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+body.light .ascii-bg-wrapper {
+    background: radial-gradient(circle at 50% 25%, #dbeafe 0%, #e0f2fe 45%, #f0f6f8 100%);
+}
+
+body.light .ascii-bg-wrapper::after {
+    background:
+        radial-gradient(circle at 50% 45%, rgba(13, 110, 253, 0.08) 0%, transparent 55%),
+        radial-gradient(circle at center, rgba(240, 246, 248, 0.30) 0%, rgba(240, 246, 248, 0.70) 100%);
+}
+
+/* Contenedor de texto centrado (sin fondo propio para no cortar jamás el canvas fijo) */
 .overlay-home {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Oscurece la imagen */
+    background: transparent;
     z-index: 1;
     padding: 2rem;
     display: flex;
@@ -30,118 +75,180 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: background-color 0.5s ease;
-}
-
-body.light .overlay-home {
-    background-color: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
 }
 
 .home-text-container {
-    max-width: 800px;
+    max-width: 840px;
     z-index: 2;
+    pointer-events: auto;
+    position: relative;
+    filter: drop-shadow(0 12px 35px rgba(0, 0, 0, 0.45));
+}
+
+body.light .home-text-container {
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.08));
 }
 
 .greeting-text {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
+    color: #cbd5e1;
+}
+
+body.light .greeting-text {
+    color: #475569 !important;
 }
 
 /* Título con color destacado */
 .title-home {
-    color: #78adff;
-    transition: color 0.5s ease;
+    font-size: clamp(2.8rem, 6vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    color: #f8fafc;
+    background: linear-gradient(135deg, #ffffff 40%, #78adff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.85rem;
 }
 
 body.light .title-home {
-    color: #0d6efd;
+    background: linear-gradient(135deg, #0f172a 40%, #0d6efd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #0f172a;
 }
 
 /* Subtítulo con efecto de escritura */
 .type-animation-container {
-    min-height: 60px;
-    /* Previene saltos de layout cuando se borra el texto */
+    min-height: 56px;
 }
 
 .subtitle-home {
-    color: #fff;
+    color: #94a3b8;
     font-weight: 500;
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    line-height: 1.8;
-    font-style: italic;
-    letter-spacing: 1px;
-    transition: color 0.5s ease;
+    font-size: clamp(1.15rem, 2.5vw, 1.8rem);
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    font-family: 'JetBrains Mono', monospace, sans-serif;
 }
 
 body.light .subtitle-home {
-    color: #212529;
+    color: #334155;
 }
 
-body.light .greeting-text {
-    color: #495057 !important;
+/* Botones Editoriales Unificados */
+.home-buttons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Botón de navegación */
-.btn-home {
-    background-color: #fff;
-    border-color: #002255;
-    color: #78adff;
+.btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 2rem;
+    border-radius: 999px;
+    font-size: 0.98rem;
     font-weight: 600;
-    padding: 0.6rem 1.5rem;
-    border-radius: 1.5rem;
-    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0d6efd 0%, #0048b3 100%);
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-home:hover {
-    background-color: #78adff;
-    color: #fff;
-}
-
-body.light .btn-home {
-    background-color: #0d6efd;
-    color: #fff;
-    border-color: #0d6efd;
-}
-
-body.light .btn-home:hover {
-    background-color: #0b5ed7;
-    color: #fff;
+.btn-hero-primary:hover {
+    background: linear-gradient(135deg, #1a78ff 0%, #0d6efd 100%);
     transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(13, 110, 253, 0.6);
+    color: #ffffff !important;
 }
 
-.home-buttons .btn {
+.btn-hero-primary .btn-hero-icon {
+    transition: transform 0.25s ease;
+}
+
+.btn-hero-primary:hover .btn-hero-icon {
+    transform: translateY(3px);
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 2rem;
+    border-radius: 999px;
+    font-size: 0.98rem;
     font-weight: 600;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f8fafc !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.home-buttons .btn:hover {
+body.light .btn-hero-secondary {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #0f172a !important;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-3px);
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-body.light .btn-outline-light {
-    color: #212529;
-    border-color: #212529;
+body.light .btn-hero-secondary:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #0f172a !important;
 }
 
-body.light .btn-outline-light:hover {
-    background-color: #212529;
-    color: #fff;
-    border-color: #212529;
+.btn-hero-secondary .btn-hero-icon {
+    transition: transform 0.25s ease;
+}
+
+.btn-hero-secondary:hover .btn-hero-icon {
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
     .home-section {
-        height: 100vh;
-        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        padding: 6rem 1rem 4rem 1rem;
     }
 
     .home-buttons {
         flex-direction: column;
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
         margin: 0 auto;
+        gap: 0.9rem;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.95rem 1.6rem;
+    }
+
+    .home-bottom-fade {
+        height: 90px;
     }
 }
