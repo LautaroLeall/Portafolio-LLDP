@@ -1,0 +1,200 @@
+/* PROJECT DETAIL MODAL WINDOW & SCROLL CONTAINER */
+
+/* Backdrop */
+.project-detail-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(2, 10, 21, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    overflow-y: auto;
+}
+
+/* Enlarged Modal Window */
+.project-detail-modal {
+    position: relative;
+    width: 96vw;
+    max-width: 1400px;
+    height: 93vh;
+    max-height: 93vh;
+    background: rgba(10, 25, 47, 0.97);
+    border: 1px solid rgba(13, 110, 253, 0.35);
+    border-radius: 1.6rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), 0 0 40px rgba(13, 110, 253, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #f8fafc;
+}
+
+body.light .project-detail-modal {
+    background: rgba(255, 255, 255, 0.99);
+    border-color: rgba(13, 110, 253, 0.25);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18), 0 0 40px rgba(13, 110, 253, 0.12);
+    color: #0f172a;
+}
+
+/* Modal Scroll Progress Bar matching Main Page */
+.modal-scroll-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3.5px;
+    background: linear-gradient(to right, #78adff, #0d6efd);
+    z-index: 100;
+    transform-origin: 0%;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.6);
+    transition: width 0.1s linear;
+}
+
+/* Modal Header Bar */
+.modal-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    flex-shrink: 0;
+}
+
+body.light .modal-header-bar {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.modal-category-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.38rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.pill-fullstack {
+    background: rgba(13, 110, 253, 0.18);
+    color: #78adff;
+    border: 1px solid rgba(13, 110, 253, 0.35);
+}
+
+body.light .pill-fullstack {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+.pill-landing {
+    background: rgba(16, 185, 129, 0.18);
+    color: #4ade80;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+body.light .pill-landing {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border-color: rgba(16, 185, 129, 0.25);
+}
+
+.modal-in-progress-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    background: rgba(245, 158, 11, 0.16);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.22);
+}
+
+body.light .modal-in-progress-pill {
+    background: rgba(245, 158, 11, 0.12);
+    color: #d97706;
+    border-color: rgba(245, 158, 11, 0.35);
+}
+
+.modal-project-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+/* Explicit Modal Close Button */
+.modal-close-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.45);
+    color: #ef4444;
+    transform: rotate(90deg) scale(1.05);
+}
+
+body.light .modal-close-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .modal-close-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #dc2626;
+}
+
+/* Scrollable Body with Custom Scrollbar Matching the Main Site */
+.modal-body-scrollable {
+    overflow-y: auto;
+    padding: 1.8rem 2rem;
+    flex-grow: 1;
+    scrollbar-width: thin;
+    scrollbar-color: #0d6efd rgba(2, 10, 21, 0.4);
+}
+
+body.light .modal-body-scrollable {
+    scrollbar-color: #0d6efd rgba(0, 0, 0, 0.05);
+}
+
+/* WebKit Scrollbar Styling (Identical aesthetic to main site) */
+.modal-body-scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body-scrollable::-webkit-scrollbar-track {
+    background: rgba(2, 10, 21, 0.45);
+    border-radius: 999px;
+}
+
+body.light .modal-body-scrollable::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.modal-body-scrollable::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #78adff 0%, #0d6efd 100%);
+    border-radius: 999px;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.4);
+}
+
+.modal-body-scrollable::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #9ec5fe 0%, #0b5ed7 100%);
+}

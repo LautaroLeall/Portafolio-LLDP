@@ -1,0 +1,226 @@
+/* PROJECT DETAIL BROWSER MOCKUP & CONTROLS */
+
+.interactive-sandbox-wrapper {
+    background: #020a15;
+    border: 1px solid rgba(13, 110, 253, 0.25);
+    border-radius: 1.35rem;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Browser Mockup Top Bar */
+.browser-mockup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.2rem;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+body.light .browser-mockup-header {
+    background: #e2e8f0;
+    border-bottom-color: #cbd5e1;
+}
+
+.browser-traffic-lights {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.traffic-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.traffic-dot:hover {
+    opacity: 0.75;
+}
+
+.dot-red {
+    background: #ef4444;
+}
+
+.dot-yellow {
+    background: #f59e0b;
+}
+
+.dot-green {
+    background: #10b981;
+}
+
+.browser-url-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    max-width: 440px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.light .browser-url-bar {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    color: #475569;
+}
+
+.browser-url-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.browser-security-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    background: rgba(13, 110, 253, 0.15);
+    border: 1px solid rgba(13, 110, 253, 0.3);
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #78adff;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+body.light .browser-security-badge {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+.browser-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+/* View Mode Toggle */
+.view-mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light .view-mode-toggle {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+.mode-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+    background: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.4);
+}
+
+/* Device Toggles & Device Locked Pill */
+.device-toggle-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3px 5px;
+    border-radius: 999px;
+}
+
+body.light .device-toggle-group {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+.device-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 0.35rem 0.55rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.device-btn:hover {
+    color: #f8fafc;
+}
+
+body.light .device-btn:hover {
+    color: #0f172a;
+}
+
+.device-btn.active {
+    background: rgba(13, 110, 253, 0.25);
+    color: #38bdf8;
+}
+
+.reload-btn:hover {
+    color: #38bdf8;
+}
+
+.device-locked-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    background: rgba(13, 110, 253, 0.12);
+    border: 1px solid rgba(13, 110, 253, 0.3);
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #78adff;
+}
+
+body.light .device-locked-pill {
+    background: rgba(13, 110, 253, 0.08);
+    color: #0d6efd;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+.spin-anim {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
