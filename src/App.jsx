@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import { useEffect } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useSpring } from 'framer-motion'
 
@@ -12,18 +10,23 @@ import BtnCV from './components/BtnCV'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-// import Footer from './components/Footer'
 
-import BottomNavbar from './components/BottomNavbar' // el navbar minimalista con icons
-import ThemeToggle from './components/ThemeToggle'   // el switch de tema
-import LanguageToggle from './components/LanguageToggle' // el switch de idioma
+import BottomNavbar from './components/BottomNavbar'
+import ThemeToggle from './components/ThemeToggle'
+import LanguageToggle from './components/LanguageToggle'
 import Networks from './components/Networks'
+import CodeWavesCanvas from './components/ui/CodeWavesCanvas'
 import './styles/globalControls.css'
 
 import { useTheme } from './hooks/useTheme'
+import { useLanguage } from './hooks/useLanguage'
+import { useModal } from './hooks/useModal'
 
 function App() {
   const { theme } = useTheme()
+  const { language } = useLanguage()
+  const { isModalOpen } = useModal()
+  const isLight = theme === 'light'
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -32,48 +35,65 @@ function App() {
   });
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true })
-  }, [])
+    document.documentElement.lang = language;
+  }, [language]);
 
   return (
     <div className={`App ${theme}`}>
       <motion.div
         className="scroll-progress-bar"
         style={{ scaleX }}
+        animate={isModalOpen ? { opacity: 0 } : { opacity: 1 }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
       />
-      
+
       {/* Controles Unificados (Tema + Idioma en una sola barra glassmorphism) */}
-      <div className="global-controls">
+      <motion.div
+        className="global-controls"
+        initial={{ y: 0, opacity: 1, scale: 1 }}
+        animate={isModalOpen ? { y: 85, opacity: 0, scale: 0.92 } : { y: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      >
         <ThemeToggle />
         <div className="controls-divider"></div>
         <LanguageToggle />
-      </div>
+      </motion.div>
 
       <Networks />
+
+      {/* Unified Cyber Constellation Background across all post-Hero sections */}
+      <CodeWavesCanvas
+        isLight={isLight}
+        showLogo={false}
+        showParticles={true}
+        isFixed={true}
+        fadeOnHero={true}
+      />
 
       <section id="home">
         <Home />
       </section>
 
-      <section id="profile" className='py-5'>
-        <About />
-        <Qualifications />
-        <BtnCV />
-      </section>
+      {/* Post-Hero Container */}
+      <div className="post-hero-container">
+        <section id="profile">
+          <About />
+          <Qualifications />
+          <BtnCV />
+        </section>
 
-      <section id="skills">
-        <Skills />
-      </section>
+        <section id="skills">
+          <Skills />
+        </section>
 
-      <section id="projects">
-        <Projects />
-      </section>
+        <section id="projects">
+          <Projects />
+        </section>
 
-      <section id="contact">
-        <Contact />
-      </section>
-
-      {/* <Footer /> */}
+        <section id="contact" className="pb-5">
+          <Contact />
+        </section>
+      </div>
 
       <BottomNavbar />
 
