@@ -1,7 +1,10 @@
 // src/components/Networks.jsx
 import React from 'react'
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion'
 // Icons
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { useModal } from '../hooks/useModal'
 import '../styles/networks.css'
 
 const socialLinks = [
@@ -23,8 +26,19 @@ const socialLinks = [
 ]
 
 const Networks = () => {
+    const { isModalOpen } = useModal()
+
     return (
-        <div className="social-bar">
+        <motion.div
+            className="social-bar"
+            initial={{ x: 0, y: '-50%', opacity: 1, scale: 1 }}
+            animate={
+                isModalOpen
+                    ? { x: -85, y: '-50%', opacity: 0, scale: 0.92 }
+                    : { x: 0, y: '-50%', opacity: 1, scale: 1 }
+            }
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        >
             <ul>
                 {socialLinks.map((item, i) => (
                     <li key={i}>
@@ -40,7 +54,7 @@ const Networks = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </motion.div>
     )
 }
 
