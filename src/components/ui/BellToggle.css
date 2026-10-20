@@ -1,0 +1,109 @@
+/* Botón interactivo con animación de campana y ondas acústicas */
+.bell-toggle-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border: 1px solid rgba(13, 110, 253, 0.28);
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.bell-toggle-btn.is-active {
+    border-color: rgba(34, 197, 94, 0.45);
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.2);
+}
+
+.bell-toggle-btn:hover:not(:disabled) {
+    border-color: rgba(13, 110, 253, 0.55);
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.28);
+}
+
+.bell-toggle-btn.is-active:hover:not(:disabled) {
+    border-color: rgba(34, 197, 94, 0.65);
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.32);
+}
+
+.bell-toggle-btn:disabled {
+    opacity: 0.55;
+    cursor: default;
+}
+
+/* Tamaños disponibles */
+.bell-toggle-btn.size-sm {
+    height: 36px;
+    padding: 0 1rem;
+    font-size: 0.82rem;
+}
+
+.bell-toggle-btn.size-md {
+    height: 44px;
+    padding: 0 1.25rem;
+    font-size: 0.88rem;
+}
+
+.bell-toggle-btn.size-lg {
+    height: 52px;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Icono de campana y ondas SVG laterales */
+.bell-icon-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bell-icon-glyph {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: 50% 15%;
+}
+
+.bell-wave-svg {
+    position: absolute;
+    top: -3px;
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.bell-wave-left {
+    right: calc(100% - 2px);
+    transform-origin: 100% 100%;
+}
+
+.bell-wave-right {
+    left: calc(100% - 2px);
+    transform-origin: 0% 100%;
+}
+
+/* Texto del botón */
+.bell-label-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.bell-label-text {
+    display: inline-block;
+}
