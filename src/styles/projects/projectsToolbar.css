@@ -1,0 +1,135 @@
+/* PROJECTS FILTER TOOLBAR & NAVIGATION */
+
+.projects-filter-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.light .projects-filter-toolbar {
+    border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+
+.projects-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #94a3b8;
+    font-family: 'JetBrains Mono', monospace, sans-serif;
+    letter-spacing: 0.3px;
+}
+
+body.light .projects-status-indicator {
+    color: #64748b;
+}
+
+.projects-beacon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    display: inline-block;
+    animation: livePulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes livePulseBeacon {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+.filter-nav-pill-container {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    gap: 0.25rem;
+}
+
+body.light .filter-nav-pill-container {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.filter-tab-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.25rem;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: color 0.25s ease;
+    z-index: 1;
+}
+
+body.light .filter-tab-btn {
+    color: #64748b;
+}
+
+.filter-tab-btn:hover {
+    color: #f8fafc;
+}
+
+body.light .filter-tab-btn:hover {
+    color: #0f172a;
+}
+
+.filter-tab-btn.active {
+    color: #ffffff !important;
+}
+
+.filter-active-indicator {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0d6efd 0%, #0048b3 100%);
+    border-radius: 999px;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.45);
+    z-index: -1;
+}
+
+.filter-tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.15);
+    color: inherit;
+    transition: all 0.25s ease;
+}
+
+.filter-tab-btn.active .filter-tab-count {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
