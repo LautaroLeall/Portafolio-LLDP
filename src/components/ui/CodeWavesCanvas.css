@@ -1,0 +1,47 @@
+/* Modo 1: Contenedor dentro de una sección (usado en Contacto para el logo </>) */
+.code-waves-canvas-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    isolation: isolate;
+}
+
+/* Modo 2: Fondo fijo unificado en todas las secciones después del Home */
+.code-waves-canvas-fixed {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    isolation: isolate;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60px, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 60px, black 100%);
+}
+
+.code-waves-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+/* Viñeta sutil para integrar bordes del fondo */
+.code-waves-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(2, 10, 21, 0.4) 100%);
+    z-index: 1;
+}
+
+body.light .code-waves-vignette {
+    background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(240, 246, 248, 0.45) 100%);
+}
