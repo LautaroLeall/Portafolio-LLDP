@@ -1,0 +1,252 @@
+/* CONTACT DIRECT CHANNELS & AVAILABILITY STREAM */
+
+.channels-section-label {
+    display: flex;
+    align-items: center;
+}
+
+.channels-section-label .label-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #78adff;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-family: 'JetBrains Mono', monospace, sans-serif;
+}
+
+body.light .channels-section-label .label-text {
+    color: #0d6efd;
+}
+
+.contact-channels-stream {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-stream-row {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+}
+
+.channel-stream-row:first-child {
+    padding-top: 0.5rem;
+}
+
+body.light .channel-stream-row {
+    border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+
+.channel-stream-row:hover {
+    padding-left: 0.4rem;
+    color: inherit;
+}
+
+.channel-icon-node {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+
+body.light .channel-icon-node {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #334155;
+}
+
+.channel-stream-row:hover .channel-icon-node {
+    background: rgba(13, 110, 253, 0.12);
+    border-color: rgba(13, 110, 253, 0.35);
+    color: #38bdf8;
+    transform: scale(1.06);
+}
+
+.linkedin-node {
+    color: #60a5fa;
+}
+
+.email-node {
+    color: #38bdf8;
+}
+
+.channel-info-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex-grow: 1;
+}
+
+.channel-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.2px;
+}
+
+body.light .channel-title {
+    color: #0f172a;
+}
+
+.channel-subtitle {
+    font-size: 0.88rem;
+    color: #94a3b8;
+}
+
+body.light .channel-subtitle {
+    color: #64748b;
+}
+
+.email-value {
+    font-family: 'JetBrains Mono', monospace, sans-serif;
+    font-size: 0.86rem;
+    color: #78adff;
+}
+
+body.light .email-value {
+    color: #0d6efd;
+}
+
+.channel-arrow-icon {
+    color: #64748b;
+    margin-left: auto;
+    transition: transform 0.25s ease, color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.channel-stream-row:hover .channel-arrow-icon {
+    transform: translate(3px, -3px);
+    color: #78adff;
+}
+
+body.light .channel-stream-row:hover .channel-arrow-icon {
+    color: #0d6efd;
+}
+
+/* Interactive Email Copy Pill */
+.btn-channel-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(13, 110, 253, 0.1);
+    border: 1px solid rgba(13, 110, 253, 0.25);
+    color: #78adff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+body.light .btn-channel-copy {
+    background: rgba(13, 110, 253, 0.06);
+    border-color: rgba(13, 110, 253, 0.2);
+    color: #0d6efd;
+}
+
+.btn-channel-copy:hover {
+    background: rgba(13, 110, 253, 0.2);
+    border-color: #0d6efd;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(13, 110, 253, 0.3);
+}
+
+.btn-channel-copy.copied {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.45);
+    color: #4ade80;
+}
+
+body.light .btn-channel-copy.copied {
+    color: #16a34a;
+}
+
+.check-pop {
+    animation: popCheck 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popCheck {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Availability & Location (Unboxed Card) */
+.contact-availability-card {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+body.light .contact-availability-card {
+    border-top-color: rgba(0, 0, 0, 0.07);
+}
+
+.availability-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+}
+
+.live-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    display: inline-block;
+    flex-shrink: 0;
+    animation: livePulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes livePulseBeacon {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+.availability-text {
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+body.light .availability-text {
+    color: #334155;
+}
