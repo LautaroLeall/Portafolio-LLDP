@@ -6,7 +6,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import ProjectDetail from './ProjectDetail';
 // Icons
 import { TiCloudStorageOutline } from "react-icons/ti";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaKey, FaEnvelope, FaFileUpload, FaRegBell } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaKey, FaEnvelope, FaFileUpload, FaRegBell, FaWhatsapp } from 'react-icons/fa';
 import { SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiMongodb, SiCloudinary, SiReactrouter, SiSocketdotio, SiSupabase, SiPostgresql, SiZod, SiDeno, SiMercadopago, SiGoogle } from "react-icons/si";
 import { LuTabletSmartphone } from "react-icons/lu";
 import '../styles/projects.css';
@@ -38,7 +38,9 @@ const techIcons = {
     Zustand: <Boxes />,
     Vite: <SiVite />,
     'Mercado Pago': <SiMercadopago />,
-    'Google OAuth': <SiGoogle />
+    'Google OAuth': <SiGoogle />,
+    EmailJS: <FaEnvelope color="#ff7849" />,
+    WhatsApp: <FaWhatsapp color="#25D366" />
 };
 
 const projectList = [
@@ -108,6 +110,18 @@ const projectList = [
         image: '/projects/fleeswap.png',
         imageMobile: '/projects-mobile/fleeswap.png',
         category: 'Full Stack'
+    },
+    {
+        title: 'Servicios Web LLDP',
+        descriptionKey: 'projects.servicios.desc',
+        longDescKey: 'projects.servicios.longDesc',
+        featuresKey: 'projects.servicios.features',
+        techs: ['React', 'Tailwind', 'Framer', 'EmailJS', 'Responsive', 'Vite'],
+        code: 'https://github.com/LautaroLeall/Servicios-LLDP',
+        demo: 'https://servicios-lldp.vercel.app/',
+        image: '/projects/mis-servicios.png',
+        imageMobile: '/projects-mobile/mis-servicios.png',
+        category: 'Landing'
     },
     {
         title: 'MyM Decoraciones',
