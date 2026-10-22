@@ -450,7 +450,7 @@ const ProjectDetail = ({ project, onClose, techIcons = {} }) => {
                                                             setIframeLoading(false);
                                                         }}
                                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                                                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"
                                                     />
                                                 </div>
                                             </>
