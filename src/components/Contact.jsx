@@ -18,9 +18,10 @@ import {
     AlertCircle,
     X,
     ArrowUpRight,
-    MapPin
+    MapPin,
+    Briefcase
 } from 'lucide-react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 import '../styles/contact.css'
 
 // Sub-component for individual toast items in the queue with self-contained auto-dismiss
@@ -213,7 +214,41 @@ const Contact = () => {
                         </div>
 
                         <div className="contact-channels-stream">
-                            {/* Canal 1: GitHub */}
+                            {/* Canal 0: WhatsApp Directo */}
+                            <a
+                                href="https://wa.me/5493813399463?text=Hola%20Lautaro,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="channel-stream-row"
+                            >
+                                <div className="channel-icon-node whatsapp-node">
+                                    <FaWhatsapp size={20} />
+                                </div>
+                                <div className="channel-info-wrap">
+                                    <span className="channel-title">WhatsApp</span>
+                                    <span className="channel-subtitle">{t('contact.whatsappCard')}</span>
+                                </div>
+                                <ArrowUpRight size={18} className="channel-arrow-icon" />
+                            </a>
+
+                            {/* Canal 2: Servicios Web */}
+                            <a
+                                href="https://servicios-lldp.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="channel-stream-row"
+                            >
+                                <div className="channel-icon-node services-node">
+                                    <Briefcase size={19} />
+                                </div>
+                                <div className="channel-info-wrap">
+                                    <span className="channel-title">{t('contact.servicesCardTitle')}</span>
+                                    <span className="channel-subtitle">{t('contact.servicesCardSubtitle')}</span>
+                                </div>
+                                <ArrowUpRight size={18} className="channel-arrow-icon" />
+                            </a>
+
+                            {/* Canal 3: GitHub */}
                             <a
                                 href="https://github.com/LautaroLeall"
                                 target="_blank"
@@ -285,7 +320,7 @@ const Contact = () => {
                                 </span>
                             </div>
                             <div className="availability-item">
-                                <MapPin size={15} className="text-primary flex-shrink-0" />
+                                <MapPin size={15} className="text-primary shrink-0" />
                                 <span className="availability-text">
                                     {language === 'es'
                                         ? 'Tucumán, Argentina • Remoto / Híbrido'
