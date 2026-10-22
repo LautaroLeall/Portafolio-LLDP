@@ -3,30 +3,38 @@ import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 // Icons
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Briefcase } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 import { useModal } from '../hooks/useModal'
+import { useLanguage } from '../hooks/useLanguage'
 import '../styles/networks.css'
-
-const socialLinks = [
-    {
-        icon: <Github size={25} />,
-        href: 'https://github.com/LautaroLeall',
-        label: 'GitHub',
-    },
-    {
-        icon: <Linkedin size={25} />,
-        href: 'https://www.linkedin.com/in/lauldp/',
-        label: 'LinkedIn',
-    },
-    {
-        icon: <Mail size={25} />,
-        href: 'mailto:lautaroleal4@gmail.com?subject=Consulta%20profesional%20-%20Portafolio%20de%20Lautaro%20Leal&body=Hola%20Lautaro,%20me%20gustaría%20ponerme%20en%20contacto%20contigo%20para...',
-        label: 'Email',
-    }
-]
 
 const Networks = () => {
     const { isModalOpen } = useModal()
+    const { language } = useLanguage()
+
+    const socialLinks = [
+        {
+            icon: <Github size={24} />,
+            href: 'https://github.com/LautaroLeall',
+            label: 'GitHub',
+        },
+        {
+            icon: <Linkedin size={24} />,
+            href: 'https://www.linkedin.com/in/lauldp/',
+            label: 'LinkedIn',
+        },
+        {
+            icon: <FaWhatsapp size={24} />,
+            href: 'https://wa.me/5493813399463?text=Hola%20Lautaro,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta.',
+            label: 'WhatsApp',
+        },
+        {
+            icon: <Briefcase size={22} />,
+            href: 'https://servicios-lldp.vercel.app/',
+            label: language === 'es' ? 'Servicios Web' : 'Web Services',
+        }
+    ]
 
     return (
         <motion.div
