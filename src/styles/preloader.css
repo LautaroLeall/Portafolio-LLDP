@@ -1,0 +1,308 @@
+/* PORTAFOLIO LLDP — AUTHENTIC DEVELOPER TERMINAL CONSOLE PRELOADER */
+
+.terminal-preloader-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 99999999;
+    background: #020a15;
+    background: radial-gradient(circle at 50% 50%, #061122 0%, #030a16 55%, #020a15 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif;
+    color: #f0f6f8;
+}
+
+/* Background Reactive Particle Canvas */
+.terminal-interactive-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+}
+
+/* Terminal Window Frame */
+.terminal-window {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 580px;
+    background: rgba(9, 15, 27, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.85),
+        0 0 40px rgba(13, 110, 253, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    overflow: hidden;
+    animation: terminalWindowFadeIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Terminal Titlebar (macOS / Unix style) */
+.terminal-titlebar {
+    height: 38px;
+    background: rgba(16, 24, 40, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.terminal-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.terminal-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.terminal-dot.dot-close {
+    background: #ff5f56;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.terminal-dot.dot-min {
+    background: #ffbd2e;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.terminal-dot.dot-max {
+    background: #27c93f;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.terminal-window-title {
+    font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.72rem;
+    color: rgba(240, 246, 248, 0.65);
+    letter-spacing: 0.06em;
+}
+
+.terminal-titlebar-spacer {
+    width: 47px;
+}
+
+/* Terminal Console Body */
+.terminal-body {
+    padding: 22px 24px;
+    font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.75;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Prompt Line */
+.terminal-prompt-line {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.term-prompt-user {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.term-prompt-sep {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.term-prompt-cmd {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* System Info Block */
+.terminal-info-block {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 0.72rem;
+}
+
+.term-info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(240, 246, 248, 0.75);
+}
+
+.term-info-tag {
+    color: #00f0ff;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Output Log Stream */
+.terminal-log-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.terminal-log-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(240, 246, 248, 0.88);
+}
+
+.term-check {
+    color: #10b981;
+    font-weight: 800;
+}
+
+.term-status-ok {
+    color: #10b981;
+    font-weight: 700;
+    margin-left: auto;
+    font-size: 0.70rem;
+}
+
+.term-status-spin {
+    color: #00f0ff;
+    margin-left: auto;
+    font-size: 0.70rem;
+    animation: termSpinDot 1s infinite;
+}
+
+/* Terminal Progress Bar */
+.terminal-progress-section {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    margin-bottom: 6px;
+}
+
+.terminal-progress-label {
+    color: rgba(240, 246, 248, 0.65);
+}
+
+.terminal-progress-percentage {
+    color: #00f0ff;
+    font-weight: 800;
+}
+
+.terminal-bar-track {
+    width: 100%;
+    height: 4px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #10b981, #00f0ff, #0d6efd);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+    transition: width 0.06s linear;
+}
+
+/* Ready Line */
+.terminal-ready-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #10b981;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.term-cursor {
+    display: inline-block;
+    color: #00f0ff;
+    animation: termCursorBlink 0.8s infinite;
+    font-weight: 900;
+}
+
+/* Keyframes */
+@keyframes terminalWindowFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes termCursorBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes termSpinDot {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 540px) {
+    .terminal-body {
+        padding: 18px 16px;
+        font-size: 0.72rem;
+    }
+
+    .terminal-titlebar {
+        padding: 0 12px;
+        height: 34px;
+    }
+
+    .terminal-window-title {
+        font-size: 0.66rem;
+    }
+
+    .term-status-ok,
+    .term-status-spin {
+        font-size: 0.65rem;
+    }
+}
