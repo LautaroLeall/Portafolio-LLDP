@@ -16,7 +16,8 @@ export const translations = {
                 'Building Scalable Products'
             ],
             btnWork: 'View My Work',
-            btnContact: 'Contact Me'
+            btnContact: 'Contact Me',
+            btnServices: 'Web Services'
         },
         about: {
             title: 'About Me',
@@ -193,11 +194,28 @@ export const translations = {
                     'Fast, responsive modern layout designed with Tailwind CSS and Framer',
                     'Clear call-to-action sections driving qualified client inquiries'
                 ]
+            },
+            servicios: {
+                desc: 'High-conversion web services platform with interactive mockups, 3D holographic preloader & instant quote calculator.',
+                longDesc: 'Official commercial platform for Lautaro Leal Del Prete web development services. Features an interactive 3D CSS gyroscope preloader, asymmetric Bento Grid layout, 6 live interactive service mockups with real-time UI state, coverflow 3D showcase, and a 3-step interactive quote calculator with direct WhatsApp brief generation and automated EmailJS delivery. Engineered with high-performance code splitting, achieving an ultra-lightweight initial JS bundle of only 58.9 kB and hardware GPU acceleration on mobile Safari.',
+                features: [
+                    'Interactive 3-step project quote calculator with live brief preview and dual dispatch (WhatsApp API & EmailJS)',
+                    '6 functional interactive mockups demonstrating real client solutions (Websites, Management Systems, E-Commerce, Digital Invites, Performance Audits)',
+                    '3D Holographic Gyroscope Preloader built with pure native CSS 3D transforms and sub-second fade transition',
+                    'High-performance architecture: 80% initial JS reduction (58.9 kB bundle), requestIdleCallback lazy loading, and WebKit GPU optimization'
+                ]
             }
         },
         contact: {
             title: "Let's build something together!",
             subtitle: "I'm currently open for new opportunities. Whether you have a question, a project idea, or just want to say hi, feel free to drop a message.",
+            servicesBannerBadge: 'Commercial Platform',
+            servicesBannerTitle: 'Looking to quote a website or system for your business?',
+            servicesBannerDesc: 'Visit my official Services Platform with live interactive mockups and an instant 3-step quote calculator.',
+            servicesBannerBtn: 'Instant Quote Calculator',
+            whatsappCard: 'Direct chat & quick inquiry',
+            servicesCardTitle: 'Web Services Platform',
+            servicesCardSubtitle: 'Catalogue & instant quote calculator',
             githubCard: 'Check out my repositories',
             linkedinCard: "Let's connect professionally",
             formTitle: 'Send a Message',
@@ -231,7 +249,8 @@ export const translations = {
                 'Construyendo Productos Escalables'
             ],
             btnWork: 'Ver Trabajos',
-            btnContact: 'Contáctame'
+            btnContact: 'Contáctame',
+            btnServices: 'Servicios Web'
         },
         about: {
             title: 'Sobre mí',
@@ -408,11 +427,28 @@ export const translations = {
                     'Diseño moderno de alto contraste con animaciones suaves',
                     'Llamados a la acción estratégicos para captación de clientes e inversores'
                 ]
+            },
+            servicios: {
+                desc: 'Plataforma comercial de servicios web de alta conversión con mockups interactivos, preloader 3D y cotizador en tiempo real.',
+                longDesc: 'Plataforma comercial oficial de servicios de desarrollo web de Lautaro Leal Del Prete. Incluye un preloader con giroscopio 3D holográfico en CSS puro, catálogo en Bento Grid asimétrico, 6 mockups interactivos con estado en tiempo real, carrusel coverflow 3D y cotizador interactivo en 3 pasos con generación automática de brief para WhatsApp y despacho por EmailJS. Diseñada bajo una arquitectura crítica de alto rendimiento, logrando un bundle inicial de solo 58.9 kB de JavaScript y aceleración por GPU para Safari en iOS.',
+                features: [
+                    'Cotizador interactivo en 3 pasos con previsualización en vivo y despacho dual (WhatsApp directo y EmailJS)',
+                    '6 mockups interactivos funcionales con casos reales (Páginas Web, Sistemas de Gestión, Tiendas Online, Invitaciones Digitales, Auditoría Técnica)',
+                    'Preloader 3D holográfico con tres anillos orbitales en CSS 3D nativo y transición suave de salida',
+                    'Arquitectura ultraligera con 80% de reducción de bundle (58.9 kB JS), carga bajo demanda con requestIdleCallback y optimización GPU para móviles'
+                ]
             }
         },
         contact: {
             title: '¡Construyamos algo juntos!',
             subtitle: 'Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta, una idea de proyecto o simplemente quieras saludar, no dudes en enviar un mensaje.',
+            servicesBannerBadge: 'Plataforma Comercial',
+            servicesBannerTitle: '¿Buscás cotizar una web o sistema para tu negocio?',
+            servicesBannerDesc: 'Conocé mi plataforma oficial de servicios con mockups interactivos y cotizador en vivo en 3 simples pasos.',
+            servicesBannerBtn: 'Abrir Cotizador en Vivo',
+            whatsappCard: 'Chat directo y consultas rápidas',
+            servicesCardTitle: 'Plataforma de Servicios Web',
+            servicesCardSubtitle: 'Catálogo oficial y cotizador en vivo',
             githubCard: 'Explora mis repositorios',
             linkedinCard: 'Conectemos profesionalmente',
             formTitle: 'Enviar un Mensaje',
