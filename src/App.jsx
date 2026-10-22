@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
 
 // Secciones del portafolio
 import Home from './components/Home'
@@ -16,6 +16,7 @@ import ThemeToggle from './components/ThemeToggle'
 import LanguageToggle from './components/LanguageToggle'
 import Networks from './components/Networks'
 import CodeWavesCanvas from './components/ui/CodeWavesCanvas'
+import Preloader from './components/ui/Preloader'
 import './styles/globalControls.css'
 
 import { useTheme } from './hooks/useTheme'
@@ -26,6 +27,7 @@ function App() {
   const { theme } = useTheme()
   const { language } = useLanguage()
   const { isModalOpen } = useModal()
+  const [isLoading, setIsLoading] = useState(true)
   const isLight = theme === 'light'
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -40,6 +42,11 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+      {/* Preloader 3D Holográfico con Salida Suave y Telemetría en Vivo */}
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+
       <motion.div
         className="scroll-progress-bar"
         style={{ scaleX }}
