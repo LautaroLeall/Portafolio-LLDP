@@ -10,16 +10,20 @@ Portafolio profesional **Full Stack Developer** desarrollado con **React 19 + Vi
 
 ## 🎯 Funcionalidades Principales
 
+- ✅ **Preloader Consola Terminal Unix/Linux (`Preloader`)**: Ventana de terminal de desarrollador auténtica con botones macOS/Unix, comando de arranque del entorno Full Stack (`portfolio boot`), traza de compilación en vivo con estados `[OK]`, barra de progreso fluida y transición automática y limpia al Hero.
 - ✅ **Hero Interactivo con Motor ASCII (`GradientASCII`)**: Horizonte luminoso procedural renderizado en Canvas 2D con interpolación de color en espacio **OKLab**, ruido Perlin 2D y ondas de decodificación al pasar el mouse o hacer clic.
 - ✅ **Constelación Cyber Interactiva (`CodeWavesCanvas`)**: Fondo unificado post-Hero con red de partículas, símbolos de código y ondas expansivas de doble anillo con chispas radiales al hacer clic.
 - ✅ **Editorial About & Trayectoria**: Presentación profesional en dos columnas con pilares de ingeniería, línea de tiempo académica (**UNSTA** & **Instituto Nexus**), directorio de certificaciones verificables con **Lightbox en Portal (`createPortal`)** y descarga directa de CV en PDF (**Español e Inglés**).
 - ✅ **Stack Tecnológico & Competencias**: Dominios técnicos desglosados (_Frontend, Backend & Arquitectura de Datos, QA & Testing, Workflow_) y habilidades profesionales.
-- ✅ **Showcase de 10 Proyectos con Modal Interactivo (`ProjectDetail`)**:
+- ✅ **Showcase de 11 Proyectos con Modal Interactivo (`ProjectDetail`)**:
   - Filtro dinámico con contadores por categoría (_Todos_, _Full Stack_, _Landing Pages_) e indicadores de estado (_Live_ / _En Proceso_).
+  - Incluye la plataforma comercial oficial **Servicios Web LLDP** con cotizador interactivo multi-paso.
   - **Modo Interactivo (Live Sandbox)** con selector de resolución (_Desktop, Tablet, Mobile_) y detección inteligente de seguridad `X-Frame-Options`.
   - **Modo Captura (Snapshot)** con dirección de arte responsiva (`<picture>`): muestra capturas de escritorio en pantallas grandes y capturas móviles verticales completas (`782×1600`) sin recortes en dispositivos móviles.
   - Ficha técnica completa con arquitectura, características clave y enlaces a repositorios Frontend y Backend.
-- ✅ **Sección de Contacto Avanzada**:
+- ✅ **Sección de Contacto Avanzada & Enlace a Servicios**:
+  - Callout editorial interactivo hacia la **Plataforma de Servicios Web & Cotizador Online**.
+  - Canal directo de **WhatsApp** y acceso rápido en la barra lateral flotante (`Networks`).
   - Envío de mensajes en tiempo real mediante **EmailJS**.
   - Copiado rápido de correo con componente interactivo **`BellToggle`** y ondas acústicas.
   - Cola de notificaciones flotantes (**Floating Toasts**) animadas con barra de progreso.
