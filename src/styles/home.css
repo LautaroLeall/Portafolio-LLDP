@@ -226,6 +226,53 @@ body.light .btn-hero-secondary:hover {
     transform: scale(1.1);
 }
 
+
+/* Boton Hero Servicios Web - Estilo Natural y Cohesivo */
+.btn-hero-services {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: 999px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f8fafc !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.light .btn-hero-services {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #0f172a !important;
+}
+
+.btn-hero-services:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px);
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.light .btn-hero-services:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #0f172a !important;
+}
+
+.btn-hero-services .btn-hero-icon {
+    transition: transform 0.25s ease;
+}
+
+.btn-hero-services:hover .btn-hero-icon {
+    transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
     .home-section {
         min-height: 100vh;
@@ -242,6 +289,7 @@ body.light .btn-hero-secondary:hover {
     }
 
     .btn-hero-primary,
+    .btn-hero-services,
     .btn-hero-secondary {
         width: 100%;
         justify-content: space-between;

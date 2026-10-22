@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { ArrowDown, Mail } from 'lucide-react'
+import { ArrowDown, Mail, Briefcase } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 import { useTheme } from '../hooks/useTheme'
 import GradientASCII from './ui/GradientASCII'
@@ -131,6 +131,15 @@ const Home = () => {
                         <a href="#projects" className="btn-hero-primary">
                             <span>{t('home.btnWork')}</span>
                             <ArrowDown size={17} className="btn-hero-icon" />
+                        </a>
+                        <a
+                            href="https://servicios-lldp.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-hero-services"
+                        >
+                            <span>{t('home.btnServices')}</span>
+                            <Briefcase size={16} className="btn-hero-icon" />
                         </a>
                         <a href="#contact" className="btn-hero-secondary">
                             <span>{t('home.btnContact')}</span>
