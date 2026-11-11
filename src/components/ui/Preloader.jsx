@@ -1,266 +1,161 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../hooks/useLanguage';
-import '../../styles/preloader.css';
 
-const Preloader = ({ onComplete }) => {
-    const { t } = useLanguage();
-    const canvasRef = useRef(null);
-    const [progress, setProgress] = useState(0);
+/**
+ * Preloader — Terminal de Arranque Minimalista y Real
+ * Se ejecuta EXCLUSIVAMENTE una vez al abrir o recargar el portafolio.
+ * Rápido (~1.25s), sin badges ni iconos innecesarios, 100% natural.
+ */
+export default function Preloader({ onComplete }) {
+  const { language } = useLanguage();
+  const isEs = language === 'es';
 
-    const completedRef = useRef(false);
-    const handleFinish = useCallback(() => {
-        if (completedRef.current) return;
-        completedRef.current = true;
-        if (onComplete) {
-            onComplete();
-        }
-    }, [onComplete]);
+  const [step, setStep] = useState(0);
+  const completedRef = useRef(false);
 
-    // 1. Subtle Background Particle Canvas
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+  const handleFinish = useCallback(() => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+    if (onComplete) {
+      onComplete();
+    }
+  }, [onComplete]);
 
-        let animationFrameId;
-        let width = (canvas.width = window.innerWidth);
-        let height = (canvas.height = window.innerHeight);
+  // Teclas rápidas para saltar al instante (ESC, Enter, Espacio)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleFinish();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleFinish]);
 
-        const handleResize = () => {
-            if (!canvas) return;
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        };
-        window.addEventListener('resize', handleResize);
+  // Secuencia rápida y natural de terminal (~1.25s total)
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
 
-        // Spawn 45 subtle cyber nodes
-        const particleCount = Math.min(Math.floor((width * height) / 24000), 55);
-        const particles = Array.from({ length: particleCount }, () => ({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5,
-            radius: Math.random() * 1.8 + 1,
-            baseAlpha: Math.random() * 0.3 + 0.2
-        }));
+    const t1 = setTimeout(() => setStep(1), 180);
+    const t2 = setTimeout(() => setStep(2), 420);
+    const t3 = setTimeout(() => setStep(3), 680);
+    const t4 = setTimeout(() => setStep(4), 920);
+    const t5 = setTimeout(() => handleFinish(), 1250);
 
-        const mouse = { x: -1000, y: -1000, active: false };
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      clearTimeout(t5);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [handleFinish]);
 
-        const handlePointerMove = (e) => {
-            const clientX = e.clientX || (e.touches && e.touches[0]?.clientX);
-            const clientY = e.clientY || (e.touches && e.touches[0]?.clientY);
-            if (clientX !== undefined && clientY !== undefined) {
-                mouse.x = clientX;
-                mouse.y = clientY;
-                mouse.active = true;
-            }
-        };
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{
+        opacity: 0,
+        scale: 1.02,
+        filter: 'blur(6px)',
+        transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+      }}
+      onClick={handleFinish}
+      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#070b14] text-white select-none overflow-hidden cursor-pointer"
+      aria-live="polite"
+      aria-label="Cargando portafolio de Lautaro Leal Del Prete"
+    >
+      {/* Ventana de Terminal Limpia */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.97, y: 8 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.24, ease: 'easeOut' }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative z-10 w-[92%] max-w-[500px] bg-[#0c111d] border border-white/[0.08] rounded-xl shadow-2xl shadow-black/80 overflow-hidden font-mono text-xs sm:text-[13px]"
+      >
+        {/* Barra superior de ventana */}
+        <div className="px-4 py-2.5 bg-[#090d16] border-b border-white/[0.06] flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+          </div>
 
-        window.addEventListener('mousemove', handlePointerMove);
-        window.addEventListener('touchmove', handlePointerMove, { passive: true });
+          <span className="text-[11px] text-slate-500 font-medium">
+            portafolio-lldp — zsh
+          </span>
 
-        const render = () => {
-            ctx.clearRect(0, 0, width, height);
+          <button
+            type="button"
+            onClick={handleFinish}
+            className="text-[11px] text-slate-500 hover:text-slate-300 transition-colors cursor-pointer select-none"
+            data-cursor="pointer"
+          >
+            {isEs ? 'esc para omitir' : 'esc to skip'}
+          </button>
+        </div>
 
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
+        {/* Cuerpo de la Terminal */}
+        <div className="p-4 sm:p-5 text-slate-300 leading-relaxed space-y-2">
+          {/* Prompt inicial */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-emerald-400 font-bold">$</span>
+            <span className="text-cyan-400">portafolio</span>
+            <span className="text-blue-400">git:(main)</span>
+            <span className="text-white">npm run dev</span>
+          </div>
 
-                if (mouse.active) {
-                    const dx = p.x - mouse.x;
-                    const dy = p.y - mouse.y;
-                    const dist = Math.hypot(dx, dy);
-                    if (dist < 120 && dist > 0) {
-                        const force = ((120 - dist) / 120) * 2.5;
-                        p.vx += (dx / dist) * force * 0.1;
-                        p.vy += (dy / dist) * force * 0.1;
-                    }
-                }
-
-                p.x += p.vx;
-                p.y += p.vy;
-                p.vx *= 0.98;
-                p.vy *= 0.98;
-
-                if (p.x < 0 || p.x > width) p.vx *= -1;
-                if (p.y < 0 || p.y > height) p.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 240, 255, ${p.baseAlpha})`;
-                ctx.fill();
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const pDist = Math.hypot(p.x - p2.x, p.y - p2.y);
-                    if (pDist < 100) {
-                        const lineAlpha = (1 - pDist / 100) * 0.22;
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = `rgba(0, 240, 255, ${lineAlpha})`;
-                        ctx.lineWidth = 0.8;
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            animationFrameId = requestAnimationFrame(render);
-        };
-
-        animationFrameId = requestAnimationFrame(render);
-
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('mousemove', handlePointerMove);
-            window.removeEventListener('touchmove', handlePointerMove);
-        };
-    }, []);
-
-    // 2. Realistic Terminal Boot Progress Progression
-    useEffect(() => {
-        const prevOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-
-        const startTime = performance.now();
-        const duration = 1350; // 1.35 seconds
-        let animationFrameId;
-
-        const handleTick = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const ratio = Math.min(elapsed / duration, 1);
-
-            const eased = 1 - Math.pow(1 - ratio, 3);
-            const val = Math.min(Math.round(eased * 100), 100);
-            setProgress(val);
-
-            if (ratio < 1) {
-                animationFrameId = requestAnimationFrame(handleTick);
-            } else {
-                const exitTimer = setTimeout(() => {
-                    handleFinish();
-                }, 260);
-                return () => clearTimeout(exitTimer);
-            }
-        };
-
-        animationFrameId = requestAnimationFrame(handleTick);
-
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-            document.body.style.overflow = prevOverflow;
-        };
-    }, [handleFinish]);
-
-    return (
-        <motion.div
-            className="terminal-preloader-backdrop"
-            initial={{ opacity: 1 }}
-            exit={{
-                opacity: 0,
-                scale: 1.02,
-                filter: 'blur(6px)',
-                transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] }
-            }}
-            aria-live="polite"
-            aria-label="Cargando portafolio de Lautaro Leal Del Prete"
-        >
-            {/* Subtle Reactive Particle Canvas */}
-            <canvas ref={canvasRef} className="terminal-interactive-canvas" />
-
-            {/* Developer Terminal Window */}
-            <div className="terminal-window">
-                {/* Titlebar with native macOS / Unix window buttons */}
-                <div className="terminal-titlebar">
-                    <div className="terminal-dots">
-                        <span className="terminal-dot dot-close" />
-                        <span className="terminal-dot dot-min" />
-                        <span className="terminal-dot dot-max" />
-                    </div>
-
-                    <span className="terminal-window-title">
-                        {t('preloader.windowTitle')}
-                    </span>
-
-                    <div className="terminal-titlebar-spacer" />
-                </div>
-
-                {/* Console Terminal Body */}
-                <div className="terminal-body">
-                    {/* Prompt command line */}
-                    <div className="terminal-prompt-line">
-                        <span className="term-prompt-user">lldp@system:~$</span>
-                        <span className="term-prompt-cmd">{t('preloader.command')}</span>
-                    </div>
-
-                    {/* System info block */}
-                    <div className="terminal-info-block">
-                        <div className="term-info-row">
-                            <span className="term-info-tag">[info]</span>
-                            <span>{t('preloader.role')}</span>
-                        </div>
-                        <div className="term-info-row">
-                            <span className="term-info-tag">[info]</span>
-                            <span>{t('preloader.stack')}</span>
-                        </div>
-                    </div>
-
-                    {/* Step-by-step compilation log */}
-                    <div className="terminal-log-stream">
-                        <div className="terminal-log-item">
-                            <span className="term-check">✔</span>
-                            <span>{t('preloader.step1')}</span>
-                            <span className="term-status-ok">[OK]</span>
-                        </div>
-
-                        {progress >= 35 && (
-                            <div className="terminal-log-item">
-                                <span className="term-check">✔</span>
-                                <span>{t('preloader.step2')}</span>
-                                <span className="term-status-ok">[OK]</span>
-                            </div>
-                        )}
-
-                        {progress >= 70 && (
-                            <div className="terminal-log-item">
-                                <span className="term-check">✔</span>
-                                <span>{t('preloader.step3')}</span>
-                                <span className={progress >= 95 ? 'term-status-ok' : 'term-status-spin'}>
-                                    {progress >= 95 ? '[OK]' : '...'}
-                                </span>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* Progress track */}
-                    <div className="terminal-progress-section">
-                        <div className="terminal-progress-header">
-                            <span className="terminal-progress-label">Building modules</span>
-                            <span className="terminal-progress-percentage">[{progress}%]</span>
-                        </div>
-
-                        <div className="terminal-bar-track">
-                            <div
-                                className="terminal-bar-fill"
-                                style={{ width: `${progress}%` }}
-                            />
-                        </div>
-                    </div>
-
-                    {/* Ready line on completion */}
-                    {progress >= 95 && (
-                        <div className="terminal-ready-line">
-                            <span>✔ {t('preloader.ready')}</span>
-                            <span className="term-cursor">▋</span>
-                        </div>
-                    )}
-                </div>
+          {/* Línea 1: Vite listo */}
+          {step >= 1 && (
+            <div className="pt-2 text-slate-400">
+              <span className="text-emerald-400 font-bold">VITE v7.1.3</span>{' '}
+              <span className="text-slate-500">ready in 184 ms</span>
             </div>
-        </motion.div>
-    );
-};
+          )}
 
-export default Preloader;
+          {/* Línea 2: Localhost */}
+          {step >= 2 && (
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-400 font-bold">&gt;</span>
+                <span className="text-slate-400">Local:</span>
+                <span className="text-cyan-300">http://localhost:5173/</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-500 text-[11px] sm:text-xs">
+                <span className="opacity-0">&gt;</span>
+                <span>Network:</span>
+                <span>use --host to expose</span>
+              </div>
+            </div>
+          )}
+
+          {/* Línea 3: Autor / Identidad */}
+          {step >= 3 && (
+            <div className="pt-1 flex items-center gap-2">
+              <span className="text-emerald-400 font-bold">&gt;</span>
+              <span className="text-slate-400">{isEs ? 'Autor:' : 'Author:'}</span>
+              <span className="text-slate-100 font-medium">Lautaro Leal Del Prete</span>
+            </div>
+          )}
+
+          {/* Línea 4: Listo y cursor parpadeante */}
+          {step >= 4 && (
+            <div className="pt-2 flex items-center gap-1.5 text-slate-400">
+              <span className="text-slate-500">{isEs ? 'iniciando sesión...' : 'starting session...'}</span>
+              <span className="inline-block w-1.5 h-3.5 bg-slate-300 animate-pulse" />
+            </div>
+          )}
+        </div>
+      </motion.div>
+
+      {/* Indicador discreto al pie */}
+      <span className="relative z-10 text-[11px] font-mono text-slate-600 mt-3 select-none">
+        {isEs ? 'clic o [ESC] para continuar' : 'click or [ESC] to continue'}
+      </span>
+    </motion.div>
+  );
+}
