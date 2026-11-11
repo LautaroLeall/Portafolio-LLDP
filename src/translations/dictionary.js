@@ -2,93 +2,14 @@ export const translations = {
     en: {
         nav: {
             home: 'Home',
-            about: 'About Me',
-            skills: 'Skills',
+            services: 'Services',
             projects: 'Projects',
+            skills: 'Skills',
+            education: 'Education',
+            about: 'About Me',
             contact: 'Contact'
         },
-        home: {
-            greeting: 'Hi, my name is',
-            name: 'Lautaro Leal Del Prete',
-            titles: [
-                'Full Stack Developer',
-                'Creative Problem Solver',
-                'Building Scalable Products'
-            ],
-            btnWork: 'View My Work',
-            btnContact: 'Contact Me',
-            btnServices: 'Web Services'
-        },
-        about: {
-            title: 'About Me',
-            text1: "Hello, I'm Lautaro Leal Del Prete.",
-            text2: 'I am a Software Development and Quality graduate with experience building Full Stack web applications.',
-            text3: 'I focus on developing scalable products, implementing responsive interfaces, and applying best development practices and agile methodologies.',
-            text4: "I am motivated by solving problems, integrating REST APIs, and optimizing the user experience. I'm always ready to take on new challenges for my personal and professional growth."
-        },
-        qualifications: {
-            educationTitle: 'Education',
-            educationList: [
-                {
-                    institution: 'UNSTA — Universidad del Norte Santo Tomás de Aquino',
-                    type: 'Associate Degree',
-                    degree: 'Software Development and Quality Assurance',
-                    period: '2024 - 2026'
-                },
-                {
-                    institution: 'Instituto Nexus — SM de Tucumán',
-                    type: 'English Language Training',
-                    degree: 'Communicative English & International Exams',
-                    period: '2025 - Present'
-                }
-            ],
-            certificationsTitle: 'My Certifications'
-        },
-        cv: {
-            spanish: 'Download CV - Spanish Version',
-            english: 'Download CV - English Version'
-        },
-        skills: {
-            title: 'Technical Expertise',
-            subtitle: 'Technologies and tools I use to build scalable and high-quality solutions.',
-            softTitle: 'Core Competencies & Soft Skills',
-            softSkills: {
-                ai: 'Generative AI',
-                comm: 'Communication',
-                team: 'Teamwork',
-                problem: 'Problem Solving',
-                adapt: 'Adaptability',
-                innov: 'Innovation'
-            }
-        },
         projects: {
-            title: 'My Projects',
-            subtitle: 'Explore my most recent work in Full Stack development and Landing Pages.',
-            featuredBadge: 'Featured Portfolio',
-            categories: {
-                all: 'All',
-                fullstack: 'Full Stack',
-                landing: 'Landing'
-            },
-            detail: {
-                viewDetails: 'View Details',
-                exploreInteractive: 'Live Interactive Sandbox',
-                visualSnapshot: 'HD Snapshot',
-                interactiveNotice: 'You can interact, click and test the app right here without leaving the portfolio.',
-                featuresTitle: 'Key Highlights',
-                techTitle: 'Technologies Used',
-                visitSite: 'Visit Website',
-                viewCode: 'Source Code',
-                deviceDesktop: 'Desktop',
-                deviceTablet: 'Tablet',
-                deviceMobile: 'Mobile',
-                close: 'Close',
-                reload: 'Reload',
-                protectedBadge: 'Secure Production Server',
-                protectedDesc: 'Due to X-Frame-Options server security, this web app runs protected in its own secure production environment.',
-                launchLive: 'Launch Full App in New Tab',
-                tryEmbed: 'Try embedded preview'
-            },
             nyg: {
                 desc: 'Full stack sports platform for Club Natación y Gimnasia (Rugby) with live fixtures, standings & admin suite.',
                 longDesc: 'Comprehensive Full Stack digital platform built for Club Natación y Gimnasia, dedicated to rugby operations and tournament administration. Features a high-performance public interface for club members and supporters (real-time news, player rosters, tournament fixtures, and an automated standings engine with offensive and defensive bonus points calculations) alongside an enterprise-grade private Administration Suite protected by JWT authentication via secure httpOnly cookies.',
@@ -206,31 +127,6 @@ export const translations = {
                 ]
             }
         },
-        contact: {
-            title: "Let's build something together!",
-            subtitle: "I'm currently open for new opportunities. Whether you have a question, a project idea, or just want to say hi, feel free to drop a message.",
-            servicesBannerBadge: 'Commercial Platform',
-            servicesBannerTitle: 'Looking to quote a website or system for your business?',
-            servicesBannerDesc: 'Visit my official Services Platform with live interactive mockups and an instant 3-step quote calculator.',
-            servicesBannerBtn: 'Instant Quote Calculator',
-            whatsappCard: 'Direct chat & quick inquiry',
-            servicesCardTitle: 'Web Services Platform',
-            servicesCardSubtitle: 'Catalogue & instant quote calculator',
-            githubCard: 'Check out my repositories',
-            linkedinCard: "Let's connect professionally",
-            formTitle: 'Send a Message',
-            namePlaceholder: 'Your name',
-            emailPlaceholder: 'Your email',
-            messagePlaceholder: 'Your message',
-            btnSending: 'Sending...',
-            btnSend: 'Send Message',
-            alertSuccessTitle: 'Message Sent!',
-            alertSuccessText: "I'll reply as soon as possible.",
-            alertErrorTitle: 'Oops...',
-            alertErrorText: 'There was a problem sending the message.',
-            copyEmail: 'Copy Email',
-            emailCopied: 'Email Copied!'
-        },
         preloader: {
             windowTitle: 'lldp@portfolio: ~ (zsh)',
             command: 'portfolio boot --profile="Lautaro Leal Del Prete"',
@@ -245,93 +141,14 @@ export const translations = {
     es: {
         nav: {
             home: 'Inicio',
-            about: 'Sobre mí',
-            skills: 'Habilidades',
+            services: 'Servicios',
             projects: 'Proyectos',
+            skills: 'Habilidades',
+            education: 'Educación',
+            about: 'Sobre mí',
             contact: 'Contacto'
         },
-        home: {
-            greeting: 'Hola, mi nombre es',
-            name: 'Lautaro Leal Del Prete',
-            titles: [
-                'Desarrollador Full Stack',
-                'Solucionador Creativo de Problemas',
-                'Construyendo Productos Escalables'
-            ],
-            btnWork: 'Ver Trabajos',
-            btnContact: 'Contáctame',
-            btnServices: 'Servicios Web'
-        },
-        about: {
-            title: 'Sobre mí',
-            text1: 'Hola, soy Lautaro Leal Del Prete.',
-            text2: 'Soy graduado en Desarrollo y Calidad de Software con experiencia construyendo aplicaciones web Full Stack.',
-            text3: 'Me enfoco en desarrollar productos escalables, implementar interfaces adaptativas y aplicar las mejores prácticas de desarrollo y metodologías ágiles.',
-            text4: 'Me motiva resolver problemas, integrar APIs REST y optimizar la experiencia del usuario. Siempre listo para asumir nuevos desafíos para mi crecimiento personal y profesional.'
-        },
-        qualifications: {
-            educationTitle: 'Educación',
-            educationList: [
-                {
-                    institution: 'UNSTA — Universidad del Norte Santo Tomás de Aquino',
-                    type: 'Tecnicatura Universitaria',
-                    degree: 'Desarrollo y Calidad de Software',
-                    period: '2024 - 2026'
-                },
-                {
-                    institution: 'Instituto Nexus — SM de Tucumán',
-                    type: 'Formación en Idioma Inglés',
-                    degree: 'Inglés Comunicativo y Exámenes Internacionales',
-                    period: '2025 - Presente'
-                }
-            ],
-            certificationsTitle: 'Mis Certificaciones'
-        },
-        cv: {
-            spanish: 'Descargar CV - Versión Español',
-            english: 'Descargar CV - Versión Inglés'
-        },
-        skills: {
-            title: 'Conocimientos Técnicos',
-            subtitle: 'Tecnologías y herramientas que utilizo para construir soluciones escalables y de alta calidad.',
-            softTitle: 'Competencias & Habilidades Blandas',
-            softSkills: {
-                ai: 'IA Generativa',
-                comm: 'Comunicación',
-                team: 'Trabajo en equipo',
-                problem: 'Resolución de problemas',
-                adapt: 'Adaptabilidad',
-                innov: 'Innovación'
-            }
-        },
         projects: {
-            title: 'Mis Proyectos',
-            subtitle: 'Explora mis trabajos más recientes en desarrollo Full Stack y Landing Pages.',
-            featuredBadge: 'Portafolio Destacado',
-            categories: {
-                all: 'Todos',
-                fullstack: 'Full Stack',
-                landing: 'Landing'
-            },
-            detail: {
-                viewDetails: 'Ver Detalles',
-                exploreInteractive: 'Probar Modo Interactivo',
-                visualSnapshot: 'Captura HD',
-                interactiveNotice: 'Puedes interactuar, hacer clic y probar la aplicación aquí mismo sin salir del portafolio.',
-                featuresTitle: 'Características Principales',
-                techTitle: 'Stack Tecnológico',
-                visitSite: 'Visitar Sitio Web',
-                viewCode: 'Código Fuente',
-                deviceDesktop: 'Escritorio',
-                deviceTablet: 'Tablet',
-                deviceMobile: 'Móvil',
-                close: 'Cerrar',
-                reload: 'Recargar',
-                protectedBadge: 'Servidor Seguro en Producción',
-                protectedDesc: 'Por políticas de seguridad (X-Frame-Options) del servidor, esta aplicación se ejecuta en su propio entorno seguro.',
-                launchLive: 'Lanzar App en Pantalla Completa',
-                tryEmbed: 'Intentar carga embebida'
-            },
             nyg: {
                 desc: 'Plataforma web integral para Club Natación y Gimnasia (Rugby) con fixture, posiciones y panel de administración.',
                 longDesc: 'Plataforma web Full Stack desarrollada para el Club Natación y Gimnasia, enfocada en la gestión deportiva integral de la sección de Rugby. Cuenta con una interfaz pública moderna para socios e hinchas (noticias, planteles oficiales, fixture de partidos y un motor de cálculo de posiciones con puntos bonus ofensivos y defensivos) y un Panel de Administración privado y seguro con autenticación JWT mediante cookies httpOnly para gestionar torneos, partidos y contenidos del club.',
@@ -448,31 +265,6 @@ export const translations = {
                     'Arquitectura ultraligera con 80% de reducción de bundle (58.9 kB JS), carga bajo demanda con requestIdleCallback y optimización GPU para móviles'
                 ]
             }
-        },
-        contact: {
-            title: '¡Construyamos algo juntos!',
-            subtitle: 'Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta, una idea de proyecto o simplemente quieras saludar, no dudes en enviar un mensaje.',
-            servicesBannerBadge: 'Plataforma Comercial',
-            servicesBannerTitle: '¿Buscás cotizar una web o sistema para tu negocio?',
-            servicesBannerDesc: 'Conocé mi plataforma oficial de servicios con mockups interactivos y cotizador en vivo en 3 simples pasos.',
-            servicesBannerBtn: 'Abrir Cotizador en Vivo',
-            whatsappCard: 'Chat directo y consultas rápidas',
-            servicesCardTitle: 'Plataforma de Servicios Web',
-            servicesCardSubtitle: 'Catálogo oficial y cotizador en vivo',
-            githubCard: 'Explora mis repositorios',
-            linkedinCard: 'Conectemos profesionalmente',
-            formTitle: 'Enviar un Mensaje',
-            namePlaceholder: 'Tu nombre',
-            emailPlaceholder: 'Tu correo electrónico',
-            messagePlaceholder: 'Tu mensaje',
-            btnSending: 'Enviando...',
-            btnSend: 'Enviar Mensaje',
-            alertSuccessTitle: '¡Mensaje Enviado!',
-            alertSuccessText: 'Te responderé lo antes posible.',
-            alertErrorTitle: 'Ups...',
-            alertErrorText: 'Hubo un problema al enviar el mensaje.',
-            copyEmail: 'Copiar Correo',
-            emailCopied: '¡Correo Copiado!'
         },
         preloader: {
             windowTitle: 'lldp@portfolio: ~ (zsh)',
