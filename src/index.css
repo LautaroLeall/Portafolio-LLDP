@@ -1,21 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ROOT VARIABLES & GLOBAL ARCHITECTURE (LLDP ENGINEERING) */
+
+:root {
+    --lldp-midnight-navy: #020A15;
+    --lldp-electric-blue: #3B82F6;
+    --lldp-cloud-white: #F5F7FA;
+    --lldp-slate: #94A3B8;
+
+    --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+
+    /* Global Unified Page Clearance for Floating Navbar */
+    --page-top-padding: 120px;
+    --page-bottom-padding: 6rem;
+
+    /* High-Tech Cyber Scrollbar System (Default Dark) */
+    --scrollbar-track: rgba(2, 10, 21, 0.72);
+    --scrollbar-track-border: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb: linear-gradient(180deg, #3b82f6 0%, #06b6d4 50%, #2563eb 100%);
+    --scrollbar-thumb-hover: linear-gradient(180deg, #60a5fa 0%, #22d3ee 50%, #3b82f6 100%);
+    --scrollbar-thumb-active: linear-gradient(180deg, #93c5fd 0%, #38bdf8 50%, #2563eb 100%);
+    --scrollbar-glow: rgba(6, 182, 212, 0.65);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --page-top-padding: 104px;
+        --page-bottom-padding: 4rem;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 var(--scrollbar-track);
+    transition: scrollbar-color 0.4s ease;
 }
 
-body.light {
-    background-color: #f0f6f8;
-    color: #020a15;
-}
-
-body.dark {
-    background-color: #020a15;
-    color: #f0f6f8;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    transition: background-color 0.5s ease, color 0.5s ease;
+    font-family: var(--font-sans);
+    background-color: var(--lldp-midnight-navy);
+    color: var(--lldp-cloud-white);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+html.light,
+body.light {
+    background-color: #f8fafc;
+    color: #0f172a;
+    --scrollbar-track: rgba(241, 245, 249, 0.85);
+    --scrollbar-track-border: rgba(0, 0, 0, 0.07);
+    --scrollbar-thumb: linear-gradient(180deg, #2563eb 0%, #0284c7 50%, #1d4ed8 100%);
+    --scrollbar-thumb-hover: linear-gradient(180deg, #3b82f6 0%, #0ea5e9 50%, #2563eb 100%);
+    --scrollbar-thumb-active: linear-gradient(180deg, #1d4ed8 0%, #0369a1 50%, #1e40af 100%);
+    --scrollbar-glow: rgba(37, 99, 235, 0.45);
+}
+
+html.light * {
+    scrollbar-color: #2563eb var(--scrollbar-track);
+}
+
+html.dark,
+body.dark {
+    background-color: var(--lldp-midnight-navy);
+    color: var(--lldp-cloud-white);
+    --scrollbar-track: rgba(2, 10, 21, 0.72);
+    --scrollbar-track-border: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb: linear-gradient(180deg, #3b82f6 0%, #06b6d4 50%, #2563eb 100%);
+    --scrollbar-thumb-hover: linear-gradient(180deg, #60a5fa 0%, #22d3ee 50%, #3b82f6 100%);
+    --scrollbar-thumb-active: linear-gradient(180deg, #93c5fd 0%, #38bdf8 50%, #2563eb 100%);
+    --scrollbar-glow: rgba(6, 182, 212, 0.65);
+}
+
+/* Custom High-Tech Cyber Scrollbar with Theme Transitions & Glow */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-left: 1px solid var(--scrollbar-track-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    box-shadow: 0 0 10px var(--scrollbar-glow), inset 0 0 4px rgba(255, 255, 255, 0.3);
+    transition: background 0.4s ease, box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-width 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+    border: 1px solid transparent;
+    background-clip: content-box;
+    box-shadow: 0 0 18px var(--scrollbar-glow), 0 0 8px rgba(59, 130, 246, 0.8), inset 0 0 6px rgba(255, 255, 255, 0.7);
+    cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--scrollbar-thumb-active);
+    box-shadow: 0 0 22px var(--scrollbar-glow), inset 0 0 8px rgba(255, 255, 255, 0.85);
+    cursor: grabbing;
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--scrollbar-track);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Scroll Progress Bar */
@@ -24,13 +134,88 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(to right, #78adff, #0d6efd);
+    height: 3px;
+    background: linear-gradient(to right, #3B82F6, #60a5fa, #00f0ff);
     transform-origin: 0%;
     z-index: 10000;
-    box-shadow: 0 2px 10px rgba(13, 110, 253, 0.5);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
 }
 
-.shrink-0 {
-    flex-shrink: 0 !important;
+/* -------------------------------------------------------------------------- */
+/* SILEO TOAST SYSTEM — HIGH-END GLASSMORPHISM & SILKY SMOOTH PHYSICS        */
+/* -------------------------------------------------------------------------- */
+
+[data-sileo-viewport] {
+    font-family: var(--font-sans);
+    z-index: 99999 !important;
+}
+
+[data-sileo-toast] {
+    filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));
+    will-change: transform, opacity, filter;
+}
+
+html.dark [data-sileo-toast] {
+    filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 16px rgba(59, 130, 246, 0.18));
+}
+
+/* Entrada suave sin pop abrupto */
+[data-sileo-viewport][data-position^="top"] [data-sileo-toast]:not([data-ready="true"]) {
+    opacity: 0 !important;
+    transform: translateY(-18px) scale(0.92) !important;
+    filter: blur(6px) !important;
+}
+
+[data-sileo-toast][data-ready="true"] {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    filter: blur(0px) !important;
+    transition:
+        transform 0.48s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.4s ease,
+        filter 0.35s ease,
+        margin-bottom 0.4s ease,
+        margin-top 0.4s ease !important;
+}
+
+/* Salida suave al cerrarse */
+[data-sileo-toast][data-ready="true"][data-exiting="true"] {
+    opacity: 0 !important;
+    transform: translateY(-16px) scale(0.92) !important;
+    filter: blur(8px) !important;
+    pointer-events: none !important;
+    transition:
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.38s ease,
+        filter 0.35s ease !important;
+}
+
+/* Salida fluida y difuminada al navegar o cambiar de página */
+[data-sileo-viewport].sileo-route-exit [data-sileo-toast] {
+    opacity: 0 !important;
+    transform: translateY(-16px) scale(0.92) !important;
+    filter: blur(8px) !important;
+    pointer-events: none !important;
+    transition:
+        opacity 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.32s ease !important;
+}
+
+[data-sileo-toast]:hover {
+    transform: translateY(-2px) scale(1.01) !important;
+}
+
+[data-sileo-title] {
+    font-family: var(--font-sans);
+    font-weight: 700 !important;
+    font-size: 0.86rem !important;
+    letter-spacing: -0.01em;
+}
+
+[data-sileo-description] {
+    font-family: var(--font-sans);
+    font-size: 0.77rem !important;
+    line-height: 1.4 !important;
+    opacity: 0.85;
 }
