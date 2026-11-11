@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /projects/
+Allow: /projects-mobile/
+Allow: /certifications/
+Allow: /Logo_LLDP.png
+Allow: /Lautaro-Leal-Del-Prete-Spanish.pdf
+Allow: /Lautaro-Leal-Del-Prete-English.pdf
 
-Sitemap: https://portafolio-lldp.vercel.app/sitemap.xml
+Sitemap: https://lautarolealdev.com/sitemap.xml
