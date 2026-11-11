@@ -1,11 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- 01. Home -->
   <url>
-    <loc>https://portafolio-lldp.vercel.app/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://lautarolealdev.com/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://portafolio-lldp.vercel.app/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://portafolio-lldp.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lautarolealdev.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lautarolealdev.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lautarolealdev.com/" />
+    <image:image>
+      <image:loc>https://lautarolealdev.com/Logo_LLDP.png</image:loc>
+      <image:title>Lautaro Leal Del Prete — Logo Oficial</image:title>
+      <image:caption>Portafolio oficial de Lautaro Leal Del Prete, Desarrollador Full Stack</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 02. Servicios -->
+  <url>
+    <loc>https://lautarolealdev.com/servicios</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 03. Proyectos -->
+  <url>
+    <loc>https://lautarolealdev.com/proyectos</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Proyectos individuales (Casos de Estudio) -->
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/natacion-y-gimnasia</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/nutrioliva</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/nova-setup</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/confia-car</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/fleeswap</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/servicios-lldp</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/mym-decoraciones</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/levels-gym</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/cesar-aparicio-estilista</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/bga-habilitaciones</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lautarolealdev.com/proyectos/krauft-inmobiliaria</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 04. Habilidades -->
+  <url>
+    <loc>https://lautarolealdev.com/habilidades</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 05. Educacion -->
+  <url>
+    <loc>https://lautarolealdev.com/educacion</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 06. Sobre Mi -->
+  <url>
+    <loc>https://lautarolealdev.com/sobre-mi</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 07. Contacto -->
+  <url>
+    <loc>https://lautarolealdev.com/contacto</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
