@@ -4,7 +4,7 @@ import { translations } from '../translations/dictionary';
 
 export const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState(() => {
-        return localStorage.getItem('language') || 'en';
+        return localStorage.getItem('language') || 'es';
     });
 
     useEffect(() => {
