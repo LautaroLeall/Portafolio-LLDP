@@ -1,0 +1,108 @@
+/* CUSTOM CURSOR SYSTEM */
+.custom-cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999999;
+    overflow: hidden;
+}
+
+.custom-cursor-dot {
+    position: fixed;
+    top: -4px;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    background-color: #3B82F6;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform, opacity, scale;
+    scale: 1;
+    transition: scale 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+        width 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+        height 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+        background-color 0.2s ease;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+}
+
+.custom-cursor-dot.hovered {
+    opacity: 0.3;
+    transform-origin: center;
+}
+
+.custom-cursor-dot.cursor-hidden {
+    opacity: 0 !important;
+    scale: 0 !important;
+    pointer-events: none !important;
+}
+
+.custom-cursor-ring {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid rgba(59, 130, 246, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform, opacity, scale;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 1;
+    transition: scale 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.24s ease,
+        background-color 0.24s ease;
+    background-color: rgba(59, 130, 246, 0.04);
+    backdrop-filter: blur(1px);
+}
+
+.custom-cursor-ring.cursor-hidden {
+    opacity: 0 !important;
+    scale: 0.2 !important;
+    pointer-events: none !important;
+}
+
+.custom-cursor-ring.hovered {
+    width: 58px;
+    height: 58px;
+    top: -29px;
+    left: -29px;
+    border-color: rgba(59, 130, 246, 0.9);
+    background-color: rgba(59, 130, 246, 0.12);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
+}
+
+.custom-cursor-ring.view {
+    width: 72px;
+    height: 72px;
+    top: -36px;
+    left: -36px;
+    border-color: rgba(96, 165, 250, 0.9);
+    background-color: rgba(2, 10, 21, 0.85);
+    border-width: 1.5px;
+}
+
+.cursor-label {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+@media (pointer: coarse),
+(hover: none) {
+    .custom-cursor-container {
+        display: none !important;
+    }
+}

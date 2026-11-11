@@ -1,0 +1,168 @@
+.aurora-mesh-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    --cursor-x: 50%;
+    --cursor-y: 25%;
+}
+
+.aurora-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.42;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.aurora-mesh-bg.is-light .aurora-orb {
+    opacity: 0.22;
+    filter: blur(110px);
+}
+
+.orb-cyan {
+    width: 52vw;
+    height: 52vw;
+    max-width: 680px;
+    max-height: 680px;
+    top: -14%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.42) 0%, rgba(6, 182, 212, 0) 70%);
+    animation: floatOrbOne 22s ease-in-out infinite alternate;
+}
+
+.orb-indigo {
+    width: 48vw;
+    height: 48vw;
+    max-width: 640px;
+    max-height: 640px;
+    top: 12%;
+    right: -12%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.38) 0%, rgba(139, 92, 246, 0) 70%);
+    animation: floatOrbTwo 26s ease-in-out infinite alternate;
+}
+
+.orb-emerald {
+    width: 44vw;
+    height: 44vw;
+    max-width: 580px;
+    max-height: 580px;
+    bottom: -15%;
+    left: 22%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.26) 0%, rgba(16, 185, 129, 0) 70%);
+    animation: floatOrbThree 24s ease-in-out infinite alternate;
+}
+
+.orb-cursor {
+    width: 520px;
+    height: 520px;
+    left: var(--cursor-x);
+    top: var(--cursor-y);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.13) 0%, rgba(99, 102, 241, 0.05) 45%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.9;
+    transition: left 0.25s ease-out, top 0.25s ease-out;
+}
+
+@keyframes floatOrbOne {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(6%, 8%) scale(1.08);
+    }
+}
+
+@keyframes floatOrbTwo {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-7%, 6%) scale(1.06);
+    }
+}
+
+@keyframes floatOrbThree {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(5%, -7%) scale(1.1);
+    }
+}
+
+/* Architectural Studio Grid */
+.architectural-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 35%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 35%, transparent 100%);
+}
+
+.aurora-mesh-bg.is-light .architectural-grid {
+    background-image:
+        linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+.aurora-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 55%, rgba(6, 7, 11, 0.55) 100%);
+}
+
+.aurora-mesh-bg.is-light .aurora-vignette {
+    background: radial-gradient(circle at 50% 50%, transparent 65%, rgba(241, 245, 249, 0.6) 100%);
+}
+
+/* OPTIMIZACIÓN CRÍTICA PARA DISPOSITIVOS MÓVILES (iOS / Android) */
+@media (max-width: 768px),
+(hover: none) {
+    .aurora-orb {
+        filter: blur(48px);
+        opacity: 0.36;
+    }
+
+    .aurora-mesh-bg.is-light .aurora-orb {
+        filter: blur(52px);
+        opacity: 0.20;
+    }
+
+    .orb-cyan {
+        width: 75vw;
+        height: 75vw;
+        animation-duration: 36s;
+    }
+
+    .orb-indigo {
+        width: 70vw;
+        height: 70vw;
+        animation-duration: 40s;
+    }
+
+    .orb-emerald {
+        width: 65vw;
+        height: 65vw;
+        animation-duration: 38s;
+    }
+
+    /* Ocultar orb-cursor en pantallas táctiles para ahorrar 100% de GPU */
+    .orb-cursor {
+        display: none !important;
+    }
+
+    .architectural-grid {
+        background-size: 48px 48px;
+    }
+}
