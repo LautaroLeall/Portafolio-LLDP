@@ -4,14 +4,17 @@ import {
   ShieldAlert,
   FlaskConical,
   Kanban,
-  Gauge
+  Gauge,
+  Boxes
 } from 'lucide-react';
 import {
   SiReact,
   SiTailwindcss,
   SiJavascript,
   SiFramer,
+  SiThreedotjs,
   SiNodedotjs,
+  SiSocketdotio,
   SiPostgresql,
   SiMongodb,
   SiSupabase,
@@ -69,12 +72,28 @@ export const getSkillDomains = (isEs = true) => [
           : 'Asynchronous programming, promises, async/await, structured data manipulation, closures, and efficient DOM interaction.'
       },
       {
+        name: 'Zustand (State Management)',
+        icon: Boxes,
+        iconColor: 'text-amber-500',
+        detail: isEs
+          ? 'Gestión de estado global reactivo y ligero sin boilerplate, persistencia selectiva y resguardo de tokens de acceso en memoria contra ataques XSS.'
+          : 'Lightweight reactive global state management without boilerplate, selective persistence, and in-memory access token storage against XSS.'
+      },
+      {
         name: 'Framer Motion',
         icon: SiFramer,
         iconColor: 'text-[#0055ff]',
         detail: isEs
           ? 'Micro-interacciones táctiles, transiciones de pantalla con físicas fluidas y animaciones aceleradas por GPU.'
           : 'Tactile micro-interactions, spring-based UI transitions, and GPU-accelerated motion choreography.'
+      },
+      {
+        name: 'Three.js & WebGL',
+        icon: SiThreedotjs,
+        iconColor: 'text-cyan-500',
+        detail: isEs
+          ? 'Renderizado 3D interactivo en el navegador, geometrías espaciales, sistemas de partículas e iluminación acelerada por hardware con paralaje.'
+          : 'Interactive browser 3D rendering, spatial geometries, particle systems, and hardware-accelerated studio lighting with mouse parallax.'
       },
       {
         name: 'Diseño Responsive Fluido',
@@ -101,6 +120,14 @@ export const getSkillDomains = (isEs = true) => [
         detail: isEs
           ? 'Servicios backend organizados en capas (controladores, servicios y modelos), enrutamiento semántico y middlewares personalizados.'
           : 'Layered backend services (controllers, services, repositories), semantic routing, and custom middleware pipelines.'
+      },
+      {
+        name: 'Socket.IO (WebSockets)',
+        icon: SiSocketdotio,
+        iconColor: 'text-slate-900 dark:text-white',
+        detail: isEs
+          ? 'Comunicación bidireccional en tiempo real, salas privadas aisladas por operación o reserva, notificaciones en vivo y sincronización instantánea.'
+          : 'Real-time bidirectional communication, isolated private rooms per booking or trade, live notifications, and instant state synchronization.'
       },
       {
         name: 'JWT & Autenticación Segura',
@@ -171,7 +198,7 @@ export const getSkillDomains = (isEs = true) => [
       : 'Engineering discipline acquired during formal university education at UNSTA, ensuring stability, strict typing, and organized development.',
     skills: [
       {
-        name: 'Validación en Capas (Zod / Joi)',
+        name: 'Validación en Capas',
         icon: SiZod,
         iconColor: 'text-[#3068b7]',
         detail: isEs
@@ -179,12 +206,12 @@ export const getSkillDomains = (isEs = true) => [
           : 'Strict data validation at API entry points, protecting databases against invalid or malicious inputs.'
       },
       {
-        name: 'Testing & Verificación',
+        name: 'Testing & QA',
         icon: FlaskConical,
         iconColor: 'text-indigo-500',
         detail: isEs
-          ? 'Pruebas de endpoints, verificación de contratos de API y aserciones de lógica crítica de negocio.'
-          : 'Endpoint testing, API contract verification, and business logic assertions.'
+          ? 'Pruebas E2E y unitarias con Cypress, Mocha y Chai, verificación de contratos de API y aserciones automatizadas de lógica crítica de negocio.'
+          : 'E2E and unit testing with Cypress, Mocha & Chai, API contract verification, and automated assertions for critical business logic.'
       },
       {
         name: 'Metodología Ágil (Scrum)',

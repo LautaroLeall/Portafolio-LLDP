@@ -42,7 +42,7 @@ const heroItemVariants = {
 };
 
 export default function HomePage() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const isEs = language === 'es';
   const featuredProjects = projectList.slice(0, 4);
 
@@ -251,7 +251,7 @@ export default function HomePage() {
                       <span className="truncate">{project.title}</span>
                       <ArrowUpRight size={18} className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-blue-600 dark:text-cyan-400 shrink-0" />
                     </Link>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 truncate">{project.title} • {project.category}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">{t(project.descriptionKey)}</p>
                   </div>
                 </div>
 

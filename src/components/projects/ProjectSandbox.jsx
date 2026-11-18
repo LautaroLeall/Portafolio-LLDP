@@ -19,6 +19,10 @@ export default function ProjectSandbox({ project, isEs }) {
   const [iframeKey, setIframeKey] = useState(0);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
+  useEffect(() => {
+    setIframeLoaded(false);
+  }, [project.demo]);
+
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 1200
   );
