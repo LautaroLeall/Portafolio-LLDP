@@ -163,11 +163,11 @@ function App() {
 
     if (path === '/') {
       pageTitle = isEs
-        ? `${baseTitle} | Desarrollador Full Stack & Software Engineer`
-        : `${baseTitle} | Full Stack Developer & Software Engineer`;
+        ? `${baseTitle} | Desarrollo Web & Software — Tucumán`
+        : `${baseTitle} | Full Stack Web & Software Engineer`;
       pageDescription = isEs
-        ? 'Portafolio de Lautaro Leal Del Prete. Desarrollador Full Stack & Software Engineer (UNSTA): React 19, Node.js, PostgreSQL, MongoDB y proyectos en vivo.'
-        : 'Portfolio of Lautaro Leal Del Prete. Full Stack Developer & Software Engineer (UNSTA) building scalable apps with React 19, Node.js, PostgreSQL & MongoDB.';
+        ? 'Lautaro Leal Del Prete: Desarrollo Web y Software a medida en Tucumán, Argentina. Full Stack con React 19, Node.js, PostgreSQL y MongoDB.'
+        : 'Lautaro Leal Del Prete: Custom Web Development and Software Engineering. Full Stack apps with React 19, Node.js, PostgreSQL & MongoDB.';
     } else if (path === '/servicios') {
       pageTitle = isEs
         ? `Servicios & Cotizador Interactivo | ${baseTitle}`
