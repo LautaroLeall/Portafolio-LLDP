@@ -4,6 +4,7 @@ Allow: /projects/
 Allow: /projects-mobile/
 Allow: /certifications/
 Allow: /Logo_LLDP.png
+Allow: /og-banner.png
 Allow: /Lautaro-Leal-Del-Prete-Spanish.pdf
 Allow: /Lautaro-Leal-Del-Prete-English.pdf
 
