@@ -3,7 +3,7 @@
 Plataforma profesional de **Ingeniería de Software & Full Stack Development** desarrollada con **React 19 + Vite 7**, arquitectura multi-página con **React Router DOM v7**, estilizado utilitario de vanguardia con **Tailwind CSS v3**, renderizado 3D interactivo en **Three.js (WebGL)**, scroll inercial suave con **Lenis**, soporte bilingüe completo (**ES / EN**), catálogo modular de servicios con **cotizador interactivo de proyectos** y visor de casos de estudio con **Live Sandbox** y adaptación multipantalla.
 
 [![Plataforma Oficial LLDP](https://img.shields.io/badge/lautarolealdev.com-En%20Vivo-020A15?style=for-the-badge&logo=vercel&logoColor=3B82F6&labelColor=020A15)](https://lautarolealdev.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lautaro-leal-del-prete-32a249339/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lauldp)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LautaroLeall)
 
 ---
@@ -82,46 +82,50 @@ Portafolio-LLDP/
 ├── public/
 │   ├── brand/                      # Logotipos y monogramas vectoriales oficiales LLDP
 │   ├── certifications/             # Certificados oficiales (PDF y PNG de alta resolución)
-│   ├── projects/                   # Capturas Desktop oficiales de casos de estudio
-│   ├── projects-mobile/            # Capturas Mobile responsive
+│   ├── projects/                   # Capturas Desktop oficiales de casos de estudio (.webp)
+│   ├── projects-mobile/            # Capturas Mobile responsive (.webp)
 │   ├── Lautaro-Leal-Del-Prete-English.pdf
 │   ├── Lautaro-Leal-Del-Prete-Spanish.pdf
 │   ├── Logo_LLDP.png               # Isotipo oficial de alta definición
 │   ├── Logo_LLDP.svg               # Isotipo vectorial escalable
+│   ├── og-banner.png               # Tarjeta panorámica Open Graph (1200x630)
 │   ├── favicon.ico
 │   ├── robots.txt
 │   └── sitemap.xml
 ├── src/
 │   ├── components/
-│   │   ├── about/                  # Módulos específicos de Sobre Mí
+│   │   ├── about/                  # Módulos específicos de Sobre Mí (Dossier3DCard)
 │   │   ├── contact/                # Canales y formulario de contacto
 │   │   ├── layout/                 # Componentes estructurales globales
-│   │   │   ├── Footer.jsx          # Pie institucional con enlaces y estado SSL
+│   │   │   ├── Footer.jsx          # Pie institucional con enlaces y scroll to top
 │   │   │   ├── Navbar.jsx          # Barra HUD flotante de cristal con drawer móvil
 │   │   │   ├── ScrollToTop.jsx     # Reset y sincronización de scroll entre rutas
 │   │   │   └── SmoothScroll.jsx    # Envoltorio de scroll inercial Lenis
 │   │   ├── projects/               # Componentes del visor de proyectos y Sandbox
 │   │   ├── services/               # Ecosistema de servicios y cotización
-│   │   │   ├── mockups/            # Mockups interactivos de software
-│   │   │   ├── mockupsData.js      # Definición de datos y consolas interactivas
 │   │   │   ├── QuoteStepServices.jsx # Paso 1: Selección de Especialidad
 │   │   │   ├── QuoteStepOptions.jsx  # Paso 2: Configuración Técnica & Select Personalizado
-│   │   │   ├── QuoteWizard.jsx     # Orquestador del Cotizador Interactivo & Dossier
-│   │   │   ├── ServiceMockup.jsx   # Envoltorio de mockup
-│   │   │   └── ServiceMockupCard.jsx # Tarjeta modular unificada de mockup
+│   │   │   ├── QuoteStepContact.jsx  # Paso 3: Dossier Ejecutivo & Formulario Validado
+│   │   │   ├── QuoteWizard.jsx     # Orquestador del Cotizador Interactivo en 3 Pasos
+│   │   │   ├── ServiceMockup.jsx   # Dispatcher modular de mockups
+│   │   │   └── ServiceMockupCard.jsx # Tarjeta modular unificada de consola interactiva
 │   │   └── ui/
 │   │       ├── AuroraMeshBackground.jsx # Gradiente dinámico de fondo por GPU
 │   │       ├── CustomCursor.jsx    # Cursor de física magnética para desktop
+│   │       ├── HeroCode3DCanvas.jsx # Símbolo 3D interactivo </> en Three.js WebGL
 │   │       ├── LogoLLDP.jsx        # Componente oficial de identidad corporativa
+│   │       ├── NotFound3DCanvas.jsx # Artefacto 3D interactivo para vista 404
 │   │       ├── PageLoader.jsx      # Indicador láser minimalista superior
 │   │       ├── PagesHero3D.jsx     # Render 3D interactivo en Three.js WebGL
 │   │       └── Preloader.jsx       # Consola de booteo Unix inicial
 │   ├── context/                    # Providers globales (Theme, Language, Loader)
 │   ├── data/
+│   │   ├── mockupsData.js          # Definición de datos y consolas interactivas
 │   │   ├── pricingData.js          # Preguntas, opciones y adicionales por especialidad
 │   │   ├── projectsData.jsx        # Catálogo centralizado de proyectos y stacks
-│   │   └── servicesData.js         # Catálogo de servicios y generador de URL WhatsApp
-│   ├── hooks/                      # Custom Hooks (useTheme, useLanguage, usePageLoader)
+│   │   ├── servicesData.js         # Catálogo de servicios y generador de URL WhatsApp
+│   │   └── skillsData.js           # Dominios técnicos y matriz de habilidades
+│   ├── hooks/                      # Custom Hooks (useTheme, useLanguage, usePageLoader, useQuoteWizard)
 │   ├── pages/                      # Vistas principales de la aplicación (React.lazy)
 │   │   ├── AboutPage.jsx           # Perfil Profesional & Filosofía de Ingeniería
 │   │   ├── ContactPage.jsx         # Formulario EmailJS & Canales Directos
@@ -136,14 +140,17 @@ Portafolio-LLDP/
 │   │   └── emailService.js         # Servicio centralizado de EmailJS con metadatos
 │   ├── translations/
 │   │   └── dictionary.js           # Diccionario bilingüe (ES / EN)
-│   ├── App.jsx                     # Enrutador central con PageTransition y Suspense
+│   ├── utils/
+│   │   ├── languageTypingTransition.js # Motor de transición de tipeo al cambiar idioma
+│   │   └── quoteValidation.js      # Sanitización telefónica, validaciones y constructor de brief
+│   ├── App.jsx                     # Enrutador central con SEO dinámico, PageTransition y Suspense
 │   ├── index.css                   # Directivas Tailwind, tokens de color y utilidades
 │   └── main.jsx                    # Punto de entrada de la aplicación
 ├── .env.example                    # Plantilla de variables de entorno requeridas
-├── index.html                      # SEO, Open Graph y JSON-LD estructurado
+├── index.html                      # SEO, Open Graph, <noscript> y JSON-LD estructurado
 ├── tailwind.config.js              # Configuración y extensión de tema Tailwind
 ├── vercel.json                     # Cabeceras de seguridad, caché perimetral y rewrites SPA
-└── vite.config.js                  # Configuración de compilación y optimización de chunks
+└── vite.config.js                  # Configuración de compilación, chunks y auto-sitemap
 ```
 
 ---
