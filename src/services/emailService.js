@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import { CONTACT_INFO } from '../data/servicesData';
 
 export const EMAILJS_CONFIG = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_y9njvrc',
@@ -48,7 +49,7 @@ export async function sendContactEmail({
     // Telefonos
     phone: phone && phone.trim() ? phone.trim() : 'No especificado',
     user_phone: phone && phone.trim() ? phone.trim() : 'No especificado',
-    whatsapp_url: cleanPhone ? `https://wa.me/${cleanPhone}` : 'https://wa.me/5491121852002',
+    whatsapp_url: cleanPhone ? `https://wa.me/${cleanPhone}` : `https://wa.me/${CONTACT_INFO.whatsappNumber}`,
     // Asunto y Servicio
     service: service.trim(),
     project_service: service.trim(),
