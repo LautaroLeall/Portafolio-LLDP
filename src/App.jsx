@@ -27,6 +27,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 import { useTheme } from './hooks/useTheme';
 import { useLanguage } from './hooks/useLanguage';
 import { usePageLoader } from './hooks/usePageLoader';
+import { projectList } from './data/projectsData';
 
 /**
  * RouteSuspenseFallback — Sincroniza el loader global y el ocultamiento del Footer
@@ -90,10 +91,34 @@ function PageTransition({ children }) {
 
 function App() {
   const { theme } = useTheme();
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const { isPageLoading } = usePageLoader();
-  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+
+  // Mostrar Preloader solo en la primera carga de la sesión en la portada (/)
+  const [isLoading, setIsLoading] = useState(() => {
+    try {
+      if (sessionStorage.getItem('lldp_preloader_shown') === '1') {
+        return false;
+      }
+      if (window.location.pathname !== '/') {
+        sessionStorage.setItem('lldp_preloader_shown', '1');
+        return false;
+      }
+      return true;
+    } catch {
+      return true;
+    }
+  });
+
+  const handlePreloaderComplete = () => {
+    try {
+      sessionStorage.setItem('lldp_preloader_shown', '1');
+    } catch {
+      // Ignore storage restrictions
+    }
+    setIsLoading(false);
+  };
 
   const validStaticRoutes = [
     '/',
@@ -104,7 +129,13 @@ function App() {
     '/sobre-mi',
     '/contacto'
   ];
-  const isProjectDetail = /^\/proyectos\/[^/]+$/.test(location.pathname);
+  const slugMatch = location.pathname.startsWith('/proyectos/')
+    ? location.pathname.replace('/proyectos/', '').replace(/\/+$/, '')
+    : null;
+  const matchedProject = slugMatch
+    ? projectList.find((p) => p.slug === slugMatch || p.id === slugMatch)
+    : null;
+  const isProjectDetail = Boolean(matchedProject);
   const isNotFound = !validStaticRoutes.includes(location.pathname) && !isProjectDetail;
   const hideNavbarAndFooter = isProjectDetail || isNotFound;
 
@@ -119,53 +150,102 @@ function App() {
     document.documentElement.lang = language;
   }, [language]);
 
-  // Actualización dinámica de títulos por ruta para indexación SEO e historial
+  // Actualización dinámica integral de SEO (Title, Description, Canonical, Open Graph, Twitter y Robots)
   useEffect(() => {
     const isEs = language === 'es';
     const path = location.pathname;
     const baseTitle = 'Lautaro Leal Del Prete';
+    const baseUrl = 'https://lautarolealdev.com';
+
+    let pageTitle = '';
+    let pageDescription = '';
+    let canonicalUrl = `${baseUrl}${path === '/' ? '/' : path.replace(/\/+$/, '')}`;
 
     if (path === '/') {
-      document.title = isEs
+      pageTitle = isEs
         ? `${baseTitle} | Desarrollador Full Stack & Software Engineer`
         : `${baseTitle} | Full Stack Developer & Software Engineer`;
+      pageDescription = isEs
+        ? 'Portafolio oficial de Lautaro Leal Del Prete (Lautaro Leal). Desarrollador Full Stack y Software Engineer (UNSTA) especializado en React 19, Node.js, Express, PostgreSQL, Supabase y MongoDB.'
+        : 'Official portfolio of Lautaro Leal Del Prete (Lautaro Leal). Full Stack Developer and Software Engineer (UNSTA) specialized in React 19, Node.js, Express, PostgreSQL, Supabase, and MongoDB.';
     } else if (path === '/servicios') {
-      document.title = isEs
+      pageTitle = isEs
         ? `Servicios & Cotizador Interactivo | ${baseTitle}`
         : `Services & Instant Quoter | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'Desarrollo de Páginas Web, Sistemas de Gestión a medida, Tiendas Online (E-Commerce), Invitaciones Digitales y Optimización SEO. Cotizá tu proyecto en tiempo real.'
+        : 'Custom Websites, Management Systems, Online Stores (E-Commerce), Digital Invitations, and SEO Optimization. Quote your software project interactively.';
     } else if (path === '/proyectos') {
-      document.title = isEs
+      pageTitle = isEs
         ? `Proyectos & Casos de Estudio | ${baseTitle}`
         : `Projects & Case Studies | ${baseTitle}`;
-    } else if (path.startsWith('/proyectos/')) {
-      const slug = path.replace('/proyectos/', '');
-      const projectTitle = slug
-        .split('-')
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-        .join(' ');
-      document.title = `${projectTitle} | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'Catálogo de 11 proyectos verificables en producción: sistemas Full Stack con React 19, Node.js, PostgreSQL, MongoDB, pagos con Mercado Pago y WebSockets en tiempo real.'
+        : 'Showcase of 11 verifiable production projects: Full Stack platforms built with React 19, Node.js, PostgreSQL, MongoDB, Mercado Pago checkout, and real-time WebSockets.';
+    } else if (matchedProject) {
+      pageTitle = `${matchedProject.title} — ${isEs ? 'Caso de Estudio' : 'Case Study'} | ${baseTitle}`;
+      pageDescription = t(matchedProject.descriptionKey);
+      canonicalUrl = `${baseUrl}/proyectos/${matchedProject.slug}`;
     } else if (path === '/habilidades') {
-      document.title = isEs
+      pageTitle = isEs
         ? `Stack Tecnológico & Habilidades | ${baseTitle}`
         : `Tech Stack & Engineering Skills | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'Matriz técnica de ingeniería: React 19, Zustand, Three.js, Tailwind CSS, Node.js, Express, PostgreSQL, Supabase, MongoDB, Socket.IO, Zod y Testing QA (Cypress, Mocha & Chai).'
+        : 'Engineering skills matrix: React 19, Zustand, Three.js, Tailwind CSS, Node.js, Express, PostgreSQL, Supabase, MongoDB, Socket.IO, Zod, and QA Testing (Cypress, Mocha & Chai).';
     } else if (path === '/educacion') {
-      document.title = isEs
+      pageTitle = isEs
         ? `Educación & Certificaciones | ${baseTitle}`
         : `Education & Verified Credentials | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'Trayectoria académica en la Universidad del Norte Santo Tomás de Aquino (UNSTA), formación en inglés técnico, certificaciones verificables y descarga de CV en PDF.'
+        : 'Academic degree in Software Development & Quality Assurance at UNSTA, technical English training, verifiable certifications, and official PDF resume download.';
     } else if (path === '/sobre-mi') {
-      document.title = isEs
+      pageTitle = isEs
         ? `Sobre Mí & Filosofía de Ingeniería | ${baseTitle}`
         : `About Me & Engineering Philosophy | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'Perfil profesional de Lautaro Leal Del Prete: principios de arquitectura limpia, calidad de software (QA UNSTA), seguridad de datos y desarrollo Full Stack desde Tucumán, Argentina.'
+        : 'Professional profile of Lautaro Leal Del Prete: clean architecture principles, software quality assurance (UNSTA), data security, and Full Stack development from Argentina.';
     } else if (path === '/contacto') {
-      document.title = isEs
+      pageTitle = isEs
         ? `Contacto & Propuestas de Software | ${baseTitle}`
         : `Contact & Software Inquiries | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'Canales directos de contacto con Lautaro Leal Del Prete: formulario con despacho automático, WhatsApp directo, LinkedIn y GitHub. Respuestas en menos de 24 horas.'
+        : 'Direct contact channels with Lautaro Leal Del Prete: automated inquiry form, direct WhatsApp, LinkedIn, and GitHub. Replies within 24 hours.';
     } else {
-      document.title = isEs
+      pageTitle = isEs
         ? `Página no encontrada (404) | ${baseTitle}`
         : `Page Not Found (404) | ${baseTitle}`;
+      pageDescription = isEs
+        ? 'La ruta solicitada no existe o ha sido reubicada en lautarolealdev.com.'
+        : 'The requested route does not exist or has been relocated on lautarolealdev.com.';
     }
-  }, [location.pathname, language]);
+
+    document.title = pageTitle;
+
+    const setMetaTag = (selector, attr, value) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+
+    setMetaTag('meta[name="title"]', 'content', pageTitle);
+    setMetaTag('meta[name="description"]', 'content', pageDescription);
+    setMetaTag('link[rel="canonical"]', 'href', canonicalUrl);
+    setMetaTag('meta[property="og:title"]', 'content', pageTitle);
+    setMetaTag('meta[property="og:description"]', 'content', pageDescription);
+    setMetaTag('meta[property="og:url"]', 'content', canonicalUrl);
+    setMetaTag('meta[name="twitter:title"]', 'content', pageTitle);
+    setMetaTag('meta[name="twitter:description"]', 'content', pageDescription);
+    setMetaTag('meta[name="twitter:url"]', 'content', canonicalUrl);
+
+    const robotsDirective = isNotFound
+      ? 'noindex, nofollow'
+      : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+    setMetaTag('meta[name="robots"]', 'content', robotsDirective);
+    setMetaTag('meta[name="googlebot"]', 'content', robotsDirective);
+  }, [location.pathname, language, matchedProject, isNotFound, t]);
 
   // Desvanece con animación suave cualquier notificación de Sileo activa al cambiar de ruta
   useEffect(() => {
@@ -200,9 +280,9 @@ function App() {
         {/* Global Page Transition & Async Loader */}
         <PageLoader />
 
-        {/* Preloader with Smooth Terminal Exit (Solo en el arranque inicial) */}
+        {/* Preloader with Smooth Terminal Exit (Solo en el arranque inicial de sesión) */}
         <AnimatePresence mode="wait">
-          {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+          {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
         </AnimatePresence>
 
         {/* Top Scroll Progress Indicator */}
