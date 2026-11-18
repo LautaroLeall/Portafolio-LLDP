@@ -128,11 +128,17 @@ export default function PagesHero3D({ className = '', style = {} }) {
       window.addEventListener('resize', handleResize);
     }
 
-    // Animation Loop
-    let animId;
+    // Animation Loop (Paused automatically when out of viewport or tab hidden)
+    let animId = null;
+    let isVisible = true;
     const startTime = performance.now();
 
     const animate = () => {
+      if (!isVisible || document.hidden) {
+        animId = null;
+        return;
+      }
+
       const elapsedTime = (performance.now() - startTime) * 0.001;
 
       // Continuous autonomous counter-rotations
@@ -155,11 +161,40 @@ export default function PagesHero3D({ className = '', style = {} }) {
       animId = requestAnimationFrame(animate);
     };
 
-    animate();
+    const startLoop = () => {
+      if (!animId && isVisible && !document.hidden) {
+        animId = requestAnimationFrame(animate);
+      }
+    };
+
+    let intersectionObserver = null;
+    if (typeof IntersectionObserver !== 'undefined') {
+      intersectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isVisible = entry.isIntersecting;
+            if (isVisible) startLoop();
+          });
+        },
+        { threshold: 0.01 }
+      );
+      intersectionObserver.observe(container);
+    }
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden && isVisible) {
+        startLoop();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    startLoop();
 
     // Clean up
     return () => {
-      cancelAnimationFrame(animId);
+      if (animId) cancelAnimationFrame(animId);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (intersectionObserver) intersectionObserver.disconnect();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
       if (resizeObserver) {
