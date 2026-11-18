@@ -21,17 +21,31 @@ export default function ProjectsPage() {
   ];
 
   const filteredProjects = useMemo(() => {
+    const normalizeText = (str = '') =>
+      str
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[.\-_]/g, '');
+
+    const normalizedQuery = normalizeText(searchTerm.trim());
+
     return projectList.filter((project) => {
       const matchesCategory =
         selectedCategory === 'All' || project.category === selectedCategory;
+      if (!normalizedQuery) return matchesCategory;
+
+      const descText = t(project.descriptionKey) || '';
       const matchesSearch =
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        normalizeText(project.title).includes(normalizedQuery) ||
+        normalizeText(project.category).includes(normalizedQuery) ||
+        normalizeText(descText).includes(normalizedQuery) ||
         project.techs.some((tech) =>
-          tech.toLowerCase().includes(searchTerm.toLowerCase())
+          normalizeText(tech).includes(normalizedQuery)
         );
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchTerm]);
+  }, [selectedCategory, searchTerm, t]);
 
   return (
     <div className="w-full min-h-screen pt-28 sm:pt-32 pb-28 text-slate-900 dark:text-slate-100 transition-colors duration-300 relative overflow-x-hidden">
