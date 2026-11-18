@@ -166,22 +166,22 @@ function App() {
         ? `${baseTitle} | Desarrollador Full Stack & Software Engineer`
         : `${baseTitle} | Full Stack Developer & Software Engineer`;
       pageDescription = isEs
-        ? 'Portafolio oficial de Lautaro Leal Del Prete (Lautaro Leal). Desarrollador Full Stack y Software Engineer (UNSTA) especializado en React 19, Node.js, Express, PostgreSQL, Supabase y MongoDB.'
-        : 'Official portfolio of Lautaro Leal Del Prete (Lautaro Leal). Full Stack Developer and Software Engineer (UNSTA) specialized in React 19, Node.js, Express, PostgreSQL, Supabase, and MongoDB.';
+        ? 'Portafolio de Lautaro Leal Del Prete. Desarrollador Full Stack & Software Engineer (UNSTA): React 19, Node.js, PostgreSQL, MongoDB y proyectos en vivo.'
+        : 'Portfolio of Lautaro Leal Del Prete. Full Stack Developer & Software Engineer (UNSTA) building scalable apps with React 19, Node.js, PostgreSQL & MongoDB.';
     } else if (path === '/servicios') {
       pageTitle = isEs
         ? `Servicios & Cotizador Interactivo | ${baseTitle}`
         : `Services & Instant Quoter | ${baseTitle}`;
       pageDescription = isEs
-        ? 'Desarrollo de Páginas Web, Sistemas de Gestión a medida, Tiendas Online (E-Commerce), Invitaciones Digitales y Optimización SEO. Cotizá tu proyecto en tiempo real.'
-        : 'Custom Websites, Management Systems, Online Stores (E-Commerce), Digital Invitations, and SEO Optimization. Quote your software project interactively.';
+        ? 'Desarrollo de Páginas Web, Sistemas de Gestión a medida, Tiendas Online, Invitaciones Digitales y optimización SEO. Cotizá tu software online.'
+        : 'Custom Websites, Management Systems, Online Stores, Digital Invitations, and SEO optimization. Quote your software project interactively online.';
     } else if (path === '/proyectos') {
       pageTitle = isEs
         ? `Proyectos & Casos de Estudio | ${baseTitle}`
         : `Projects & Case Studies | ${baseTitle}`;
       pageDescription = isEs
-        ? 'Catálogo de 11 proyectos verificables en producción: sistemas Full Stack con React 19, Node.js, PostgreSQL, MongoDB, pagos con Mercado Pago y WebSockets en tiempo real.'
-        : 'Showcase of 11 verifiable production projects: Full Stack platforms built with React 19, Node.js, PostgreSQL, MongoDB, Mercado Pago checkout, and real-time WebSockets.';
+        ? 'Catálogo de 11 proyectos en producción: sistemas Full Stack con React 19, Node.js, PostgreSQL, MongoDB, Mercado Pago y WebSockets en tiempo real.'
+        : 'Showcase of 11 production projects: Full Stack platforms built with React 19, Node.js, PostgreSQL, MongoDB, Mercado Pago, and real-time WebSockets.';
     } else if (matchedProject) {
       pageTitle = `${matchedProject.title} — ${isEs ? 'Caso de Estudio' : 'Case Study'} | ${baseTitle}`;
       pageDescription = t(matchedProject.descriptionKey);
@@ -191,29 +191,29 @@ function App() {
         ? `Stack Tecnológico & Habilidades | ${baseTitle}`
         : `Tech Stack & Engineering Skills | ${baseTitle}`;
       pageDescription = isEs
-        ? 'Matriz técnica de ingeniería: React 19, Zustand, Three.js, Tailwind CSS, Node.js, Express, PostgreSQL, Supabase, MongoDB, Socket.IO, Zod y Testing QA (Cypress, Mocha & Chai).'
-        : 'Engineering skills matrix: React 19, Zustand, Three.js, Tailwind CSS, Node.js, Express, PostgreSQL, Supabase, MongoDB, Socket.IO, Zod, and QA Testing (Cypress, Mocha & Chai).';
+        ? 'Stack técnico de ingeniería: React 19, Zustand, Three.js, Tailwind CSS, Node.js, PostgreSQL, Supabase, MongoDB, Socket.IO, Zod y testing QA.'
+        : 'Engineering skills matrix: React 19, Zustand, Three.js, Tailwind CSS, Node.js, PostgreSQL, Supabase, MongoDB, Socket.IO, Zod, and QA testing.';
     } else if (path === '/educacion') {
       pageTitle = isEs
         ? `Educación & Certificaciones | ${baseTitle}`
         : `Education & Verified Credentials | ${baseTitle}`;
       pageDescription = isEs
-        ? 'Trayectoria académica en la Universidad del Norte Santo Tomás de Aquino (UNSTA), formación en inglés técnico, certificaciones verificables y descarga de CV en PDF.'
-        : 'Academic degree in Software Development & Quality Assurance at UNSTA, technical English training, verifiable certifications, and official PDF resume download.';
+        ? 'Formación universitaria en Desarrollo y Calidad de Software (UNSTA), inglés técnico, certificaciones verificables y descarga oficial de CV en PDF.'
+        : 'University degree in Software Development & Quality Assurance (UNSTA), technical English, verifiable certifications, and official PDF resume.';
     } else if (path === '/sobre-mi') {
       pageTitle = isEs
         ? `Sobre Mí & Filosofía de Ingeniería | ${baseTitle}`
         : `About Me & Engineering Philosophy | ${baseTitle}`;
       pageDescription = isEs
-        ? 'Perfil profesional de Lautaro Leal Del Prete: principios de arquitectura limpia, calidad de software (QA UNSTA), seguridad de datos y desarrollo Full Stack desde Tucumán, Argentina.'
-        : 'Professional profile of Lautaro Leal Del Prete: clean architecture principles, software quality assurance (UNSTA), data security, and Full Stack development from Argentina.';
+        ? 'Perfil profesional de Lautaro Leal Del Prete: arquitectura limpia, calidad de software (QA UNSTA), seguridad de datos y desarrollo Full Stack.'
+        : 'Professional profile of Lautaro Leal Del Prete: clean architecture, software quality assurance (UNSTA), data security, and Full Stack engineering.';
     } else if (path === '/contacto') {
       pageTitle = isEs
         ? `Contacto & Propuestas de Software | ${baseTitle}`
         : `Contact & Software Inquiries | ${baseTitle}`;
       pageDescription = isEs
-        ? 'Canales directos de contacto con Lautaro Leal Del Prete: formulario con despacho automático, WhatsApp directo, LinkedIn y GitHub. Respuestas en menos de 24 horas.'
-        : 'Direct contact channels with Lautaro Leal Del Prete: automated inquiry form, direct WhatsApp, LinkedIn, and GitHub. Replies within 24 hours.';
+        ? 'Canales directos de contacto con Lautaro Leal Del Prete: formulario automático, WhatsApp, LinkedIn y GitHub. Respuestas en menos de 24 horas.'
+        : 'Direct contact channels with Lautaro Leal Del Prete: automated inquiry form, WhatsApp, LinkedIn, and GitHub. Replies within 24 hours.';
     } else {
       pageTitle = isEs
         ? `Página no encontrada (404) | ${baseTitle}`
