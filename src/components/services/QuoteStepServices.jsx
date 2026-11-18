@@ -24,14 +24,12 @@ export default function QuoteStepServices({
       case 'paginas-web':
         return <Globe size={20} />;
       case 'sistemas-gestion':
-      case 'sistemas-de-gestion':
         return <Cpu size={20} />;
       case 'tienda-online':
         return <ShoppingCart size={20} />;
       case 'invitaciones-digitales':
         return <Sparkles size={20} />;
       case 'mejora-web':
-      case 'mejora-de-tu-web':
         return <Zap size={20} />;
       default:
         return <Calculator size={20} />;

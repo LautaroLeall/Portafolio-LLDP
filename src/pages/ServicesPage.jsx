@@ -5,7 +5,7 @@ import {
   ArrowRight,
   CheckCircle2
 } from 'lucide-react';
-import { getServicesData, getPricingConfig } from '../data/servicesData';
+import { getServicesData } from '../data/servicesData';
 import ServiceMockup from '../components/services/ServiceMockup';
 import QuoteWizard from '../components/services/QuoteWizard';
 import PagesHero3D from '../components/ui/PagesHero3D';
@@ -19,7 +19,6 @@ export default function ServicesPage() {
   const isEs = language === 'es';
 
   const services = getServicesData(language);
-  const pricingConfig = getPricingConfig(language);
 
   const [activeServiceId, setActiveServiceId] = useState(services[0]?.id || 'paginas-web');
   const [wizardServiceId, setWizardServiceId] = useState(services[0]?.id || 'paginas-web');
@@ -278,7 +277,6 @@ export default function ServicesPage() {
       {/* 3. Cotizador Wizard */}
       <QuoteWizard
         services={services}
-        pricingConfig={pricingConfig}
         isEs={isEs}
         preselectedServiceId={wizardServiceId}
       />

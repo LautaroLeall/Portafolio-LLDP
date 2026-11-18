@@ -10,12 +10,11 @@ export default function ServiceMockup({
   serviceId,
   service,
   lang,
-  language,
-  variant = 'card'
+  language
 }) {
   const activeId = serviceId || service?.id || 'paginas-web';
   const isEs = (lang || language || 'es') === 'es';
   const data = getServiceMockupData(activeId, isEs);
 
-  return <ServiceMockupCard {...data} isEs={isEs} variant={variant} />;
+  return <ServiceMockupCard {...data} />;
 }

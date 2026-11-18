@@ -23,7 +23,6 @@ import {
 export function getServiceMockupData(serviceId, isEs = true) {
   switch (serviceId) {
     case 'sistemas-gestion':
-    case 'sistemas-de-gestion':
       return {
         activeColor: 'bg-blue-600',
         iconColor: 'bg-indigo-500/20 text-indigo-400',
@@ -156,7 +155,6 @@ export function getServiceMockupData(serviceId, isEs = true) {
       };
 
     case 'mejora-web':
-    case 'mejora-de-tu-web':
       return {
         activeColor: 'bg-cyan-600',
         iconColor: 'bg-cyan-500/20 text-cyan-400',
