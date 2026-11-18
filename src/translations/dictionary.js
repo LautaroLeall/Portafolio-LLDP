@@ -126,16 +126,6 @@ export const translations = {
                     'High-performance architecture: 80% initial JS reduction (58.9 kB bundle), requestIdleCallback lazy loading, and WebKit GPU optimization'
                 ]
             }
-        },
-        preloader: {
-            windowTitle: 'lldp@portfolio: ~ (zsh)',
-            command: 'portfolio boot --profile="Lautaro Leal Del Prete"',
-            role: 'Role: Full Stack Developer',
-            stack: 'Stack: React 19 • Node.js • Cloud Architecture',
-            step1: 'Compiling modules and components...',
-            step2: 'Loading showcase with 11 production projects...',
-            step3: 'Mounting interactive cyber canvas...',
-            ready: 'All systems operational. Launching portfolio...'
         }
     },
     es: {
@@ -265,16 +255,6 @@ export const translations = {
                     'Arquitectura ultraligera con 80% de reducción de bundle (58.9 kB JS), carga bajo demanda con requestIdleCallback y optimización GPU para móviles'
                 ]
             }
-        },
-        preloader: {
-            windowTitle: 'lldp@portfolio: ~ (zsh)',
-            command: 'portfolio boot --profile="Lautaro Leal Del Prete"',
-            role: 'Rol: Desarrollador Full Stack',
-            stack: 'Stack: React 19 • Node.js • Arquitectura Cloud',
-            step1: 'Compilando módulos y componentes...',
-            step2: 'Cargando catálogo con 11 proyectos de producción...',
-            step3: 'Montando constelación cyber...',
-            ready: 'Todos los sistemas operativos. Iniciando portafolio...'
         }
     }
-}
+};
