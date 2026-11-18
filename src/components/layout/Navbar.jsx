@@ -210,6 +210,7 @@ export default function Navbar() {
                         <button
                             type="button"
                             onClick={toggleLanguage}
+                            data-no-typing="true"
                             className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors cursor-pointer select-none ${isLight
                                 ? 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                                 : 'text-slate-300 hover:text-white hover:bg-white/10'
