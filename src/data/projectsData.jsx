@@ -58,10 +58,9 @@ export const projectList = [
         code: 'https://github.com/LautaroLeall/NYG-Front',
         codeBack: 'https://github.com/LautaroLeall/NYG-Back',
         demo: 'https://natacionygimanacia.vercel.app/',
-        image: '/projects/nyg.png',
-        imageMobile: '/projects-mobile/nyg.png',
-        category: 'Full Stack',
-        inProgress: true
+        image: '/projects/nyg.webp',
+        imageMobile: '/projects-mobile/nyg.webp',
+        category: 'Full Stack'
     },
     {
         id: 'nutrioliva',
@@ -74,10 +73,9 @@ export const projectList = [
         code: 'https://github.com/LautaroLeall/NutriOliva-Front',
         codeBack: 'https://github.com/LautaroLeall/NutriOliva-Back',
         demo: 'https://nutri-oliva.vercel.app/',
-        image: '/projects/nutrioliva.png',
-        imageMobile: '/projects-mobile/nutrioliva.png',
-        category: 'Full Stack',
-        inProgress: true
+        image: '/projects/nutrioliva.webp',
+        imageMobile: '/projects-mobile/nutrioliva.webp',
+        category: 'Full Stack'
     },
     {
         id: 'nova-setup',
@@ -90,8 +88,8 @@ export const projectList = [
         code: 'https://github.com/LautaroLeall/Nova-Setup-Front',
         codeBack: 'https://github.com/LautaroLeall/Nova-Setup-Back',
         demo: 'https://nova-setup.vercel.app/',
-        image: '/projects/nova-setup.png',
-        imageMobile: '/projects-mobile/nova-setup.png',
+        image: '/projects/nova-setup.webp',
+        imageMobile: '/projects-mobile/nova-setup.webp',
         category: 'Full Stack'
     },
     {
@@ -105,8 +103,8 @@ export const projectList = [
         code: 'https://github.com/LautaroLeall/Confia-CAR-Front',
         codeBack: 'https://github.com/LautaroLeall/Confia-CAR-Back',
         demo: 'https://confia-car-rent.vercel.app/',
-        image: '/projects/confia-car.png',
-        imageMobile: '/projects-mobile/confia-car.png',
+        image: '/projects/confia-car.webp',
+        imageMobile: '/projects-mobile/confia-car.webp',
         category: 'Full Stack'
     },
     {
@@ -120,8 +118,8 @@ export const projectList = [
         code: 'https://github.com/BenjaZelaya/Fleeswap-Frontend',
         codeBack: 'https://github.com/STCzao/fleeswap-backend',
         demo: 'https://fleeswap.vercel.app/',
-        image: '/projects/fleeswap.png',
-        imageMobile: '/projects-mobile/fleeswap.png',
+        image: '/projects/fleeswap.webp',
+        imageMobile: '/projects-mobile/fleeswap.webp',
         category: 'Full Stack'
     },
     {
@@ -134,8 +132,8 @@ export const projectList = [
         techs: ['React', 'Tailwind', 'Framer', 'EmailJS', 'Responsive', 'Vite'],
         code: 'https://github.com/LautaroLeall/Servicios-LLDP',
         demo: 'https://servicios-lldp.vercel.app/',
-        image: '/projects/mis-servicios.png',
-        imageMobile: '/projects-mobile/mis-servicios.png',
+        image: '/projects/mis-servicios.webp',
+        imageMobile: '/projects-mobile/mis-servicios.webp',
         category: 'Landing'
     },
     {
@@ -148,8 +146,8 @@ export const projectList = [
         techs: ['React', 'ReactRouter', 'Tailwind', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/MyM_Decoraciones',
         demo: 'https://mym-decoraciones.netlify.app/',
-        image: '/projects/mym-decoraciones.png',
-        imageMobile: '/projects-mobile/mym-decoraciones.png',
+        image: '/projects/mym-decoraciones.webp',
+        imageMobile: '/projects-mobile/mym-decoraciones.webp',
         category: 'Landing'
     },
     {
@@ -162,8 +160,8 @@ export const projectList = [
         techs: ['React', 'Tailwind', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Levels-GYM',
         demo: 'https://levels-ar.netlify.app/',
-        image: '/projects/levels-gym.png',
-        imageMobile: '/projects-mobile/levels-gym.png',
+        image: '/projects/levels-gym.webp',
+        imageMobile: '/projects-mobile/levels-gym.webp',
         category: 'Landing'
     },
     {
@@ -176,8 +174,8 @@ export const projectList = [
         techs: ['React', 'ReactRouter', 'Tailwind', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Cesar_Aparicio_Estilista',
         demo: 'https://cesar-aparicio-estilista.netlify.app/',
-        image: '/projects/cesar-estista.png',
-        imageMobile: '/projects-mobile/cesar-estista.png',
+        image: '/projects/cesar-aparicio-estilista.webp',
+        imageMobile: '/projects-mobile/cesar-aparicio-estilista.webp',
         category: 'Landing'
     },
     {
@@ -190,8 +188,8 @@ export const projectList = [
         techs: ['React', 'Tailwind', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/BG-Habilitaciones',
         demo: 'https://bga-habilitaciones.netlify.app/',
-        image: '/projects/bga-habilitaciones.png',
-        imageMobile: '/projects-mobile/bga-habilitaciones.png',
+        image: '/projects/bga-habilitaciones.webp',
+        imageMobile: '/projects-mobile/bga-habilitaciones.webp',
         category: 'Landing'
     },
     {
@@ -204,8 +202,8 @@ export const projectList = [
         techs: ['React', 'ReactRouter', 'Tailwind', 'Framer', 'Responsive'],
         code: 'https://github.com/LautaroLeall/Krauft',
         demo: 'https://krauft-marketing-inmobiliaria.netlify.app/',
-        image: '/projects/krauft.png',
-        imageMobile: '/projects-mobile/krauft.png',
+        image: '/projects/krauft.webp',
+        imageMobile: '/projects-mobile/krauft.webp',
         category: 'Landing'
     }
 ];
