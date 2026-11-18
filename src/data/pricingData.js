@@ -82,7 +82,6 @@ export const getServicePricingConfig = (serviceId = 'paginas-web', lang = 'es') 
 
     /* 02. SISTEMAS DE GESTIÓN */
     case 'sistemas-gestion':
-    case 'sistemas-de-gestion':
       return {
         tierQuestion: isEs ? 'Alcance del Sistema de Gestión:' : 'System Scope & Capacity:',
         tiers: {
@@ -300,7 +299,6 @@ export const getServicePricingConfig = (serviceId = 'paginas-web', lang = 'es') 
 
     /* 05. MEJORA DE TU WEB ACTUAL */
     case 'mejora-web':
-    case 'mejora-de-tu-web':
       return {
         tierQuestion: isEs ? 'Objetivo Principal de la Optimización:' : 'Primary Optimization Goal:',
         tiers: {
@@ -449,12 +447,3 @@ export const getServicePricingConfig = (serviceId = 'paginas-web', lang = 'es') 
       return getServicePricingConfig('paginas-web', lang);
   }
 };
-
-/**
- * getPricingConfig — Compatibilidad retroactiva
- */
-export const getPricingConfig = (lang = 'es') => {
-  return getServicePricingConfig('paginas-web', lang);
-};
-
-export const pricingConfig = getPricingConfig('es');
