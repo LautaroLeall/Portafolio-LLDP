@@ -93,7 +93,7 @@ export default function HomePage() {
               >
                 {isEs ? (
                   <>
-                    Construyo aplicaciones web completas, arquitecturas de software robustas y sistemas
+                    Desarrollo web y software a medida: aplicaciones completas, plataformas escalables y sistemas
                     en producción con <strong className="text-slate-900 dark:text-white font-semibold">React 19, Node.js, Express, PostgreSQL y MongoDB</strong>.
                     Graduado de <strong className="text-slate-900 dark:text-white font-semibold">UNSTA</strong> con foco en código limpio, seguridad y alto rendimiento.
                   </>
