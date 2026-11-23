@@ -1,0 +1,70 @@
+# Lautaro Leal Del Prete — Programador, Desarrollo Web & Software Engineering (https://lautarolealdev.com)
+> Última actualización: 2026-11-23
+> Portafolio oficial de Lautaro Leal Del Prete (Lautaro Leal, Lautaro Del Prete, Leal Del Prete, Lautaro Tucumán, LLDP).
+
+## Perfil Profesional
+- **Nombre completo:** Lautaro Leal Del Prete
+- **Rol:** Programador Web, Full Stack Developer & Software Engineer
+- **Ubicación:** San Miguel de Tucumán, Tucumán, Argentina (disponible presencial y remoto global)
+- **Formación Universitaria:** Técnico Universitario en Desarrollo y Calidad de Software — Universidad del Norte Santo Tomás de Aquino (UNSTA, Tucumán)
+- **Idiomas:** Español (Nativo), Inglés (Técnico / B2-C1 en formación en Instituto Nexus)
+
+## Secciones Principales
+- [Inicio](https://lautarolealdev.com/): Presentación, stack principal y desarrollos recientes en producción.
+- [Servicios y Cotizador](https://lautarolealdev.com/servicios): Diseño web, software a medida y cotizador interactivo en Tucumán y remoto.
+- [Proyectos y Casos de Estudio](https://lautarolealdev.com/proyectos): 11 aplicaciones web verificables con código fuente y sandboxes en vivo.
+- [Habilidades Técnicas](https://lautarolealdev.com/habilidades): React 19, Vite, Zustand, Tailwind CSS, Three.js, Node.js, Express, PostgreSQL, Supabase (RLS), MongoDB, Socket.IO, Zod, Cypress, Mocha y Chai.
+- [Educación y Certificaciones](https://lautarolealdev.com/educacion): Título universitario UNSTA, certificaciones Microsoft/freeCodeCamp/Digitalers y descarga de CV en PDF.
+- [Sobre Mí](https://lautarolealdev.com/sobre-mi): Filosofía de arquitectura limpia, calidad de software y seguridad.
+- [Contacto](https://lautarolealdev.com/contacto): Formulario directo, WhatsApp, LinkedIn y GitHub.
+
+## Especialidades de Servicio
+- **Páginas Web** (https://lautarolealdev.com/servicios): Diseño y desarrollo sitios web modernos, veloces y adaptables a celulares y computadoras, reflejando la identidad de tu negocio con contacto directo a tu WhatsApp.
+- **Sistemas de Gestión** (https://lautarolealdev.com/servicios): Sistemas web a medida que centralizan tu operación diaria: agenda de turnos, control de stock, tablas deportivas o reservas y balance de finanzas accesible desde cualquier dispositivo.
+- **Tienda Online** (https://lautarolealdev.com/servicios): Tus clientes recorren tu catálogo desde el celular, arman su carrito y pagan online, mientras vos administrás productos, precios, stock y órdenes desde un panel simple.
+- **Invitaciones Digitales** (https://lautarolealdev.com/servicios): Tarjetas digitales interactivas y mobile-first para Cumpleaños Infantiles, 15 Años, 18 Años, Casamientos y Eventos. Incluyen pantalla de bienvenida con música, cuenta regresiva en vivo, personajes o animaciones temáticas, ubicación con Google Maps, sección de regalos (CBU/Alias con copiado rápido) y confirmación de asistencia (RSVP) directo a tu WhatsApp.
+- **Mejora de tu Web** (https://lautarolealdev.com/servicios): Si tu sitio tarda en cargar o quedó desactualizado en celulares, realizo una revisión previa y transformo su Velocidad, Diseño y Funciones.
+- **Revisión de Presupuesto** (https://lautarolealdev.com/servicios): Revisamos juntos el presupuesto que te pasaron (Diseño, Desarrollo, Contenido, Soporte y Extras), sin compromiso, para que elijas con seguridad y ahorres.
+
+## Preguntas Frecuentes (Tucumán & Remoto)
+- **¿Quién es Lautaro Leal Del Prete y qué tipo de desarrollo web y software realiza en Tucumán?**
+  Lautaro Leal Del Prete es Desarrollador Full Stack y Técnico Universitario en Desarrollo y Calidad de Software graduado en la UNSTA (San Miguel de Tucumán). Diseña y programa páginas web corporativas, tiendas online (e-commerce), sistemas de gestión a medida (turnos, stock, finanzas) y plataformas web escalables con React 19, Node.js, PostgreSQL y MongoDB.
+- **¿El código fuente y el dominio quedan 100% a mi nombre sin abonos mensuales cautivos?**
+  Sí. A diferencia de las agencias que cobran abonos mensuales obligatorios por alquilarte una plantilla, cada sitio web o sistema de gestión se entrega llave en mano con código 100% propio en GitHub, dominio registrado a tu nombre y despliegue optimizado en Vercel o Netlify.
+- **¿Las páginas web y sistemas incluyen SEO para aparecer en Google y carga ultrarrápida en celulares?**
+  Sí. Todos los desarrollos se construyen con arquitectura mobile-first, imágenes WebP optimizadas, datos estructurados JSON-LD, sitemap automático y meta etiquetas calibradas para Google Search y buscadores con IA, logrando tiempos de carga menores a 1.2 segundos.
+- **¿Trabajás únicamente en Tucumán o también para empresas de toda Argentina y el exterior?**
+  Atiendo de forma presencial en San Miguel de Tucumán, Yerba Buena y alrededores, y trabajo de manera remota para empresas, comercios y equipos de software de toda Argentina, Latinoamérica, Estados Unidos y Europa.
+- **¿Cómo puedo pedir un presupuesto o revisar una cotización que ya me pasaron?**
+  Podés configurar el alcance de tu proyecto en el Cotizador Interactivo de esta página y enviarlo directo por WhatsApp (+54 381 339 9463) o correo electrónico. También podés solicitar una revisión gratuita de cualquier presupuesto web previo para detectar sobreprecios o faltantes técnicos.
+
+## Proyectos en Producción (11 Casos de Estudio)
+- **Club Natación y Gimnasia** (Full Stack) — Caso de estudio: https://lautarolealdev.com/proyectos/natacion-y-gimnasia | Demo: https://natacionygimanacia.vercel.app/ | Stack: React, Tailwind, Nodejs, Express, MongoDB, Cloudinary, JWT, Zustand, Zod
+  Plataforma web integral para Club Natación y Gimnasia (Rugby) con fixture, posiciones y panel de administración.
+- **NutriOliva** (Full Stack) — Caso de estudio: https://lautarolealdev.com/proyectos/nutrioliva | Demo: https://nutri-oliva.vercel.app/ | Stack: React, Tailwind, Supabase, PostgreSQL, JWT, Deno
+  Plataforma para gestión nutricional, diseño de planes alimenticios y seguimiento diario de pacientes en tiempo real.
+- **Nova-SetUp** (Full Stack) — Caso de estudio: https://lautarolealdev.com/proyectos/nova-setup | Demo: https://nova-setup.vercel.app/ | Stack: React, Tailwind, Framer, Nodejs, Express, MongoDB, Cloudinary, JWT, Vite
+  E-commerce Full Stack para setups y hardware premium con simulador "Arma tu PC", carrito lateral y panel admin.
+- **CONFIA-CAR** (Full Stack) — Caso de estudio: https://lautarolealdev.com/proyectos/confia-car | Demo: https://confia-car-rent.vercel.app/ | Stack: React, Nodejs, Express, MongoDB, Socket.IO, Mercado Pago, Google OAuth, JWT, Vite
+  Plataforma integral de alquiler de vehículos con pagos Mercado Pago, Google OAuth, chat en vivo por WebSockets y panel administrativo.
+- **Fleeswap** (Full Stack) — Caso de estudio: https://lautarolealdev.com/proyectos/fleeswap | Demo: https://fleeswap.vercel.app/ | Stack: React, Tailwind, Zustand, Nodejs, Express, MongoDB, Socket.IO, Cloudinary, JWT
+  Marketplace Full Stack para trueques y compras con confirmación bilateral, chat Socket.IO, notificaciones y reputación.
+- **Servicios Web LLDP** (Landing) — Caso de estudio: https://lautarolealdev.com/proyectos/servicios-lldp | Demo: https://servicios-lldp.vercel.app/ | Stack: React, Tailwind, Framer, EmailJS, Responsive, Vite
+  Plataforma comercial de servicios web de alta conversión con mockups interactivos, preloader 3D y cotizador en tiempo real.
+- **MyM Decoraciones** (Landing) — Caso de estudio: https://lautarolealdev.com/proyectos/mym-decoraciones | Demo: https://mym-decoraciones.netlify.app/ | Stack: React, ReactRouter, Tailwind, Framer, Responsive
+  Landing page para decoración de eventos con precios y contacto.
+- **Levels GYM** (Landing) — Caso de estudio: https://lautarolealdev.com/proyectos/levels-gym | Demo: https://levels-ar.netlify.app/ | Stack: React, Tailwind, Framer, Responsive
+  Sitio web de alto rendimiento para gimnasio con planes y contacto.
+- **Cesar Aparicio Estilista** (Landing) — Caso de estudio: https://lautarolealdev.com/proyectos/cesar-aparicio-estilista | Demo: https://cesar-aparicio-estilista.netlify.app/ | Stack: React, ReactRouter, Tailwind, Framer, Responsive
+  Landing page para estilista con reservas vía WhatsApp.
+- **BGA Habilitaciones** (Landing) — Caso de estudio: https://lautarolealdev.com/proyectos/bga-habilitaciones | Demo: https://bga-habilitaciones.netlify.app/ | Stack: React, Tailwind, Framer, Responsive
+  Sitio profesional para consultoría de habilitaciones comerciales.
+- **Krauft Marketing Inmobiliario** (Landing) — Caso de estudio: https://lautarolealdev.com/proyectos/krauft-inmobiliaria | Demo: https://krauft-marketing-inmobiliaria.netlify.app/ | Stack: React, ReactRouter, Tailwind, Framer, Responsive
+  Sitio web corporativo para marketing inmobiliario.
+
+## Canales Oficiales Verificados
+- Web oficial: https://lautarolealdev.com/
+- Email: lautaroleal4@gmail.com
+- WhatsApp: https://wa.me/5493813399463
+- LinkedIn: https://www.linkedin.com/in/lauldp
+- GitHub: https://github.com/LautaroLeall
