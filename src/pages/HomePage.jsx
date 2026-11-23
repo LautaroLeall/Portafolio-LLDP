@@ -389,8 +389,8 @@ export default function HomePage() {
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 m-0">
                 {isEs
-                  ? 'Estoy disponible para posiciones Full Stack, desarrollo a medida y consultoría técnica.'
-                  : 'Available for Full Stack roles, bespoke software development, and technical consulting.'}
+                  ? 'Desarrollo web y software a medida desde San Miguel de Tucumán para toda Argentina y el mundo remoto.'
+                  : 'Available for Full Stack roles, bespoke software development, and technical consulting worldwide.'}
               </p>
             </div>
 

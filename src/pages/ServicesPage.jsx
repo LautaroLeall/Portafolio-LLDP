@@ -8,6 +8,7 @@ import {
 import { getServicesData } from '../data/servicesData';
 import ServiceMockup from '../components/services/ServiceMockup';
 import QuoteWizard from '../components/services/QuoteWizard';
+import ServicesFaq from '../components/services/ServicesFaq';
 import PagesHero3D from '../components/ui/PagesHero3D';
 import { useLanguage } from '../hooks/useLanguage';
 
@@ -280,6 +281,9 @@ export default function ServicesPage() {
         isEs={isEs}
         preselectedServiceId={wizardServiceId}
       />
+
+      {/* 4. Preguntas Frecuentes (SEO Local & Conversión) */}
+      <ServicesFaq isEs={isEs} />
     </div>
   );
 }

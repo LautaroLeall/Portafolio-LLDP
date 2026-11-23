@@ -163,10 +163,10 @@ function App() {
 
     if (path === '/') {
       pageTitle = isEs
-        ? `${baseTitle} | Desarrollo Web & Software — Tucumán`
+        ? `${baseTitle} | Programador & Desarrollo Web Tucumán`
         : `${baseTitle} | Full Stack Web & Software Engineer`;
       pageDescription = isEs
-        ? 'Lautaro Leal Del Prete: Desarrollo Web y Software a medida en Tucumán, Argentina. Full Stack con React 19, Node.js, PostgreSQL y MongoDB.'
+        ? 'Programador y desarrollador web en Tucumán. Desarrollo de software a medida, diseño web y sistemas Full Stack en Argentina con React 19 y Node.js.'
         : 'Lautaro Leal Del Prete: Custom Web Development and Software Engineering. Full Stack apps with React 19, Node.js, PostgreSQL & MongoDB.';
     } else if (path === '/servicios') {
       pageTitle = isEs
