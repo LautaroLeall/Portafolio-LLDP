@@ -1,0 +1,5 @@
+Contact: mailto:lautaroleal4@gmail.com
+Contact: https://lautarolealdev.com/contacto
+Canonical: https://lautarolealdev.com/.well-known/security.txt
+Preferred-Languages: es, en
+Expires: 2027-12-31T23:59:59.000Z
