@@ -28,6 +28,7 @@ Plataforma profesional de **Ingeniería de Software & Full Stack Development** d
     - **Paso 2 (Requerimientos Técnicos):** Preguntas de alcance personalizadas por especialidad (`pricingData.js`), selector desplegable de cristal pulido y módulos adicionales opcionales.
     - **Paso 3 (Dossier & Despacho):** Ficha técnica ejecutiva con chips interactivos y botón de modificación rápida. Despacho 100% automático mediante **EmailJS** o coordinación directa con brief preformateado en **WhatsApp**.
     - **Stepper 100% Responsivo:** Línea de progreso de una sola fila calibrada para evitar saltos en pantallas móviles reducidas.
+  - **Preguntas Frecuentes Interactivas (`ServicesFaq.jsx` + `faqData.js`):** Layout sticky en desktop con barra activa animada (`layoutId`) y respuestas compartidas como fuente única con el schema `FAQPage`.
 
 - 🚀 **Showcase de Proyectos de Ingeniería (`/proyectos`)**:
   - Buscador reactivo en tiempo real y filtrado dinámico por categorías con contadores (_Todos, Full Stack, Landing Pages_).
@@ -53,11 +54,11 @@ Plataforma profesional de **Ingeniería de Software & Full Stack Development** d
   - Plantilla HTML ejecutiva estilo Vercel/Linear (dark cyber-tech) con tipografía de ingeniería, iconos SVG puros, sin emojis y botones de acción rápida dual (Email directo + WhatsApp).
   - Sistema de notificaciones toast con física de resortes mediante **Sileo**.
 
-- 🔍 **SEO Técnico, Accesibilidad & Performance Web**:
-  - Estructura semántica estricta (jerarquía H1 → H2 → H3 normalizada, eliminación de `<main>` anidados, `aria-label` en controles interactivos).
-  - `boxShadow` extendido en Tailwind CSS (`shadow-xs` y `shadow-2xs`).
-  - Metadatos optimizados para dominio personalizado `lautarolealdev.com`, datos estructurados `JSON-LD` (`schema.org/Person`), Open Graph, Twitter Cards, `robots.txt` limpio y `sitemap.xml` multi-página.
-  - Reglas de cabeceras de seguridad y rewrites SPA en `vercel.json`.
+- 🔍 **SEO Técnico, Local SEO (Tucumán), GEO & Seguridad Web**:
+  - **Pre-renderizado Estático por Ruta (`scripts/seoPrerenderPlugin.mjs`):** Genera automáticamente `sitemap.xml`, `llms.txt` (GEO para buscadores con IA) y **17 archivos HTML estáticos** en `dist/` (compatibles con `cleanUrls` y `trailingSlash: false` en Vercel), con validación automática en build de longitudes de `<title>` y `<meta name="description">`.
+  - **Datos Estructurados `JSON-LD` por Ruta:** Grafo `@graph` en portada (`Person`, `ProfessionalService` con `GeoCoordinates` y `OfferCatalog`, `WebSite`, `ProfilePage`, `ItemList`) y esquemas específicos por subruta (`BreadcrumbList`, `FAQPage`, `CollectionPage`, `SoftwareApplication`, `AboutPage`, `ContactPage`).
+  - **Identidad y Verificación:** Juego completo de favicons (`favicon.ico`, `48x48`, `96x96`, `180x180`, `192x192`, `512x512`), `site.webmanifest`, `BingSiteAuth.xml`, Open Graph (`og-banner.png` 1200×630), `robots.txt` e índice semántico `H1 → H2 → H3`.
+  - **Seguridad Endurecida (`vercel.json` + `.well-known/security.txt`):** `Content-Security-Policy` estricta (`script-src 'self'`), `Strict-Transport-Security` con preload, `COOP`, `X-Content-Type-Options`, `Referrer-Policy` y `Permissions-Policy`.
 
 ---
 
@@ -80,18 +81,30 @@ Plataforma profesional de **Ingeniería de Software & Full Stack Development** d
 ```text
 Portafolio-LLDP/
 ├── public/
+│   ├── .well-known/
+│   │   └── security.txt            # Política oficial de contacto y seguridad (RFC 9116)
 │   ├── brand/                      # Logotipos y monogramas vectoriales oficiales LLDP
 │   ├── certifications/             # Certificados oficiales (PDF y PNG de alta resolución)
 │   ├── projects/                   # Capturas Desktop oficiales de casos de estudio (.webp)
 │   ├── projects-mobile/            # Capturas Mobile responsive (.webp)
+│   ├── BingSiteAuth.xml            # Verificación oficial para Bing Webmaster Tools
 │   ├── Lautaro-Leal-Del-Prete-English.pdf
 │   ├── Lautaro-Leal-Del-Prete-Spanish.pdf
 │   ├── Logo_LLDP.png               # Isotipo oficial de alta definición
 │   ├── Logo_LLDP.svg               # Isotipo vectorial escalable
-│   ├── og-banner.png               # Tarjeta panorámica Open Graph (1200x630)
+│   ├── apple-touch-icon.png        # Icono iOS / PWA (180x180)
+│   ├── favicon-48x48.png           # Favicons optimizados para buscadores (Google/Bing)
+│   ├── favicon-96x96.png
+│   ├── favicon-192x192.png
+│   ├── favicon-512x512.png
 │   ├── favicon.ico
+│   ├── llms.txt                    # Resumen estructurado GEO autogenerado para motores IA
+│   ├── og-banner.png               # Tarjeta panorámica Open Graph (1200x630)
 │   ├── robots.txt
-│   └── sitemap.xml
+│   ├── site.webmanifest            # Manifiesto web e iconos PWA
+│   └── sitemap.xml                 # Sitemap XML multi-ruta autogenerado en build
+├── scripts/
+│   └── seoPrerenderPlugin.mjs      # Plugin Vite: sitemap, llms.txt, 17 HTML estáticos y validación SEO
 ├── src/
 │   ├── components/
 │   │   ├── about/                  # Módulos específicos de Sobre Mí (Dossier3DCard)
@@ -102,13 +115,14 @@ Portafolio-LLDP/
 │   │   │   ├── ScrollToTop.jsx     # Reset y sincronización de scroll entre rutas
 │   │   │   └── SmoothScroll.jsx    # Envoltorio de scroll inercial Lenis
 │   │   ├── projects/               # Componentes del visor de proyectos y Sandbox
-│   │   ├── services/               # Ecosistema de servicios y cotización
+│   │   ├── services/               # Ecosistema de servicios, FAQ y cotización
 │   │   │   ├── QuoteStepServices.jsx # Paso 1: Selección de Especialidad
 │   │   │   ├── QuoteStepOptions.jsx  # Paso 2: Configuración Técnica & Select Personalizado
 │   │   │   ├── QuoteStepContact.jsx  # Paso 3: Dossier Ejecutivo & Formulario Validado
 │   │   │   ├── QuoteWizard.jsx     # Orquestador del Cotizador Interactivo en 3 Pasos
 │   │   │   ├── ServiceMockup.jsx   # Dispatcher modular de mockups
-│   │   │   └── ServiceMockupCard.jsx # Tarjeta modular unificada de consola interactiva
+│   │   │   ├── ServiceMockupCard.jsx # Tarjeta modular unificada de consola interactiva
+│   │   │   └── ServicesFaq.jsx     # Acordeón animado FAQ (Local SEO Tucumán & GEO)
 │   │   └── ui/
 │   │       ├── AuroraMeshBackground.jsx # Gradiente dinámico de fondo por GPU
 │   │       ├── CustomCursor.jsx    # Cursor de física magnética para desktop
@@ -120,9 +134,11 @@ Portafolio-LLDP/
 │   │       └── Preloader.jsx       # Consola de booteo Unix inicial
 │   ├── context/                    # Providers globales (Theme, Language, Loader)
 │   ├── data/
+│   │   ├── faqData.js              # Preguntas frecuentes (fuente única UI + JSON-LD FAQPage)
 │   │   ├── mockupsData.js          # Definición de datos y consolas interactivas
 │   │   ├── pricingData.js          # Preguntas, opciones y adicionales por especialidad
-│   │   ├── projectsData.jsx        # Catálogo centralizado de proyectos y stacks
+│   │   ├── projectsCatalog.js      # Catálogo puro JS de proyectos (compartido UI + plugin SEO)
+│   │   ├── projectsData.jsx        # Wrapper React con iconos del catálogo de proyectos
 │   │   ├── servicesData.js         # Catálogo de servicios y generador de URL WhatsApp
 │   │   └── skillsData.js           # Dominios técnicos y matriz de habilidades
 │   ├── hooks/                      # Custom Hooks (useTheme, useLanguage, usePageLoader, useQuoteWizard)
@@ -133,7 +149,7 @@ Portafolio-LLDP/
 │   │   ├── HomePage.jsx            # Portada principal (FCP instantáneo)
 │   │   ├── ProjectDetailPage.jsx   # Caso de Estudio con Live Sandbox Iframe
 │   │   ├── ProjectsPage.jsx        # Catálogo de 11 Proyectos con Filtros
-│   │   ├── ServicesPage.jsx        # Catálogo de Especialidades & Cotizador
+│   │   ├── ServicesPage.jsx        # Catálogo de Especialidades, Cotizador & FAQ
 │   │   ├── SkillsPage.jsx          # Dominios Técnicos & Matriz de Habilidades
 │   │   └── NotFoundPage.jsx        # Vista 404 interactiva con Canvas 3D
 │   ├── services/
@@ -147,10 +163,10 @@ Portafolio-LLDP/
 │   ├── index.css                   # Directivas Tailwind, tokens de color y utilidades
 │   └── main.jsx                    # Punto de entrada de la aplicación
 ├── .env.example                    # Plantilla de variables de entorno requeridas
-├── index.html                      # SEO, Open Graph, <noscript> y JSON-LD estructurado
+├── index.html                      # SEO, Open Graph, favicons, <main> estático y JSON-LD @graph
 ├── tailwind.config.js              # Configuración y extensión de tema Tailwind
-├── vercel.json                     # Cabeceras de seguridad, caché perimetral y rewrites SPA
-└── vite.config.js                  # Configuración de compilación, chunks y auto-sitemap
+├── vercel.json                     # Cabeceras CSP/HSTS, cleanUrls, caché perimetral y rewrites SPA
+└── vite.config.js                  # Configuración de compilación, chunks y plugin seoPrerenderPlugin
 ```
 
 ---

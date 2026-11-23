@@ -1,6 +1,8 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -21,7 +23,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(?:png|jpg|jpeg|webp|svg|ico|pdf))",
+      "source": "/(.*\\.(?:png|jpg|jpeg|webp|svg|ico|pdf|webmanifest))",
       "headers": [
         {
           "key": "Cache-Control",
@@ -30,11 +32,24 @@
       ]
     },
     {
-      "source": "/(robots\\.txt|sitemap\\.xml)",
+      "source": "/(robots\\.txt|sitemap\\.xml|llms\\.txt|BingSiteAuth\\.xml)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400, stale-while-revalidate=43200"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=43200"
+        },
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
         }
       ]
     },
@@ -44,6 +59,10 @@
         {
           "key": "Strict-Transport-Security",
           "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.emailjs.com; frame-src 'self' https://*.vercel.app https://*.netlify.app https://*.github.io; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Content-Type-Options",
