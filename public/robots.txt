@@ -12,6 +12,8 @@ Allow: /favicon-512x512.png
 Allow: /apple-touch-icon.png
 Allow: /site.webmanifest
 Allow: /og-banner.png
+Allow: /llms.txt
+Allow: /.well-known/security.txt
 Allow: /Lautaro-Leal-Del-Prete-Spanish.pdf
 Allow: /Lautaro-Leal-Del-Prete-English.pdf
 
